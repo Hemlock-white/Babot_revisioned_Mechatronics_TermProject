@@ -1,0 +1,18 @@
+﻿Reference,Value,Footprint,Side,Purpose,Supplier Link
+U4,Arduino Micro A000053,Arduino_Micro_A000053,F,Preassembled ATmega32U4 module; USB logic supply and programming,https://shopee.tw/search?keyword=Arduino%20Micro%20A000053%20ATmega32U4%20original%20module
+U2,MIKROE-2332 DIGI POT 2,DIGI_POT_2_MIKROE2332,F,"Dedicated TPL0501 socket, both supply pins 5 V; analog terminals wired to J2",https://www.mikroe.com/digipot-2-click
+U1,CD74HC4067 16-channel module,BaBot_THT:CD74HC4067_Module,F,THT breakout module containing CD74HC4067; connector positions mapped to standard IC pin numbers for schematic consistency,https://s.taobao.com/search?q=CD74HC4067%2016%E8%B7%AF%20%E6%A8%A1%E6%8B%9F%20%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%20%E6%A8%A1%E5%9D%97 | https://shopee.tw/search?keyword=CD74HC4067%2016%20channel%20multiplexer%20module
+U3,20-way header to Plate,Header20,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C54803349.html
+H1,Servo signal/+5V/GND,Original_Base_H1,B,Original circuit; footprint converted or retained,https://s.taobao.com/search?q=PZ254V-11-03P%202.54mm%201x3%20vertical%20male%20pin%20header
+H2,Servo signal/+5V/GND,Original_Base_H2,B,Original circuit; footprint converted or retained,https://s.taobao.com/search?q=PZ254V-11-03P%202.54mm%201x3%20vertical%20male%20pin%20header
+H3,Servo signal/+5V/GND,Original_Base_H3,B,Original circuit; footprint converted or retained,https://s.taobao.com/search?q=PZ254V-11-03P%202.54mm%201x3%20vertical%20male%20pin%20header
+R1,10k,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2903232.html
+R7,10k,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2903232.html
+R10,500,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C1370878.html
+R18,500,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C1370878.html
+C1,220nF leaded ceramic,Ceramic_5mm,B,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=220nF%200.22uF%20ceramic%20disc%20capacitor%20radial%205mm%20pitch
+C5,10uF 16V,Electrolytic_5mm,F,Servo rail bulk capacitor; original value retained,https://www.lcsc.com/product-detail/C442560.html
+SW1,Momentary NO,Pushbutton_6mm,F,Original active-high mode button; standard THT switch,https://shopee.tw/search?keyword=6x6mm%20tactile%20push%20button%20switch%20through%20hole%204%20pin%20normally%20open
+U15,Red LED 3mm,LED_3mm,F,"Original LED function; KiCad pin 1 cathode, pin 2 anode",https://shopee.tw/search?keyword=3mm%20red%20LED%20through%20hole%202%20lead
+J1,5V servo power input,Power_Terminal,F,External regulated 5 V servo supply; separate from Micro USB logic supply,https://www.lcsc.com/product-detail/C5183929.html
+J2,TPL0501 H W L,Header_1x03,F,"Three short wires to Click screw terminals H, W, L respectively",https://s.taobao.com/search?q=2.54mm%201x3%20straight%20male%20pin%20header%20breakaway
