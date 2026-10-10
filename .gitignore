@@ -1,0 +1,12 @@
+# KiCad editor state, autosaves, and generated backups
+*.kicad_prl
+*-backups/
+.history/
+*.lck
+*~
+
+# Temporary routing logs and OS/editor clutter
+logs/
+*.log
+.DS_Store
+Thumbs.db
