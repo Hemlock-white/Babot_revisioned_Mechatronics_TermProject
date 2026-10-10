@@ -126,7 +126,7 @@
         "max_error": 0.005,
         "min_clearance": 0.2,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.3,
+        "min_copper_edge_clearance": 0.25,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -485,7 +485,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "BaBot_Base_THT.kicad_pro",
+    "filename": "BaBot_Base_THT_4067_Module.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -706,8 +706,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "BaBot_Base_THT.kicad_sch",
-        "name": "BaBot_Base_THT",
+        "filename": "BaBot_Base_THT_4067_Module.kicad_sch",
+        "name": "BaBot_Base_THT_4067_Module",
         "uuid": "00000000-0000-0000-0000-000000000000"
       }
     ],
