@@ -1,0 +1,33 @@
+# BaBot through-hole conversion
+
+The current Base in this repository is the fully routed **four-layer** `KiCad/BaBot_Base_THT_4067_Module.kicad_pro`. The separate two-layer Base attempt is preserved under [`../history/PCB/base_2layer_draft/`](../history/PCB/base_2layer_draft/) and is **not ready to fabricate**: six signal connections and one GND connection remain open. The `KiCad/BaBot_Plate_THT.kicad_pro` copy is an **older unrouted two-layer Plate**. A routed Plate and its Gerbers have been reported as complete but have not yet been provided for import into this repository. Factory-assembled modules can still contain SMD parts.
+
+See **[ROUTING.md](ROUTING.md)** for widths, clearances and current assumptions. The net classes and width presets are already configured in both projects.
+
+Earlier learning notes are archived as [Base circuit learning guide](../history/notes/circuit_learning_base.md) and [Plate circuit learning guide](../history/notes/circuit_learning_plate.md). New teaching pages are deferred pending the project owner's instructions.
+
+## Files kept
+
+`KiCad/` contains the four-layer Base, the older Plate project, editable connection schematics, BOMs, connection tables, and the required local symbol/footprint libraries. Keep `BaBot_THT.pretty`, `BaBot_THT.kicad_sym`, `fp-lib-table` and `sym-lib-table` with the projects. `sources/` contains the two module schematic PDFs. `VALIDATION.md` records the handoff checks.
+
+Fabrication files for the validated four-layer Base are in [`fabrication/BaBot_Base_THT_4layer/`](fabrication/BaBot_Base_THT_4layer/). The two-layer Base draft and the older Plate copy have no new fabrication exports here. The original Gerbers and BOMs remain under [`../original/pcbway/`](../original/pcbway/).
+
+The Base and Plate CSV BOMs group identical purchase parts. `Qty per board` is for one board, and `Qty for 5 boards` is for five. Enter your stock in `Qty on hand` and change `[ ]` to `[x]` in `Have full 5-board qty?` when that complete five-board quantity is available. The Base BOM also counts cuttable socket strips, conditional module pin strips, and one Base–Plate cable per assembled pair; the cable is deliberately counted only once.
+
+## Important assembly changes
+
+- **Base U4:** assembled [Arduino Micro A000053](https://docs.arduino.cc/hardware/micro), using two 1×17 sockets on 2.54 mm pitch, rows 15.24 mm apart. This footprint is for the full Micro, not a Pro Micro. Its USB supplies logic and programming. MCU pin assignments were compared against Arduino's native CAD and the original board's manufacturing net data.
+- **Base RV1:** [Bourns 3296W-1-104LF, 100 kΩ, 25-turn trimmer](https://www.lcsc.com/product-detail/C48084.html). Pad 1 receives `POT_H` from `R18`; pad 2 (wiper) and pad 3 go to GND. The old U2 DIGI POT 2 Click and J2 analog header are removed. With power off, measure between `RV1-1` and GND and adjust RV1 to about 10 kΩ as an initial setting; `R18` adds 500 Ω in series. Re-measure and tune using real sensor readings. A multi-turn adjustment can be turned in either direction.
+- Use tall module sockets (approximately 8.5 mm or more clearance under the module) and trim opposite-side leads. Module body outlines are on F.Fab; the courtyards cover the socket strips. The Micro body overhangs the Base slightly. Confirm USB access, underside clearances, fastener access and fit with the printed mechanism; this is not a verified drop-in mechanical replacement.
+- **Base U1:** CD74HC4067 16-channel through-hole breakout module. Check its two header rows and printed pin labels against the project footprint before ordering; the board maps the module pads to the IC's schematic pin numbers. The two-layer draft uses 1.7 mm copper pads around 0.8 mm drills (0.45 mm annular ring) to open routing space; the four-layer reference retains 2.0 mm pads. **Plate Q17:** FQP30N06L, TO-220; pin 1 gate, 2 drain, 3 source, with its tab also drain. The original MOSFET pin order was remapped. R23 adds a 220 Ω gate resistor; R22 remains a 10 kΩ gate pulldown.
+- Base J1 is the new regulated **5 V servo/IR power input: pin 1 +5 V, pin 2 GND**. Logic and servo positive rails stay separate, with shared GND. Both supplies are needed for normal operation. This replaces the original dual USB-C/power-diode arrangement. The Micro provides the original MCU clock/reset/USB support and its onboard power indication.
+- Base U3 and Plate U1 use matching **2×10, 2.54 mm headers**, connected with a straight-through 20-way cable, pin 1 to pin 1. Check orientation; these are unshrouded headers. Plate's header is on the underside. The original FPC cable will not fit.
+- Original sensor/IR, servo-header and three mounting-hole positions are preserved. The Base perimeter was adjusted for copper-to-edge clearance and kept within a 99.95 mm width for the 100 × 100 mm fabrication price tier; check this small outline change against the enclosure. Plate resistors and Q17 are underneath; follow the BOM's F/B side column. IR204/H60 and 1540031NC6090 optical components retain the original pad mapping. Base U15 uses pin 1 cathode / pin 2 anode. Use 0.25 W axial resistors with 10.16 mm lead spacing; C1 is leaded 220 nF at 5 mm pitch, C5 is 10 µF/16 V at 2 mm pitch. Check the selected parts' dimensions against the footprints.
+
+## Design basis and limits
+
+The editable boards were reconstructed from the supplied Gerbers, BOMs and flying-probe nets because no original editable CAD was available. The connection schematics use generic passive-pin blocks, explicit pin numbers and net labels. They document connectivity and are linked to their PCB footprints; they are not functional ERC models or transistor-level schematics of the modules.
+
+The later manufacturing BOM values were retained where the older schematic PDF disagreed: Plate R1–R21 = 330 Ω (PDF 500 Ω); Base R18 = 500 Ω (PDF 100 kΩ). The PDF's EEPROM circuitry was absent from the manufacturing BOM/probe data and was not added. These revision differences still need functional confirmation on the prototype. The current [`../software/main.ino`](../software/main.ino) is an unchanged copy of the available upstream firmware; that file contains no digital-pot startup command. Firmware behavior, operation, and mechanical fit have not been bench-tested with these PCBs.
+
+Original robot design: [JohanLink/BABOT](https://github.com/JohanLink/BABOT). Module and trimmer references: [Arduino schematic](https://docs.arduino.cc/resources/schematics/A000053-schematics.pdf), [Bourns 3296 datasheet](https://www.bourns.com/docs/product-datasheets/3296.pdf). Keep the original design and vendor attribution/license terms when redistributing.

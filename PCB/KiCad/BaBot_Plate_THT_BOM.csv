@@ -1,63 +1,8 @@
-﻿Reference,Value,Footprint,Side,Purpose,Supplier Link
-IR1,IR204/H60,Original_Plate_IR1,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR2,IR204/H60,Original_Plate_IR2,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR3,IR204/H60,Original_Plate_IR3,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR4,IR204/H60,Original_Plate_IR4,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR5,IR204/H60,Original_Plate_IR5,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR6,IR204/H60,Original_Plate_IR6,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR7,IR204/H60,Original_Plate_IR7,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR8,IR204/H60,Original_Plate_IR8,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR9,IR204/H60,Original_Plate_IR9,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR10,IR204/H60,Original_Plate_IR10,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR11,IR204/H60,Original_Plate_IR11,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR12,IR204/H60,Original_Plate_IR12,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR13,IR204/H60,Original_Plate_IR13,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR14,IR204/H60,Original_Plate_IR14,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR15,IR204/H60,Original_Plate_IR15,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR16,IR204/H60,Original_Plate_IR16,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR17,IR204/H60,Original_Plate_IR17,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR18,IR204/H60,Original_Plate_IR18,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR19,IR204/H60,Original_Plate_IR19,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR20,IR204/H60,Original_Plate_IR20,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-IR21,IR204/H60,Original_Plate_IR21,F,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C60099.html
-Q1,1540031NC6090,Original_Plate_Q1,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q2,1540031NC6090,Original_Plate_Q2,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q3,1540031NC6090,Original_Plate_Q3,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q4,1540031NC6090,Original_Plate_Q4,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q5,1540031NC6090,Original_Plate_Q5,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q6,1540031NC6090,Original_Plate_Q6,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q7,1540031NC6090,Original_Plate_Q7,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q8,1540031NC6090,Original_Plate_Q8,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q9,1540031NC6090,Original_Plate_Q9,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q10,1540031NC6090,Original_Plate_Q10,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q11,1540031NC6090,Original_Plate_Q11,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q12,1540031NC6090,Original_Plate_Q12,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q13,1540031NC6090,Original_Plate_Q13,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q14,1540031NC6090,Original_Plate_Q14,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q15,1540031NC6090,Original_Plate_Q15,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-Q16,1540031NC6090,Original_Plate_Q16,F,Original circuit; footprint converted or retained,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
-R1,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R2,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R3,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R4,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R5,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R6,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R7,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R8,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R9,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R10,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R11,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R12,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R13,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R14,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R15,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R16,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R17,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R18,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R19,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R20,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-R21,330,Axial_R_10.16,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C2894590.html
-U1,20-way header to Base,Header20,B,Original circuit; footprint converted or retained,https://www.lcsc.com/product-detail/C54803349.html
-Q17,FQP30N06L,TO220_GDS,B,Logic-level THT MOSFET; G-D-S remapped from original G-S-D,https://www.lcsc.com/product-detail/C243087.html
-R22,10k,Axial_R_10.16,B,"Gate pulldown, retained downstream of added gate resistor",https://www.lcsc.com/product-detail/C2903232.html
-R23,220,Axial_R_10.16,B,Added MCU gate-current limiting resistor,https://www.lcsc.com/product-detail/C3537012.html
+﻿Have full 5-board qty?,References,Component / value,Qty per board,Qty for 5 boards,Qty on hand,Footprint / use,Side,Purpose / notes,Supplier Link
+,IR1-IR21,IR204/H60,21,105,,Position-specific THT footprints; see PCB refs,F,21 infrared emitters; check anode/cathode orientation and optical match.,https://www.lcsc.com/product-detail/C60099.html
+[],Q1-Q16,1540031NC6090,16,80,,Position-specific THT footprints; see PCB refs,F,16 infrared phototransistors; check polarity and package fit.,https://shopee.tw/search?keyword=Wurth%20Elektronik%201540031NC6090%20940nm%20phototransistor
+,R1-R21,330,21,105,,Axial_R_10.16,B,330 Ω 0.25 W axial IR current-limiting resistors; 10.16 mm lead spacing.,https://www.lcsc.com/product-detail/C2894590.html
+,U1,20-way header to Base,1,5,,Header20,B,"2x10 2.54 mm male header to Base, mounted on underside; pin 1 to pin 1.",https://www.lcsc.com/product-detail/C54803349.html
+[],Q17,FQP30N06L,1,5,,TO220_GDS,B,Logic-level THT MOSFET; G-D-S remapped from original G-S-D,https://www.lcsc.com/product-detail/C243087.html
+,R22,10k,1,5,,Axial_R_10.16,B,"Gate pulldown, retained downstream of added gate resistor",https://www.lcsc.com/product-detail/C2903232.html
+,R23,220,1,5,,Axial_R_10.16,B,Added MCU gate-current limiting resistor,https://www.lcsc.com/product-detail/C3537012.html
