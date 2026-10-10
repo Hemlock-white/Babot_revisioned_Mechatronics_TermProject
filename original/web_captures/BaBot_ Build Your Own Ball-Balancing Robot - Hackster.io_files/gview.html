@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0137)https://docs.google.com/gview?url=https://hacksterio.s3.amazonaws.com/uploads/attachments/1845254/schematics_iNWgbALrz5.pdf&embedded=true -->
+<html lang="zh" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./cb=gapi.loaded_0" nonce="" async=""></script><script nonce="">window['ppConfig'] = {productName: 'd222c26d10f0a88dacceb3da240b347e', deleteIsEnforced:  true , sealIsEnforced:  true , heartbeatRate:  0.5 , periodicReportingRateMillis:  60000.0 , disableAllReporting:  false };(function(){'use strict';function k(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function l(a){var b=typeof Symbol!="undefined"&&Symbol.iterator&&a[Symbol.iterator];if(b)return b.call(a);if(typeof a.length=="number")return{next:k(a)};throw Error(String(a)+" is not an iterable or ArrayLike");}var m=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,c){if(a==Array.prototype||a==Object.prototype)return a;a[b]=c.value;return a};
+function n(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var c=a[b];if(c&&c.Math==Math)return c}throw Error("Cannot find global object");}var p=n(this);function q(a,b){if(b)a:{var c=p;a=a.split(".");for(var d=0;d<a.length-1;d++){var e=a[d];if(!(e in c))break a;c=c[e]}a=a[a.length-1];d=c[a];b=b(d);b!=d&&b!=null&&m(c,a,{configurable:!0,writable:!0,value:b})}}
+q("Object.is",function(a){return a?a:function(b,c){return b===c?b!==0||1/b===1/c:b!==b&&c!==c}});q("Array.prototype.includes",function(a){return a?a:function(b,c){var d=this;d instanceof String&&(d=String(d));var e=d.length;c=c||0;for(c<0&&(c=Math.max(c+e,0));c<e;c++){var f=d[c];if(f===b||Object.is(f,b))return!0}return!1}});
+q("String.prototype.includes",function(a){return a?a:function(b,c){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(b instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(b,c||0)!==-1}});function r(a,b,c){a("https://csp.withgoogle.com/csp/proto/"+encodeURIComponent(b),JSON.stringify(c))}function t(){var a;if((a=window.ppConfig)==null?0:a.disableAllReporting)return function(){};var b,c,d,e;return(e=(b=window)==null?void 0:(c=b.navigator)==null?void 0:(d=c.sendBeacon)==null?void 0:d.bind(navigator))!=null?e:u}function u(a,b){var c=new XMLHttpRequest;c.open("POST",a);c.send(b)}
+function v(){var a=(w=Object.prototype)==null?void 0:w.__lookupGetter__("__proto__"),b=x,c=y;return function(){var d=a.call(this),e,f,g,h;r(c,b,{type:"ACCESS_GET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}
+function z(){var a=(A=Object.prototype)==null?void 0:A.__lookupSetter__("__proto__"),b=x,c=y;return function(d){d=a.call(this,d);var e,f,g,h;r(c,b,{type:"ACCESS_SET",origin:(f=window.location.origin)!=null?f:"unknown",report:{className:(g=d==null?void 0:(e=d.constructor)==null?void 0:e.name)!=null?g:"unknown",stackTrace:(h=Error().stack)!=null?h:"unknown"}});return d}}function B(a,b){C(a.productName,b);setInterval(function(){C(a.productName,b)},a.periodicReportingRateMillis)}
+var D="constructor __defineGetter__ __defineSetter__ hasOwnProperty __lookupGetter__ __lookupSetter__ isPrototypeOf propertyIsEnumerable toString valueOf __proto__ toLocaleString x_ngfn_x".split(" "),E=D.concat,G=navigator.userAgent.match(/Firefox\/([0-9]+)\./),H=(!G||G.length<2?0:Number(G[1])<75)?["toSource"]:[],I;if(H instanceof Array)I=H;else{for(var J=l(H),K,L=[];!(K=J.next()).done;)L.push(K.value);I=L}var M=E.call(D,I),N=[];
+function C(a,b){var c=[],d=l(Object.getOwnPropertyNames(Object.prototype)),e=d.next(),f;try{for(;!e.done;e=d.next()){var g=e.value;M.includes(g)||N.includes(g)||c.push(g)}}finally{e&&!e.done&&(f=d.return)&&f.call(d)}e=Object.prototype;d=[];for(f=0;f<c.length;f++)g=c[f],d[f]={name:g,descriptor:Object.getOwnPropertyDescriptor(Object.prototype,g),type:typeof e[g]};if(d.length!==0){c=l(d);e=c.next();var h;try{for(;!e.done;e=c.next())N.push(e.value.name)}finally{e&&!e.done&&(h=c.return)&&h.call(c)}var F;
+r(b,a,{type:"SEAL",origin:(F=window.location.origin)!=null?F:"unknown",report:{blockers:d}})}};var O=Math.random(),P=t(),Q=window.ppConfig;Q&&(Q.disableAllReporting||Q.deleteIsEnforced&&Q.sealIsEnforced||O<Q.heartbeatRate&&r(P,Q.productName,{origin:window.location.origin,type:"HEARTBEAT"}));var y=t(),R=window.ppConfig;if(R)if(R.deleteIsEnforced)delete Object.prototype.__proto__;else if(!R.disableAllReporting){var x=R.productName;try{var w,A;Object.defineProperty(Object.prototype,"__proto__",{enumerable:!1,get:v(),set:z()})}catch(a){}}
+(function(){var a=t(),b=window.ppConfig;b&&(b.sealIsEnforced?Object.seal(Object.prototype):b.disableAllReporting||(document.readyState!=="loading"?B(b,a):document.addEventListener("DOMContentLoaded",function(){B(b,a)})))})();}).call(this);
+</script><title>schematics_iNWgbALrz5.pdf</title><link rel="stylesheet" type="text/css" href="./rs=AC2dHMLMg0NusqgBvVRVCUFel337ri9EjQ" nonce=""><script async="" src="./lazy.min.js.download" nonce=""></script></head><body class="ndfHFb-c4YZDc-uoC0bf ndfHFb-c4YZDc-qbOKL-OEVmcd"><div class="ndfHFb-c4YZDc ndfHFb-c4YZDc-AHmuwe-Hr88gd-OWB6Me dif24c LgGVmb bvmRsc ndfHFb-c4YZDc-TSZdd ndfHFb-c4YZDc-vyDMJf-aZ2wEe ndfHFb-c4YZDc-i5oIFb ndfHFb-c4YZDc-uoC0bf ndfHFb-c4YZDc-e1YmVc vhoiae" aria-label="Showing viewer."><div class="ndfHFb-c4YZDc-zTETae" aria-label="目前顯示的是「schematics_iNWgbALrz5.pdf」。"></div><div class="ndfHFb-c4YZDc-JNEHMb"></div><div class="ndfHFb-c4YZDc-K9a4Re" style="bottom: 0px;"><div class="ndfHFb-c4YZDc-E7ORLb-LgbsSe ndfHFb-c4YZDc-LgbsSe-OWB6Me ndfHFb-c4YZDc-LgbsSe" role="button" aria-disabled="true" style="user-select: none; left: 16px; display: none; opacity: 1;" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="r,c" data-tooltip-offset="-6"><div class="ndfHFb-c4YZDc-DH6Rkf-AHe6Kc"><div class="ndfHFb-c4YZDc-Bz112c ndfHFb-c4YZDc-DH6Rkf-Bz112c"></div></div></div><div class="ndfHFb-c4YZDc-tJiF1e-LgbsSe ndfHFb-c4YZDc-LgbsSe-OWB6Me ndfHFb-c4YZDc-LgbsSe" role="button" aria-disabled="true" style="user-select: none; right: 16px; display: none; opacity: 1;" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="l,c" data-tooltip-offset="-6"><div class="ndfHFb-c4YZDc-DH6Rkf-AHe6Kc"><div class="ndfHFb-c4YZDc-Bz112c ndfHFb-c4YZDc-DH6Rkf-Bz112c"></div></div></div><div class="ndfHFb-c4YZDc-q77wGc" style="opacity: 1;"><div class="ndfHFb-c4YZDc-DARUcf-NnAfwf-i5oIFb" aria-label="第 3 頁，共 3 頁"><div class="ndfHFb-c4YZDc-DARUcf-NnAfwf-tJHJj">第</div><div class="ndfHFb-c4YZDc-DARUcf-NnAfwf-cQYSPc"> <input class="ndfHFb-c4YZDc-DARUcf-NGme3c-YPqjbf" type="text" inputmode="numeric" aria-label="目前在第 3 頁"> 頁</div><span>，</span><div class="ndfHFb-c4YZDc-DARUcf-NnAfwf-j4LONd">共 3 頁</div></div><div class="ndfHFb-c4YZDc-nJjxad-nK2kYb-i5oIFb" style=""><div class="ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-nJjxad-m9bMae-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe" role="button" style="user-select: none;" tabindex="0" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="縮小" data-tooltip="縮小"><div class="ndfHFb-c4YZDc-Bz112c"></div></div><div class="ndfHFb-c4YZDc-LgbsSe ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-nJjxad-hj4D6d-LgbsSe VIpgJd-TzA9Ye-eEGnhe" role="button" style="user-select: none;" tabindex="0" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="符合視窗寬度" data-tooltip="符合視窗寬度"><div class="ndfHFb-c4YZDc-Bz112c"></div></div><div class="ndfHFb-c4YZDc-LgbsSe ndfHFb-c4YZDc-to915-LgbsSe ndfHFb-c4YZDc-nJjxad-bEDTcc-LgbsSe VIpgJd-TzA9Ye-eEGnhe" role="button" style="user-select: none;" tabindex="0" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="放大" data-tooltip="放大"><div class="ndfHFb-c4YZDc-Bz112c"></div></div></div><div class="ndfHFb-c4YZDc-giiMnc-b0t70b" style="display: none;"></div><div class="ndfHFb-c4YZDc-LzGo7c" style="display: none;"></div></div><div class="ndfHFb-c4YZDc-K9a4Re-nKQ6qf ndfHFb-c4YZDc-TvD9Pc-qnnXGd" role="main"><div class="ndfHFb-c4YZDc-EglORb-ge6pde ndfHFb-c4YZDc-K9a4Re-ge6pde-Ne3sFf" role="status" tabindex="-1" aria-label="Loading" style="display: none;"><div class="ndfHFb-c4YZDc-EglORb-ge6pde-RJLb9c ndfHFb-c4YZDc-AHmuwe-wcotoc-zTETae"><div class="ndfHFb-aZ2wEe" dir="ltr"><div class="ndfHFb-vyDMJf-aZ2wEe auswjd"><div class="aZ2wEe-pbTTYe aZ2wEe-v3pZbf"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-oq6NAc"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-gS7Ybc"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-nllRtd"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div></div></div></div><span class="ndfHFb-c4YZDc-EglORb-ge6pde-fmcmS ndfHFb-c4YZDc-AHmuwe-wcotoc-zTETae" aria-hidden="true">Loading…</span></div><div class="ndfHFb-c4YZDc-ujibv-nUpftc"></div><div style="display:none" id="drive-active-item-info">{"id": "", "title": "schematics_iNWgbALrz5.pdf", "mimeType": "application\/pdf"}</div><div class="ndfHFb-c4YZDc-cYSp0e ndfHFb-c4YZDc-oKVyEf" style=""><textarea class="ndfHFb-c4YZDc-cYSp0e-B7I4Od" aria-hidden="true" tabindex="-1"></textarea><div class="ndfHFb-c4YZDc-cYSp0e-s2gQvd ndfHFb-c4YZDc-s2gQvd ndfHFb-c4YZDc-s2gQvd-sn54Q" tabindex="-1" style="margin-left: 16px; margin-top: 0px;"><div class="ndfHFb-c4YZDc-cYSp0e-Oz6c3e ndfHFb-c4YZDc-neVct-RCfa3e ndfHFb-c4YZDc-cYSp0e-DARUcf-gSKZZ" role="document" tabindex="0" style="margin-bottom: 16px; width: 583px; --viewer-zoom-ratio: 0.72875; left: 0px;"><div class="ndfHFb-c4YZDc-qwU8Me-b0t70b-haAclf"></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf" style="padding-bottom: 70.75%;"><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-PLDbbf"></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-bN97Pc-haAclf"><h2 class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-tJHJj" tabindex="0">第 1 頁，共 3 頁</h2><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 12.3539%; width: 99.1745%; height: 1.16861%;">A A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 36.8948%; width: 99.1745%; height: 1.16861%;">B B
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 61.7696%; width: 99.1745%; height: 1.16861%;">C C
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 86.4775%; width: 99.1745%; height: 1.16861%;">D D
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 77.2955%; width: 52.7123%; height: 3.3389%;">Schematic Base_schematic Create at 2025-02-11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.5991%; top: 79.6327%; width: 12.8538%; height: 2.00334%;">Update at 2025-04-04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 81.9699%; width: 48.2311%; height: 2.00334%;">Board Base Page P1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 84.4741%; width: 3.53774%; height: 1.66945%;">Drawn
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 86.6444%; width: 41.5094%; height: 2.00334%;">Reviewed BABOT
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.6698%; top: 91.6528%; width: 30.0708%; height: 2.00334%;">Version Size Page 1 Total 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.4953%; top: 95.3255%; width: 28.7736%; height: 2.00334%;">V1.0 A4 EasyEDA.com
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 16.1937%; width: 10.6132%; height: 1.83639%;">COMMON INOUT/OUTPUT 1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 17.3623%; width: 1.76887%; height: 2.00334%;">I7 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 18.5309%; width: 1.76887%; height: 2.00334%;">I6 3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 19.8664%; width: 1.76887%; height: 1.83639%;">I5 4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 21.0351%; width: 1.76887%; height: 1.83639%;">I4 5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 22.2037%; width: 1.76887%; height: 1.83639%;">I3 6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 23.3723%; width: 1.76887%; height: 2.00334%;">I2 7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 24.5409%; width: 1.76887%; height: 2.00334%;">I1 8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 25.8765%; width: 1.76887%; height: 1.83639%;">I0 9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.5472%; top: 27.0451%; width: 2.35849%; height: 1.83639%;">S0 10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.5472%; top: 28.2137%; width: 2.35849%; height: 1.83639%;">S1 11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.5472%; top: 16.1937%; width: 15.566%; height: 15.192%;">GND 12 S3 13 S2 14 E# 15 I15 16 I14 17 I13 18 I12 19 I11 20 I10 21 I9 22 I8 23 VCC 24
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.3726%; top: 14.3573%; width: 1.17925%; height: 1.16861%;">U1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.3726%; top: 32.3873%; width: 7.07547%; height: 1.16861%;">CD74HC4067SM96
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 25.0417%; width: 2.00472%; height: 1.33556%;">PT01
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 26.3773%; width: 2.12264%; height: 1.16861%;">PT00
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 23.8731%; width: 2.12264%; height: 1.33556%;">PT02
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 22.7045%; width: 2.12264%; height: 1.33556%;">PT03
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 21.5359%; width: 2.12264%; height: 1.33556%;">PT04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 20.3673%; width: 2.12264%; height: 1.16861%;">PT05
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 19.0317%; width: 2.12264%; height: 1.33556%;">PT06
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.6415%; top: 17.8631%; width: 35.7311%; height: 1.33556%;">PT07 PT08
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 19.0317%; width: 2.12264%; height: 1.33556%;">PT09
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 20.3673%; width: 2.12264%; height: 1.16861%;">PT10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 21.5359%; width: 2.00472%; height: 1.16861%;">PT11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 22.7045%; width: 2.12264%; height: 1.33556%;">PT12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 23.8731%; width: 2.12264%; height: 1.33556%;">PT13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 25.0417%; width: 2.12264%; height: 1.33556%;">PT14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.25%; top: 26.3773%; width: 2.12264%; height: 1.16861%;">PT15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 5.84307%; width: 1.88679%; height: 1.33556%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 86.4387%; top: 31.0518%; width: 1.06132%; height: 1.33556%;">R1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 86.4387%; top: 32.2204%; width: 2.00472%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 84.6698%; top: 38.2304%; width: 2.00472%; height: 1.16861%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 77.4764%; top: 9.51586%; width: 1.17925%; height: 1.33556%;">C1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 77.4764%; top: 13.0217%; width: 2.47642%; height: 1.33556%;">220nF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 83.0189%; top: 10.5175%; width: 0.943396%; height: 2.83806%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 53.7736%; top: 4.34057%; width: 1.06132%; height: 4.17362%;">U1_SIG
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 53.6557%; top: 38.2304%; width: 2.00472%; height: 1.16861%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 49.0566%; top: 38.5643%; width: 1.17925%; height: 3.67279%;">U1_S0
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 50.8255%; top: 38.7312%; width: 1.06132%; height: 3.50584%;">U1_S1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75.4717%; top: 38.5643%; width: 1.06132%; height: 3.67279%;">U1_S3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 77.1226%; top: 38.5643%; width: 1.06132%; height: 3.67279%;">U1_S2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 38.4434%; top: 45.9098%; width: 4.00943%; height: 1.5025%;">Multiplexer
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.4009%; top: 28.2137%; width: 2.12264%; height: 1.83639%;">W 1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.3302%; top: 31.8865%; width: 7.31132%; height: 1.66945%;">VDD 2 GND 3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.3302%; top: 27.0451%; width: 3.53774%; height: 1.66945%;">SCLK 4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.4481%; top: 28.2137%; width: 2.83019%; height: 1.83639%;">DIN 5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.3302%; top: 29.3823%; width: 3.06604%; height: 1.83639%;">CS# 6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.7547%; top: 29.8831%; width: 0.707547%; height: 1.33556%;">L
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.934%; top: 29.3823%; width: 0.707547%; height: 1.33556%;">7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.6368%; top: 27.5459%; width: 0.825472%; height: 1.16861%;">H
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.934%; top: 27.0451%; width: 0.707547%; height: 1.33556%;">8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 16.3915%; top: 25.7095%; width: 1.17925%; height: 1.33556%;">U2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 16.2736%; top: 34.0568%; width: 7.1934%; height: 1.16861%;">TPL0501-100DCNR
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.4811%; top: 45.9098%; width: 7.42925%; height: 1.5025%;">Digital Potentiometer
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.37264%; top: 31.5526%; width: 0.943396%; height: 2.67112%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.5991%; top: 31.5526%; width: 0.943396%; height: 2.67112%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.3538%; top: 6.6778%; width: 1.06132%; height: 4.17362%;">U1_SIG
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.72641%; top: 16.6945%; width: 1.17925%; height: 3.83973%;">U2_CS
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 10.4953%; top: 16.3606%; width: 1.06132%; height: 4.17362%;">U2_DIN
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.1462%; top: 15.3589%; width: 1.06132%; height: 5.17529%;">U2_SCLK
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75.1179%; top: 68.1135%; width: 0.825472%; height: 0.66778%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.6462%; top: 66.9449%; width: 0.943396%; height: 0.834725%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.2925%; top: 67.9466%; width: 0.825472%; height: 1.00167%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.8208%; top: 66.778%; width: 0.943396%; height: 1.00167%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.3491%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.9953%; top: 66.778%; width: 0.943396%; height: 1.00167%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.5236%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.1698%; top: 66.778%; width: 0.825472%; height: 1.00167%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.6981%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.2264%; top: 66.778%; width: 0.943396%; height: 1.00167%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 70.8726%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 70.4009%; top: 66.778%; width: 0.943396%; height: 1.00167%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 70.0472%; top: 67.9466%; width: 0.825472%; height: 1.00167%;">7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.5755%; top: 66.778%; width: 0.943396%; height: 1.00167%;">7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.1038%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 68.75%; top: 66.778%; width: 0.943396%; height: 1.00167%;">8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 68.2783%; top: 67.9466%; width: 0.943396%; height: 1.00167%;">9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.4906%; top: 66.2771%; width: 10.7311%; height: 3.3389%;">9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.3113%; top: 69.2821%; width: 19.8113%; height: 1.33556%;">21 22
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.3726%; top: 71.7863%; width: 1.29717%; height: 1.33556%;">U3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.3726%; top: 49.9165%; width: 4.83491%; height: 24.374%;">05A20L20P VCC VCC-5V-2A IR_LED_CONTROL PT15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 63.0896%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 64.033%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 64.8585%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 65.684%; top: 57.2621%; width: 0.943396%; height: 2.83806%;">PT11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 66.5094%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 67.3349%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT09
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 68.2783%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT08
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.1038%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT07
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.9292%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT06
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 70.7547%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT05
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.5802%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.5236%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT03
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.3491%; top: 57.0952%; width: 0.825472%; height: 3.00501%;">PT02
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.1745%; top: 57.2621%; width: 0.943396%; height: 2.83806%;">PT01
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75%; top: 57.0952%; width: 0.943396%; height: 3.00501%;">PT00
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 54.2453%; top: 63.9399%; width: 1.41509%; height: 8.1803%;">GND GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.717%; top: 69.2821%; width: 0.825472%; height: 2.83806%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 33.3726%; top: 49.5826%; width: 8.84434%; height: 1.33556%;">EEPROM Connector
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.6745%; top: 68.2805%; width: 2.00472%; height: 2.00334%;">A0 1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.5566%; top: 69.4491%; width: 2.12264%; height: 2.00334%;">A1 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.5566%; top: 70.7846%; width: 2.12264%; height: 1.83639%;">A2 3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.5566%; top: 71.9533%; width: 2.71226%; height: 1.83639%;">VSS 4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.3302%; top: 71.9533%; width: 2.59434%; height: 1.83639%;">SDA 5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.3302%; top: 70.7846%; width: 2.59434%; height: 1.83639%;">SCL 6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.566%; top: 69.616%; width: 2.35849%; height: 1.83639%;">WP 7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.2123%; top: 68.2805%; width: 2.71226%; height: 2.00334%;">VCC 8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.1462%; top: 66.4441%; width: 1.17925%; height: 1.33556%;">U6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.1462%; top: 74.7913%; width: 6.7217%; height: 1.33556%;">CAT24C64WI-GT3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 19.3396%; top: 63.9399%; width: 1.88679%; height: 1.33556%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 78.4641%; width: 2.00472%; height: 1.33556%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.4811%; top: 71.2855%; width: 1.76887%; height: 1.16861%;">SCL
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.4811%; top: 72.4541%; width: 1.88679%; height: 1.33556%;">SDA
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.4623%; top: 78.9649%; width: 1.17925%; height: 1.33556%;">R3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.4623%; top: 80.1336%; width: 2.00472%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 78.9649%; width: 1.17925%; height: 1.33556%;">R4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 80.1336%; width: 2.00472%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.4623%; top: 88.6477%; width: 1.88679%; height: 1.33556%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 63.4391%; width: 1.17925%; height: 1.33556%;">R5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 64.6077%; width: 2.00472%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.1132%; top: 55.5927%; width: 2.00472%; height: 1.33556%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.533%; top: 24.207%; width: 1.65094%; height: 1.16861%;">U17
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.1274%; top: 6.6778%; width: 1.06132%; height: 4.17362%;">U1_SIG
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 30.3066%; top: 18.5309%; width: 1.76887%; height: 1.16861%;">R12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 30.4245%; top: 19.6995%; width: 2.00472%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 30.3066%; top: 24.207%; width: 1.76887%; height: 1.16861%;">U18
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.533%; top: 18.8648%; width: 1.17925%; height: 1.00167%;">R18
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.533%; top: 19.6995%; width: 2.47642%; height: 1.33556%;">100kΩ
+</p></div><div class="ndfHFb-c4YZDc-cYSp0e-wxLEad-sn54Q" style="display: none;"></div><img src="blob:https://docs.google.com/7f503f6d-9068-4386-a695-3df2de8cf7f2" class="ndfHFb-c4YZDc-cYSp0e-DARUcf-RJLb9c" alt="第 1 頁，共 3 頁" aria-hidden="true" style="opacity: 1;"><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-gvZm2b"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-cYSp0e-oYxtQd-gvZm2b"></div></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf" style="padding-bottom: 72.75%;"><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-PLDbbf"><a href="https://www.arduino.cc/en/uploads/Main/arduino-micro-schematic.pdf" target="_blank" class="ndfHFb-c4YZDc-cYSp0e-DARUcf-hSRGPd" tabindex="0" role="link" aria-label="https://www.arduino.cc/en/uploads/Main/arduino-micro-schematic.pdf" data-saferedirecturl="https://www.google.com/url?sa=D&amp;q=https://www.arduino.cc/en/uploads/Main/arduino-micro-schematic.pdf&amp;ust=1790239020000000&amp;usg=AOvVaw3mqhokVyNH21ZxEdtkAWY5&amp;hl=zh-TW" rel="noreferrer" style="left: 57.0755%; top: 0.324149%; width: 23.7028%; height: 1.45867%;"></a></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-bN97Pc-haAclf"><h2 class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-tJHJj" tabindex="0">第 2 頁，共 3 頁</h2><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 98.3793%; width: 0.589623%; height: 1.13452%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 3.24149%; width: 0.589623%; height: 1.13452%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 98.3793%; width: 0.589623%; height: 1.13452%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 3.24149%; width: 0.589623%; height: 1.13452%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 98.3793%; width: 0.707547%; height: 1.13452%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 3.24149%; width: 0.707547%; height: 1.13452%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 98.3793%; width: 0.707547%; height: 1.13452%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 3.24149%; width: 0.707547%; height: 1.13452%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 98.3793%; width: 0.589623%; height: 1.13452%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 3.24149%; width: 0.589623%; height: 1.13452%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 98.3793%; width: 0.707547%; height: 1.13452%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 3.24149%; width: 0.707547%; height: 1.13452%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 14.7488%; width: 99.1745%; height: 1.13452%;">A A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 38.7358%; width: 99.1745%; height: 1.13452%;">B B
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 62.8849%; width: 99.1745%; height: 1.13452%;">C C
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 86.872%; width: 99.1745%; height: 1.13452%;">D D
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 77.9579%; width: 52.8302%; height: 3.24149%;">Schematic Base_schematic Create at 2025-02-12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.5991%; top: 80.2269%; width: 12.8538%; height: 1.94489%;">Update at 2025-04-04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 82.4959%; width: 48.3491%; height: 1.94489%;">Board Base Page P2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 84.9271%; width: 3.53774%; height: 1.62075%;">Drawn
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 87.034%; width: 41.5094%; height: 1.94489%;">Reviewed BABOT
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.6698%; top: 91.8963%; width: 30.0708%; height: 1.94489%;">Version Size Page 2 Total 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.4953%; top: 95.4619%; width: 28.7736%; height: 1.94489%;">V1.0 A4 EasyEDA.com
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 43.5981%; width: 3.65566%; height: 1.62075%;">GND 23
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 67.9245%; top: 38.8979%; width: 13.3255%; height: 1.94489%;">PB7(PCINT7/OC0A/OC1C/RTS#) 12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75%; top: 22.5284%; width: 6.25%; height: 1.94489%;">PE2 (HWB#) 33
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 15.5592%; width: 3.30189%; height: 1.78282%;">UVcc 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.3208%; top: 42.4635%; width: 3.53774%; height: 1.62075%;">GND 15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 44.7326%; width: 3.65566%; height: 1.78282%;">GND 35
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 45.8671%; width: 3.65566%; height: 1.78282%;">GND 43
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.467%; top: 47.0016%; width: 7.31132%; height: 1.94489%;">PB0(SS/PCINT0) 8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.2877%; top: 45.8671%; width: 8.49057%; height: 1.94489%;">PB1 (PCINT1/SCLK) 9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 66.9811%; top: 40.0324%; width: 14.2689%; height: 6.64506%;">PB2 (PDI/PCINT2/MOSI) 10 PB3 (PDO/PCINT3/MISO) 11 PB4(PCINT4/ADC11) 28 PB5(PCINT5/OC1A/OC4B#/ADC12) 29 PB6(PCINT6/OC1B/OC4B/ADC13) 30
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.2264%; top: 24.9595%; width: 10.0236%; height: 3.07942%;">PC6(OC3A/OC4A#) 31 PC7(ICP3/CLK0/OC4A) 32
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.2264%; top: 28.363%; width: 10.0236%; height: 10.2107%;">PD0 (OC0B/SCL/INT0) 18 PD1 (SDA/INT1) 19 PD2 (RXD1/INT2) 20 PD3 (TXD1/INT3) 21 PD4(ICP1/ADC8) 25 PD5 (XCK1/CTS#) 22 PD6(T1/OC4D#/ADC9) 26 PD7 (T0/OC4D/ADC10) 27
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.3491%; top: 21.3938%; width: 7.31132%; height: 1.94489%;">PE6 (INT.6/AIN0) 1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75.2358%; top: 13.2901%; width: 5.89623%; height: 1.94489%;">PF0 (ADC0) 41
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 75.2358%; top: 14.4246%; width: 6.01415%; height: 1.94489%;">PF1 (ADC1) 40
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.467%; top: 15.5592%; width: 7.78302%; height: 1.94489%;">PF4 (ADC4/TCK) 39
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.1132%; top: 16.6937%; width: 8.13679%; height: 1.94489%;">PF5 (ADC5/TMS)) 38
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.5849%; top: 17.8282%; width: 7.66509%; height: 1.94489%;">PF6 (ADC6/TDO 37
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.7028%; top: 19.1248%; width: 7.54717%; height: 1.94489%;">PF7 (ADC7/TDI) 36
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.3208%; top: 35.3323%; width: 4.83491%; height: 1.78282%;">RESET# 13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 30.7942%; width: 3.41981%; height: 1.78282%;">UCap 6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 41.329%; width: 3.53774%; height: 1.62075%;">UGnd 5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 33.0632%; width: 3.30189%; height: 1.78282%;">VBus 7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.3208%; top: 17.8282%; width: 3.41981%; height: 1.78282%;">VCC 14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 19.1248%; width: 3.53774%; height: 1.62075%;">VCC 34
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.3208%; top: 37.7634%; width: 4.24528%; height: 2.91734%;">XTAL1 17 XTAL2 16
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 13.2901%; width: 4.00943%; height: 1.62075%;">AREF 42
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 21.3938%; width: 4.12736%; height: 1.78282%;">AVCC 24
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.2028%; top: 22.5284%; width: 4.12736%; height: 1.78282%;">AVCC 44
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 26.094%; width: 2.35849%; height: 1.62075%;">D- 3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.6745%; top: 27.2285%; width: 2.47642%; height: 1.78282%;">D+ 4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 62.6179%; top: 12.3177%; width: 0.943396%; height: 0.972447%;">U4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 62.6179%; top: 49.2707%; width: 6.60377%; height: 1.2966%;">ATMEGA32U4-AU
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.7594%; top: 34.684%; width: 1.29717%; height: 1.2966%;">U8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.7594%; top: 38.2496%; width: 5.89623%; height: 1.45867%;">22pF U9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.7594%; top: 39.3841%; width: 7.42925%; height: 1.2966%;">U10 16MHz
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.7594%; top: 42.9498%; width: 2.00472%; height: 1.45867%;">22pF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.8632%; top: 38.0875%; width: 0.943396%; height: 2.75527%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.9057%; top: 62.0746%; width: 1.29717%; height: 1.2966%;">D+
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.1415%; top: 60.4538%; width: 20.9906%; height: 5.18639%;">D-
+GND 16 GND 15 GND 14 GND 13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 71.2264%; top: 58.1848%; width: 5.07075%; height: 14.5867%;">SBU2 B8 DN2 B7 DP2 B6 CC2 B5 VBUS B4A9 GND B1A12 SBU1 A8 DN1 A7 DP1 A6 CC1 A5 VBUS A4B9 GND A1B12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.7028%; top: 56.2399%; width: 1.65094%; height: 1.2966%;">U12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.5849%; top: 73.2577%; width: 8.01887%; height: 1.2966%;">918-418K2023S40050
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 86.4387%; top: 62.0746%; width: 0.943396%; height: 2.59319%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 54.0094%; top: 26.5802%; width: 1.17925%; height: 2.43112%;">D-
+D+
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.8443%; top: 56.7261%; width: 0.943396%; height: 2.75527%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 68.5142%; top: 55.1053%; width: 2.00472%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 50.3538%; top: 31.7666%; width: 1.17925%; height: 1.2966%;">R6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 42.6887%; top: 32.2528%; width: 0.943396%; height: 2.75527%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 50.3538%; top: 34.0357%; width: 2.00472%; height: 1.2966%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.1368%; top: 35.3323%; width: 1.88679%; height: 1.2966%;">RST
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 37.1151%; width: 1.76887%; height: 1.13452%;">SCL
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 35.8185%; width: 1.88679%; height: 1.2966%;">SDA
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.3868%; top: 19.1248%; width: 0.589623%; height: 1.13452%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 18.4765%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 17.8282%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 17.342%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 16.6937%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 16.2075%; width: 0.707547%; height: 1.13452%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 14.9109%; width: 1.17925%; height: 1.13452%;">H1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 20.7455%; width: 5.7783%; height: 1.2966%;">PZ254V-11-03P
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.3868%; top: 26.094%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 25.4457%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 24.9595%; width: 0.707547%; height: 1.13452%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 24.3112%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 23.6629%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 23.1767%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 21.8801%; width: 1.29717%; height: 1.2966%;">H2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 27.7147%; width: 5.7783%; height: 1.2966%;">PZ254V-11-03P
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.3868%; top: 33.0632%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 32.4149%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 31.9287%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 31.2804%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 30.7942%; width: 0.707547%; height: 1.13452%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 30.1459%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 28.8493%; width: 1.29717%; height: 1.2966%;">H3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 34.684%; width: 5.7783%; height: 1.2966%;">PZ254V-11-03P
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.7075%; top: 18.9627%; width: 3.41981%; height: 1.2966%;">SERVOA
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.7075%; top: 25.9319%; width: 3.41981%; height: 1.2966%;">SERVOB
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.7075%; top: 32.9011%; width: 3.53774%; height: 1.2966%;">SERVOC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.1651%; top: 12.4797%; width: 2.00472%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 17.6887%; top: 5.18639%; width: 0.943396%; height: 5.83468%;">VCC-5V-2A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.8632%; top: 17.6661%; width: 0.943396%; height: 2.75527%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 96.2264%; top: 22.3663%; width: 0.943396%; height: 2.59319%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 56.7217%; top: 52.188%; width: 1.88679%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 44.0843%; width: 2.24057%; height: 1.2966%;">MISO
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 45.2188%; width: 2.24057%; height: 1.2966%;">MOSI
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 46.3533%; width: 1.88679%; height: 1.2966%;">SCK
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.3868%; top: 42.9498%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 42.4635%; width: 0.589623%; height: 1.13452%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 41.8152%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 41.1669%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 40.6807%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 40.0324%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 38.7358%; width: 1.29717%; height: 1.2966%;">H4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 44.5705%; width: 5.7783%; height: 1.2966%;">PZ254V-11-03P
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.3868%; top: 49.919%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 49.4327%; width: 0.589623%; height: 1.2966%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 48.7844%; width: 0.707547%; height: 1.2966%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 48.2982%; width: 0.707547%; height: 1.13452%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 47.6499%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 47.0016%; width: 0.707547%; height: 1.2966%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 45.8671%; width: 1.29717%; height: 1.13452%;">H5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.3255%; top: 51.7018%; width: 5.7783%; height: 1.13452%;">PZ254V-11-03P
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 40.5186%; width: 2.24057%; height: 1.2966%;">MISO
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 41.6532%; width: 1.88679%; height: 1.2966%;">SCK
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 42.9498%; width: 1.88679%; height: 1.13452%;">RST
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 47.4878%; width: 1.88679%; height: 1.2966%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 48.7844%; width: 2.24057%; height: 1.13452%;">MOSI
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 49.919%; width: 2.00472%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 40.5186%; width: 3.53774%; height: 1.2966%;">SERVOB
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 39.3841%; width: 3.53774%; height: 1.2966%;">SERVOA
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 41.6532%; width: 3.53774%; height: 1.2966%;">SERVOC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 19.611%; width: 3.06604%; height: 1.45867%;">U1_SIG
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 34.684%; width: 3.77358%; height: 1.45867%;">U2_SCLK
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 33.5494%; width: 3.06604%; height: 1.45867%;">U2_DIN
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 32.4149%; width: 2.83019%; height: 1.45867%;">U2_CS
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 25.4457%; width: 2.59434%; height: 1.45867%;">U1_S1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 26.5802%; width: 2.59434%; height: 1.45867%;">U1_S0
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 28.8493%; width: 2.59434%; height: 1.45867%;">U1_S2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 29.9838%; width: 2.71226%; height: 1.45867%;">U1_S3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 56.7217%; top: 0.324149%; width: 24.0566%; height: 35.1702%;">https://www.arduino.cc/en/uploads/Main/arduino-micro-schematic.pdf VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.6226%; top: 94.3274%; width: 2.83019%; height: 1.2966%;">3 4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.6226%; top: 92.0583%; width: 2.83019%; height: 1.13452%;">1 2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 91.5721%; width: 1.29717%; height: 1.13452%;">SW1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 15.0943%; top: 95.9481%; width: 6.25%; height: 1.2966%;">TSC015A03526A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.37264%; top: 94.1653%; width: 0.943396%; height: 2.59319%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.1132%; top: 91.248%; width: 1.29717%; height: 1.2966%;">R7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.1132%; top: 93.6791%; width: 2.12264%; height: 1.2966%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.9528%; top: 91.7342%; width: 0.943396%; height: 2.75527%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 19.8113%; top: 83.3063%; width: 0.943396%; height: 4.70016%;">BUTTON
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.6179%; top: 18.3144%; width: 3.41981%; height: 1.2966%;">BUTTON
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 49.0566%; top: 21.8801%; width: 1.65094%; height: 1.2966%;">U14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 48.9387%; top: 26.5802%; width: 4.59906%; height: 1.2966%;">YLED1206R
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 93.6321%; top: 49.919%; width: 1.65094%; height: 1.2966%;">U15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 93.5142%; top: 51.0535%; width: 4.59906%; height: 1.2966%;">YLED1206R
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 93.6321%; top: 56.2399%; width: 1.65094%; height: 1.2966%;">R10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 93.6321%; top: 57.3744%; width: 2.12264%; height: 1.2966%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 45.6368%; top: 23.6629%; width: 1.53302%; height: 1.13452%;">R11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 45.6368%; top: 25.9319%; width: 2.12264%; height: 1.2966%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.8632%; top: 63.8574%; width: 2.00472%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.8632%; top: 24.1491%; width: 0.943396%; height: 2.59319%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 44.8113%; top: 63.8574%; width: 1.17925%; height: 1.2966%;">C2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 44.8113%; top: 64.9919%; width: 1.53302%; height: 1.2966%;">1uF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 42.6887%; top: 59.1572%; width: 1.88679%; height: 1.2966%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 42.6887%; top: 72.1232%; width: 1.88679%; height: 1.13452%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 49.0566%; top: 63.8574%; width: 1.17925%; height: 1.2966%;">C3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 49.0566%; top: 64.9919%; width: 1.53302%; height: 1.2966%;">1uF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 46.934%; top: 72.1232%; width: 1.88679%; height: 1.13452%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 53.3019%; top: 63.8574%; width: 1.17925%; height: 1.2966%;">C4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 53.3019%; top: 64.9919%; width: 1.53302%; height: 1.2966%;">1uF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 51.1792%; top: 72.1232%; width: 1.88679%; height: 1.13452%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 47.4057%; top: 53.3225%; width: 0.943396%; height: 3.24149%;">AREF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 51.6509%; top: 53.1605%; width: 0.943396%; height: 3.40357%;">UCAP
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 52.4764%; top: 31.2804%; width: 2.35849%; height: 1.13452%;">UCAP
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 51.6509%; top: 13.7763%; width: 2.35849%; height: 1.13452%;">AREF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 87.7358%; top: 21.8801%; width: 7.07547%; height: 1.45867%;">IR_LED_CONTROL
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 22.9953%; top: 67.423%; width: 3.41981%; height: 5.34846%;">GND 16 GND 15 GND 14 GND 13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 16.5094%; top: 65.154%; width: 5.07075%; height: 14.7488%;">SBU2 B8 DN2 B7 DP2 B6 CC2 B5 VBUS B4A9 GND B1A12 SBU1 A8 DN1 A7 DP1 A6 CC1 A5 VBUS A4B9 GND A1B12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.8679%; top: 63.3712%; width: 1.65094%; height: 1.13452%;">U19
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.8679%; top: 80.2269%; width: 7.90094%; height: 1.2966%;">918-418K2023S40050
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 31.7217%; top: 69.0438%; width: 0.943396%; height: 2.59319%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 6.60377%; top: 56.2399%; width: 4.36321%; height: 1.2966%;">VCC-5V-2A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.7972%; top: 61.5883%; width: 2.00472%; height: 1.2966%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 31.7217%; top: 59.1572%; width: 0.943396%; height: 2.59319%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 58.0227%; width: 1.65094%; height: 1.2966%;">U20
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.9906%; top: 61.5883%; width: 3.18396%; height: 1.2966%;">SS24AF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 63.0896%; top: 55.7536%; width: 1.53302%; height: 1.2966%;">U21
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 62.9717%; top: 59.1572%; width: 3.18396%; height: 1.2966%;">SS24AF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 32.4292%; top: 35.3323%; width: 6.48585%; height: 1.2966%;">Servo Connectors
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.1274%; top: 52.8363%; width: 9.66981%; height: 1.45867%;">Connectors For Bootloading
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 32.9009%; top: 80.8752%; width: 6.25%; height: 1.45867%;">USB-C (POWER)
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 36.3208%; top: 96.5964%; width: 2.71226%; height: 1.2966%;">Control
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.7594%; top: 75.0405%; width: 8.01887%; height: 1.45867%;">USB-C (Programming)
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 10.8491%; top: 68.5575%; width: 1.17925%; height: 1.2966%;">C5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 10.8491%; top: 72.1232%; width: 2.00472%; height: 1.13452%;">10uF
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 9.55189%; top: 63.5332%; width: 1.65094%; height: 1.2966%;">U22
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 90.2123%; top: 67.9092%; width: 1.65094%; height: 1.2966%;">R14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 90.2123%; top: 70.3404%; width: 2.24057%; height: 1.2966%;">5.1kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 90.2123%; top: 71.4749%; width: 1.65094%; height: 1.2966%;">R15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 90.2123%; top: 73.7439%; width: 2.24057%; height: 1.2966%;">5.1kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.434%; top: 60.94%; width: 1.65094%; height: 1.2966%;">CC1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.434%; top: 67.9092%; width: 1.76887%; height: 1.2966%;">CC2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 83.1368%; top: 72.6094%; width: 1.76887%; height: 1.2966%;">CC2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 83.1368%; top: 69.2058%; width: 1.76887%; height: 1.13452%;">CC1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 96.2264%; top: 70.1783%; width: 0.943396%; height: 2.75527%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 5.7783%; top: 73.7439%; width: 1.65094%; height: 1.2966%;">R16
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 5.66038%; top: 76.175%; width: 2.35849%; height: 1.2966%;">5.1kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 5.7783%; top: 66.7747%; width: 1.65094%; height: 1.2966%;">R17
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 5.66038%; top: 69.0438%; width: 2.35849%; height: 1.2966%;">5.1kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 1.53302%; top: 70.8266%; width: 0.943396%; height: 2.59319%;">GND
+</p></div><div class="ndfHFb-c4YZDc-cYSp0e-wxLEad-sn54Q" style="display: none;"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-gvZm2b"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-cYSp0e-oYxtQd-gvZm2b"></div><img src="blob:https://docs.google.com/1a367728-2ac9-4a57-b3a0-64d959ae2184" class="ndfHFb-c4YZDc-cYSp0e-DARUcf-RJLb9c" alt="第 2 頁，共 3 頁" aria-hidden="true"></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf" style="padding-bottom: 70.75%;"><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-PLDbbf"></div><div class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-bN97Pc-haAclf"><h2 class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-tJHJj" tabindex="0">第 3 頁，共 3 頁</h2><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.25472%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.3915%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 57.9009%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 98.3306%; width: 0.589623%; height: 1.16861%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 0.500835%; width: 0.589623%; height: 1.16861%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 98.3306%; width: 0.707547%; height: 1.16861%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.0377%; top: 0.500835%; width: 0.707547%; height: 1.16861%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 12.3539%; width: 99.1745%; height: 1.16861%;">A A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 36.8948%; width: 99.1745%; height: 1.16861%;">B B
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 61.7696%; width: 99.1745%; height: 1.16861%;">C C
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 0.471698%; top: 86.4775%; width: 99.1745%; height: 1.16861%;">D D
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 77.2955%; width: 52.7123%; height: 3.3389%;">Schematic Plate_schematic Create at 2025-02-11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.5991%; top: 79.6327%; width: 12.8538%; height: 2.00334%;">Update at 2025-02-18
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 81.9699%; width: 48.2311%; height: 2.00334%;">Board Plate Page P1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 84.4741%; width: 3.53774%; height: 1.66945%;">Drawn
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.6226%; top: 86.6444%; width: 41.5094%; height: 2.00334%;">Reviewed BABOT
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 59.6698%; top: 91.6528%; width: 29.9528%; height: 2.00334%;">Version Size Page 1 Total 1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.4953%; top: 95.3255%; width: 28.7736%; height: 2.00334%;">V1.0 A4 EasyEDA.com
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 4.83491%; top: 16.6945%; width: 1.17925%; height: 1.33556%;">Q1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 2.47642%; top: 31.0518%; width: 0.825472%; height: 2.83806%;">PT00
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.37264%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT01
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 14.2689%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT02
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.283%; top: 31.0518%; width: 0.825472%; height: 2.83806%;">PT03
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.1792%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 32.1934%; top: 30.8848%; width: 0.825472%; height: 3.00501%;">PT05
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 38.0896%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT06
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 43.9858%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT07
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 50%; top: 31.0518%; width: 0.825472%; height: 2.83806%;">PT08
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 55.8962%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT09
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 61.9104%; top: 31.0518%; width: 0.825472%; height: 2.83806%;">PT10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 67.8066%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 73.7028%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.717%; top: 31.0518%; width: 0.825472%; height: 2.83806%;">PT13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 85.6132%; top: 31.0518%; width: 0.943396%; height: 2.83806%;">PT14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 91.6274%; top: 30.8848%; width: 0.825472%; height: 3.00501%;">PT15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 46.4623%; top: 3.50584%; width: 2.00472%; height: 1.33556%;">VCC
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 46.1085%; top: 35.7262%; width: 4.36321%; height: 1.33556%;">VCC-5V-2A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 2.00472%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR1 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 4.48113%; top: 44.7412%; width: 1.06132%; height: 1.33556%;">R1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 4.48113%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 9.08019%; top: 44.7412%; width: 1.29717%; height: 1.33556%;">R2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 9.08019%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 6.60377%; top: 48.414%; width: 1.41509%; height: 8.01336%;">IR2 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.7972%; top: 44.7412%; width: 1.29717%; height: 1.33556%;">R3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 13.7972%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.3208%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR3 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.5142%; top: 44.7412%; width: 1.17925%; height: 1.33556%;">R4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.3962%; top: 45.9098%; width: 2.24057%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 16.0377%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR4 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.1132%; top: 44.7412%; width: 1.29717%; height: 1.33556%;">R5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.1132%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.6368%; top: 48.414%; width: 1.41509%; height: 8.01336%;">IR5 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.8302%; top: 44.7412%; width: 1.17925%; height: 1.33556%;">R6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.8302%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.3538%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR6 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 32.4292%; top: 44.7412%; width: 1.29717%; height: 1.33556%;">R7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 32.4292%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.9528%; top: 48.414%; width: 1.41509%; height: 8.01336%;">IR7 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 37.1462%; top: 44.7412%; width: 1.29717%; height: 1.33556%;">R8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 37.1462%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 34.6698%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR8 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.8632%; top: 44.7412%; width: 1.17925%; height: 1.33556%;">R9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 41.7453%; top: 45.9098%; width: 2.24057%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 39.3868%; top: 48.414%; width: 1.29717%; height: 8.01336%;">IR9 IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 46.4623%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 46.4623%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 43.9858%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR10IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 51.1792%; top: 44.7412%; width: 1.53302%; height: 1.33556%;">R11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 51.1792%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 48.7028%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR11IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 55.7783%; top: 44.7412%; width: 1.76887%; height: 1.33556%;">R12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 55.7783%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 53.3019%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR12IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.4953%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 60.4953%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 58.0189%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR13IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 65.2123%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 65.0943%; top: 45.9098%; width: 2.24057%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 62.7358%; top: 48.414%; width: 0.825472%; height: 8.01336%;">IR14IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.8113%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 69.8113%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 67.3349%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR15IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R16
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 74.5283%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.0519%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR16IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.1274%; top: 44.7412%; width: 1.76887%; height: 1.33556%;">R17
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 79.1274%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 76.6509%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR17IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 83.8443%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R18
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 83.8443%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 81.3679%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR18IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 88.5613%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R19
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 88.4434%; top: 45.9098%; width: 2.24057%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 86.0849%; top: 48.414%; width: 0.825472%; height: 8.01336%;">IR19IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 92.3349%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R20
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 92.3349%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 89.8585%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR20IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 96.1085%; top: 44.7412%; width: 1.65094%; height: 1.33556%;">R21
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 96.1085%; top: 45.9098%; width: 2.12264%; height: 1.33556%;">500Ω
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 93.6321%; top: 48.414%; width: 0.943396%; height: 8.01336%;">IR21IR204/H60
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.7594%; top: 63.9399%; width: 1.76887%; height: 1.33556%;">Q17
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 72.7594%; top: 65.6093%; width: 3.65566%; height: 1.33556%;">AO3400A
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 64.7406%; top: 66.9449%; width: 1.65094%; height: 1.33556%;">R22
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 64.7406%; top: 68.1135%; width: 2.12264%; height: 1.33556%;">10kΩ
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 50.2358%; top: 64.6077%; width: 7.1934%; height: 1.5025%;">IR_LED_CONTROL
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 63.0896%; top: 72.9549%; width: 9.08019%; height: 1.33556%;">GND GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.2453%; top: 87.3122%; width: 0.943396%; height: 0.834725%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 28.7736%; top: 86.1436%; width: 0.943396%; height: 0.834725%;">1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 28.4198%; top: 87.1452%; width: 0.825472%; height: 1.00167%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.9481%; top: 85.9766%; width: 0.943396%; height: 1.00167%;">2
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.5943%; top: 87.1452%; width: 0.825472%; height: 1.00167%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.1226%; top: 85.9766%; width: 0.943396%; height: 1.00167%;">3
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.6509%; top: 87.1452%; width: 0.943396%; height: 1.00167%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.2972%; top: 85.9766%; width: 0.825472%; height: 1.16861%;">4
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.8255%; top: 87.1452%; width: 0.943396%; height: 1.00167%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.4717%; top: 85.9766%; width: 0.825472%; height: 1.00167%;">5
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25%; top: 87.1452%; width: 0.943396%; height: 1.00167%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.5283%; top: 85.9766%; width: 0.943396%; height: 1.00167%;">6
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.1745%; top: 87.1452%; width: 0.825472%; height: 1.00167%;">7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.7028%; top: 85.9766%; width: 0.943396%; height: 1.00167%;">7
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.3491%; top: 87.1452%; width: 0.825472%; height: 1.00167%;">8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 22.8774%; top: 85.9766%; width: 0.943396%; height: 1.00167%;">8
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 22.4057%; top: 87.1452%; width: 0.943396%; height: 1.00167%;">9
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.7358%; top: 85.4758%; width: 10.6132%; height: 3.3389%;">9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 11.4387%; top: 88.4808%; width: 19.8113%; height: 1.33556%;">21 22
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.5%; top: 90.985%; width: 1.17925%; height: 1.33556%;">U1
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 12.5%; top: 65.6093%; width: 4.83491%; height: 27.8798%;">05A20L20P VCC VCC-5V-2A IR_LED_CONTROL PT15
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 17.3349%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT14
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.1604%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT13
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 18.9858%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT12
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 19.8113%; top: 72.788%; width: 0.943396%; height: 2.83806%;">PT11
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 20.6368%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT10
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 21.5802%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT09
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 22.4057%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT08
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 23.2311%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT07
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.0566%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT06
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 24.8821%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT05
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 25.8255%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT04
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 26.6509%; top: 72.621%; width: 0.825472%; height: 3.00501%;">PT03
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 27.4764%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT02
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 28.3019%; top: 72.788%; width: 0.943396%; height: 2.83806%;">PT01
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 29.1274%; top: 72.621%; width: 0.943396%; height: 3.00501%;">PT00
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 8.37264%; top: 80.6344%; width: 0.943396%; height: 2.83806%;">GND
+</p><p class="ndfHFb-c4YZDc-cYSp0e-DARUcf-Df1ZY-eEGnhe" style="left: 10.8491%; top: 16.6945%; width: 84.9057%; height: 1.33556%;">Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12 Q13 Q14 Q15 Q16
+</p></div><div class="ndfHFb-c4YZDc-cYSp0e-wxLEad-sn54Q" style="display: none;"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-gvZm2b"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-vWsuo-fmcmS-G0jgYd"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-IDNFyf ndfHFb-c4YZDc-cYSp0e-oYxtQd-gvZm2b"></div><img src="blob:https://docs.google.com/7cd30c49-998d-4fbe-a062-7997c2f951af" class="ndfHFb-c4YZDc-cYSp0e-DARUcf-RJLb9c" alt="第 3 頁，共 3 頁" aria-hidden="true"></div></div><span class="ndfHFb-c4YZDc-cYSp0e-AznF2e-DTMEae" tabindex="0"></span></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe" aria-hidden="true"><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-haAclf"><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-YPqjbf-haAclf"><input class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-YPqjbf V67aGc-YPqjbf-V67aGc" placeholder="在文件中搜尋" aria-label="在文件中搜尋" tabindex="-1"></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-NnAfwf-haAclf"><span class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-NnAfwf"></span></div></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-E7ORLb ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-SKd3Ne VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe" role="button" style="user-select: none;" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="尋找上一個項目" data-tooltip="尋找上一個項目"><div class="ndfHFb-c4YZDc-Bz112c"></div></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-tJiF1e ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-SKd3Ne VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe" role="button" style="user-select: none;" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="尋找下一個項目" data-tooltip="尋找下一個項目"><div class="ndfHFb-c4YZDc-Bz112c"></div></div><div class="ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-TvD9Pc ndfHFb-c4YZDc-vWsuo-fmcmS-xxlfEe-SKd3Ne VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe" role="button" style="user-select: none;" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="關閉搜尋列" data-tooltip="關閉搜尋列"><div class="ndfHFb-c4YZDc-Bz112c"></div></div></div></div></div></div><div class="ndfHFb-c4YZDc-Wrql6b ndfHFb-c4YZDc-Wrql6b-Hyc8Sd" style="width: 40px; right: 16px; opacity: 1;"><div class="ndfHFb-c4YZDc-Wrql6b-SmKAyb"><div class="ndfHFb-c4YZDc-Wrql6b-DdWCyb-b0t70b"></div><div class="ndfHFb-c4YZDc-Wrql6b-AeOLfc-b0t70b"><div class="ndfHFb-c4YZDc-GSQQnc-LgbsSe ndfHFb-c4YZDc-to915-LgbsSe VIpgJd-TzA9Ye-eEGnhe ndfHFb-c4YZDc-LgbsSe" role="button" style="user-select: none;" tabindex="0" data-tooltip-delay="500" data-tooltip-class="ndfHFb-c4YZDc-tk3N6e-suEOdc" data-tooltip-align="b,c" data-tooltip-offset="-6" aria-label="彈出式視窗" data-tooltip="彈出式視窗"><div class="ndfHFb-c4YZDc-Bz112c ndfHFb-c4YZDc-DH6Rkf-Bz112c"></div></div></div></div></div><div class="VIpgJd-TUo6Hb-xJ5Hnf ndfHFb-c4YZDc-dZssN-aZ2wEe-SUR3Rd-xJ5Hnf" style="display: none;"></div><div class="VIpgJd-TUo6Hb ndfHFb-c4YZDc-dZssN-aZ2wEe-SUR3Rd-haAclf" tabindex="0" style="display: none;"><div class="ndfHFb-c4YZDc-EglORb-ge6pde ndfHFb-c4YZDc-dZssN-aZ2wEe-SUR3Rd" role="status" tabindex="-1" aria-label="載入中" style="display: none;"><div class="ndfHFb-c4YZDc-EglORb-ge6pde-RJLb9c ndfHFb-c4YZDc-AHmuwe-wcotoc-zTETae"><div class="ndfHFb-aZ2wEe" dir="ltr"><div class="ndfHFb-vyDMJf-aZ2wEe auswjd"><div class="aZ2wEe-pbTTYe aZ2wEe-v3pZbf"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-oq6NAc"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-gS7Ybc"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div><div class="aZ2wEe-pbTTYe aZ2wEe-nllRtd"><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-LK5yu"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-pehrl-TpMipd"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div><div class="aZ2wEe-LkdAo-e9ayKc aZ2wEe-qwU8Me"><div class="aZ2wEe-LkdAo aZ2wEe-hj4D6d"></div></div></div></div></div></div><span class="ndfHFb-c4YZDc-EglORb-ge6pde-fmcmS ndfHFb-c4YZDc-AHmuwe-wcotoc-zTETae" aria-hidden="true">載入中…</span></div></div><span tabindex="0" style="display: none; position: absolute;"></span></div><script nonce="" aria-hidden="true">/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function c(a,e,f){a._preloadFailed||a.complete&&a.naturalWidth===void 0?f():a.complete&&a.naturalWidth?e():(a.addEventListener("load",function(){e()},!1),a.addEventListener("error",function(){f()},!1))}
+for(var d=function(a,e,f){function k(){b.style.display="none"}var g=document.body.getElementsByClassName(a)[0],b;g&&(b=g.getElementsByClassName(f)[0])&&(b._preloadStartTime=Date.now(),b.onerror=function(){this._preloadFailed=!0},c(b,function(){b.naturalWidth<800?k():(b._preloadEndTime||(b._preloadEndTime=Date.now()),e&&(g.getElementsByClassName(e)[0].style.display="none"))},k))},h=["_initStaticViewer"],l=this||self,m;h.length&&(m=h.shift());)h.length||d===void 0?l=l[m]&&l[m]!==Object.prototype[m]?
+l[m]:l[m]={}:l[m]=d;
+</script><script nonce="" aria-hidden="true">_initStaticViewer('ndfHFb-c4YZDc-K9a4Re-nKQ6qf','ndfHFb-c4YZDc-EglORb-ge6pde','ndfHFb-c4YZDc-ujibv-JUCs7e')</script><script type="text/javascript" charset="UTF-8" src="./m=main" nonce="" aria-hidden="true"></script><script type="text/javascript" src="./client.js.download" nonce="" gapi_processed="true" aria-hidden="true"></script><script type="text/javascript" nonce="" aria-hidden="true">_init([["0",null,null,null,null,2,null,null,null,null,0,[1],null,null,null,"https://drive.google.com",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[],12,1,1],null,null,null,null,[null,"菲利浦斯米夏","luvsci.mg12@nycu.edu.tw","https://lh3.googleusercontent.com/a/default-user\u003ds128",null,null,null,null,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1],[null,"schematics_iNWgbALrz5.pdf","/viewerng/thumb?ds\u003dAON1mFyNqmwu3nSBZ-JQoYmOI7UeWy0lgCGLu3SEBjJB9b4eCLp0UloUlserWRzWprLNk-KvQ61uowGwLHSFFaVHFmGZmwSJESapLV2S0kc36D7zUDiiN_DZK5-LAMbm-7VDmdT2vDalfKOwWA_KDow595F-VtyrAOSpSLXVoHzJtGYC2RGF9l-FhhFY-2wlJl33p16E6eEWMYWZiThjqhYyEdIuqTjVow4J1A70bH4D2-LZm-t-YZ9WOkhmn52bZVkLZbnUW61grQRW9waMRghxiLt_hHM7US8kynCyM0Y_wI1O-WAju_J6xtjnTv4jboBLa2M5tUc3\u0026ck\u003dlantern\u0026dsmi\u003dunknown\u0026authuser\u003d0\u0026w\u003d800\u0026webp\u003dtrue\u0026p\u003dproj",null,null,null,null,null,null,"/viewerng/upload?ds\u003dAON1mFwafcb3crtSyI1Ks9oEF_wYqlwvkTE3-okTGd0AN684FGTFgWOEuvUG780_-KO2Gzoqa7r-MHY5nK5ZARPRyXRYnj2myl0b8RXhhAcSCgHE_Lqr_tNZuZwFf0CjM65EP6setLdZThK34fQ9gDMLvWBRnWwFCioxuLz0tJ8UGs94OLIwJM4VhIVgDjCQJqCo8OsLV9Rv_9IBFdcYwu2QJM0vOzn633fiPS7wqC_wVRorjegvP9lUIZtnFb6VQuNGffiIj1IJaZHknwxf6B2l-gWSxSErdy6b3iHAiRzTrlfq6BwMhws_mkOCk3uxIIwbMXVIxUGc\u0026ck\u003dlantern\u0026dsmi\u003dunknown\u0026authuser\u003d0\u0026p\u003dproj",null,"application/pdf",null,null,1,null,"/viewerng/viewer?url\u003dhttps://hacksterio.s3.amazonaws.com/uploads/attachments/1845254/schematics_iNWgbALrz5.pdf",null,"https://hacksterio.s3.amazonaws.com/uploads/attachments/1845254/schematics_iNWgbALrz5.pdf",null,null,0,null,null,null,null,null,"/viewerng/standalone/refresh?url\u003dhttps://hacksterio.s3.amazonaws.com/uploads/attachments/1845254/schematics_iNWgbALrz5.pdf\u0026embedded\u003dtrue",[null,null,"meta?id\u003dACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV\u0026authuser\u003d0","img?id\u003dACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV\u0026authuser\u003d0","press?id\u003dACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV\u0026authuser\u003d0","status?id\u003dACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV\u0026authuser\u003d0","https://doc-10-5c-apps-viewer.googleusercontent.com/viewer/secure/pdf/j7g7qh13n5idnu5ll3103110fica5b70/utk33ap6ffrncg5kgugen6bdf48lrkos/1790152650000/lantern/04750498712939033035/ACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV?authuser\u003d0",null,"presspage?id\u003dACFrOgAw_FxhTct_XvwmFSBXk5ljzpYUlVXPciURIMvuoWCc1iRE3p1VcHtja0ivVEXbb3LUbqHKq8w1bDNgZ48IPF8aI9x9pBKR81bt7HYIe5nDWue2I2R5tRuo6c94BrKwag1ACPsKo_yRUKyV\u0026authuser\u003d0"],null,null,null,"pdf"],"","",2]);</script><div class="ndfHFb-c4YZDc-mg9Pef ndfHFb-c4YZDc-mg9Pef-BvBYQ ndfHFb-c4YZDc-i5oIFb ndfHFb-c4YZDc-uoC0bf dif24c vhoiae LgGVmb bvmRsc" role="menu" aria-haspopup="true" tabindex="-1" style="user-select: none; display: none;"><div class="ndfHFb-c4YZDc-j7LFlb" role="menuitem" aria-hidden="true" style="user-select: none; display: none;" id=":t"><div class="ndfHFb-c4YZDc-j7LFlb-bN97Pc" style="user-select: none;">複製</div></div><div class="ndfHFb-c4YZDc-j7LFlb" role="menuitem" aria-hidden="true" style="user-select: none; display: none;" id=":u"><div class="ndfHFb-c4YZDc-j7LFlb-bN97Pc" style="user-select: none;">新增註解</div></div></div><div id="goog-lr-13" aria-live="polite" aria-atomic="true" style="position: absolute; top: -1000px; height: 1px; overflow: hidden;">第 2 頁，共 3 頁 第 3 頁，共 3 頁</div></body></html>
