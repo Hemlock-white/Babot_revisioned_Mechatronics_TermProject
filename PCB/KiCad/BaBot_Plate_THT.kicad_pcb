@@ -135,6 +135,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/7e2a20dc-7264-56d0-b463-2d9f208821f9")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -248,9 +249,7 @@
 			(uuid "32768a30-d173-4d21-b28d-0225b7611655")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/7e2a20dc-7264-56d0-b463-2d9f208821f9")
-)
+	)
 	(footprint "Original_Plate_Q14"
 		(layer "F.Cu")
 		(uuid "15f008ec-9d36-4cd6-b129-92acab51163d")
@@ -299,6 +298,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/c6693db9-99f3-5eb3-ac6d-df907a91f4ae")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -412,9 +412,7 @@
 			(uuid "c7ee0c5d-79a6-44d1-b736-d1cbcb5fb161")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/c6693db9-99f3-5eb3-ac6d-df907a91f4ae")
-)
+	)
 	(footprint "Original_Plate_IR15"
 		(layer "F.Cu")
 		(uuid "18240a97-b209-4546-950e-db96eb289f45")
@@ -463,6 +461,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/a886c36b-f99c-5ca0-b1e6-ce6d66104596")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -576,9 +575,7 @@
 			(uuid "ea520b93-d9df-4652-b586-ac5932127f56")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/a886c36b-f99c-5ca0-b1e6-ce6d66104596")
-)
+	)
 	(footprint "Original_Plate_Q12"
 		(layer "F.Cu")
 		(uuid "19b7bfcb-45f0-4baf-a0a3-00d42be07757")
@@ -627,6 +624,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b7a0072d-c7cb-5cb3-97c4-b0235dcbc7cb")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -740,9 +738,7 @@
 			(uuid "0fe881dc-25d0-4d61-9bbc-5e2d4ebe87a6")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b7a0072d-c7cb-5cb3-97c4-b0235dcbc7cb")
-)
+	)
 	(footprint "Original_Plate_IR7"
 		(layer "F.Cu")
 		(uuid "1a797846-2672-4841-837d-b1bffd63f9f3")
@@ -791,6 +787,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d776bf96-ca58-5b07-ad67-4ab3666321e8")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -904,9 +901,7 @@
 			(uuid "49d013ed-2af8-4f1d-aafc-2ea03a5e5bb5")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d776bf96-ca58-5b07-ad67-4ab3666321e8")
-)
+	)
 	(footprint "Original_Plate_Q16"
 		(layer "F.Cu")
 		(uuid "2619552c-128d-4336-9324-dc2c19f401f9")
@@ -955,6 +950,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d80caa1e-f8dc-5d07-9442-a5a8131bc887")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1068,9 +1064,7 @@
 			(uuid "930b3a49-2e70-4769-8156-4cffe7e1085b")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d80caa1e-f8dc-5d07-9442-a5a8131bc887")
-)
+	)
 	(footprint "Original_Plate_Q10"
 		(layer "F.Cu")
 		(uuid "2640a4e0-500e-4470-8264-48322387924a")
@@ -1119,6 +1113,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/182bea32-746f-52c1-b713-cb726e02a67f")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1232,9 +1227,7 @@
 			(uuid "c4aaec43-9b1c-4deb-8f91-1c40993dd527")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/182bea32-746f-52c1-b713-cb726e02a67f")
-)
+	)
 	(footprint "Original_Plate_Q3"
 		(layer "F.Cu")
 		(uuid "3b1e4122-001b-4235-a632-9fc7dc0f00c4")
@@ -1283,6 +1276,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/23243df3-c288-50e0-a52a-3b6c8fab4368")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1396,9 +1390,7 @@
 			(uuid "7f355207-f89c-416a-aeb9-d5189f7b538d")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/23243df3-c288-50e0-a52a-3b6c8fab4368")
-)
+	)
 	(footprint "Original_Plate_IR1"
 		(layer "F.Cu")
 		(uuid "40b50527-6cbe-4225-af6f-b931dee3b66b")
@@ -1447,6 +1439,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/8268bbf5-0f19-566b-a849-d39451ddc52c")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1560,9 +1553,7 @@
 			(uuid "eb7f0aea-8790-46f3-bfb1-68c1c524f6be")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/8268bbf5-0f19-566b-a849-d39451ddc52c")
-)
+	)
 	(footprint "Original_Plate_Q11"
 		(layer "F.Cu")
 		(uuid "421dc1b1-c4fa-49f1-a9a1-19645a9ab560")
@@ -1611,6 +1602,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/0f14da51-016f-592a-9eb8-8ba3021534e2")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1724,9 +1716,7 @@
 			(uuid "00d9d7fa-f41f-4707-88be-eeb37cd4c034")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/0f14da51-016f-592a-9eb8-8ba3021534e2")
-)
+	)
 	(footprint "Original_Plate_IR4"
 		(layer "F.Cu")
 		(uuid "45259a8f-964b-42c6-91dc-7dc0fcfb6315")
@@ -1775,6 +1765,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/fffdc5d3-5123-51c6-82c5-17362b15d181")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1888,9 +1879,7 @@
 			(uuid "cd451bea-eeaf-433f-8d0b-21d30b2ce53c")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/fffdc5d3-5123-51c6-82c5-17362b15d181")
-)
+	)
 	(footprint "Original_Plate_Q1"
 		(layer "F.Cu")
 		(uuid "4e3011ae-a46f-4ffb-9df8-ac3c113cd296")
@@ -1939,6 +1928,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/2d2b6de4-0397-56a1-930e-110b61636fc4")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2052,9 +2042,7 @@
 			(uuid "7840f2e6-103b-4c64-9a72-cc0c58af293f")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/2d2b6de4-0397-56a1-930e-110b61636fc4")
-)
+	)
 	(footprint "Original_Plate_IR3"
 		(layer "F.Cu")
 		(uuid "520ca8a2-6a8a-4893-b7cd-0061dd4635a5")
@@ -2103,6 +2091,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6f8263cd-2175-5a59-859e-168fe6a33e5c")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2216,9 +2205,7 @@
 			(uuid "3b64b8a5-771a-4c19-8319-a26cbe258bcb")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6f8263cd-2175-5a59-859e-168fe6a33e5c")
-)
+	)
 	(footprint "Original_Plate_Q8"
 		(layer "F.Cu")
 		(uuid "57955da0-b3e3-4888-abf4-9b8abf0e5f76")
@@ -2267,6 +2254,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/18095642-4740-5506-bcee-de9a8f43f71c")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2380,9 +2368,7 @@
 			(uuid "ebf3feca-905d-4ff3-a8e2-d978deea0440")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/18095642-4740-5506-bcee-de9a8f43f71c")
-)
+	)
 	(footprint "Original_Plate_IR17"
 		(layer "F.Cu")
 		(uuid "64bee272-2624-49ec-88e5-67a0aa39f09b")
@@ -2431,6 +2417,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/29523caf-9435-5d2d-a445-0596d1168838")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2544,9 +2531,7 @@
 			(uuid "6019ba6a-01e5-4fd6-b943-fb6aa006fea5")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/29523caf-9435-5d2d-a445-0596d1168838")
-)
+	)
 	(footprint "Original_Plate_IR5"
 		(layer "F.Cu")
 		(uuid "671bd8b7-4467-46eb-8735-9ca6e772ccaa")
@@ -2595,6 +2580,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/953a227e-57d4-559e-93b2-a5ca423d2ed8")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2708,9 +2694,7 @@
 			(uuid "08989080-543e-4e63-a43f-3adafea8fcf4")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/953a227e-57d4-559e-93b2-a5ca423d2ed8")
-)
+	)
 	(footprint "Original_Plate_Q6"
 		(layer "F.Cu")
 		(uuid "8006c44b-f375-44d2-95c0-e21986983fcb")
@@ -2759,6 +2743,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/654a9a77-f3a3-5f8b-925e-a8a83ea64168")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2872,9 +2857,7 @@
 			(uuid "ea52b785-d59a-4d61-9759-842aa066ad92")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/654a9a77-f3a3-5f8b-925e-a8a83ea64168")
-)
+	)
 	(footprint "Original_Plate_IR11"
 		(layer "F.Cu")
 		(uuid "89f2d4ac-8a80-4d30-8d74-f148a6ff9017")
@@ -2923,6 +2906,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cb7d218d-f168-57d6-949e-cebd7f144022")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3036,9 +3020,7 @@
 			(uuid "9cbae371-9c9a-479a-b281-c5bf4575b1c7")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cb7d218d-f168-57d6-949e-cebd7f144022")
-)
+	)
 	(footprint "Original_Plate_IR8"
 		(layer "F.Cu")
 		(uuid "8fe39305-aca6-47ce-a352-20c54e80832f")
@@ -3087,6 +3069,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d86dfa6d-810e-5001-a505-26f38b584b1b")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3200,9 +3183,7 @@
 			(uuid "c20ca764-7d01-4d58-baf2-df2c3ac9f7eb")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d86dfa6d-810e-5001-a505-26f38b584b1b")
-)
+	)
 	(footprint "Original_Plate_IR18"
 		(layer "F.Cu")
 		(uuid "976cb29b-742b-4c2b-be1f-f3e45e632e49")
@@ -3251,6 +3232,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/003c026c-24e9-5cf5-a13e-62e8f8841258")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3364,9 +3346,7 @@
 			(uuid "bf0014ec-d813-4e05-94ae-4f3e2ccd5a12")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/003c026c-24e9-5cf5-a13e-62e8f8841258")
-)
+	)
 	(footprint "Original_Plate_Q4"
 		(layer "F.Cu")
 		(uuid "9fa6efcf-1735-42d1-871d-b8599f40f614")
@@ -3415,6 +3395,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cf09d5d5-2fdf-57fc-87a6-0f645ae0017d")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3528,9 +3509,7 @@
 			(uuid "a86fb920-12f3-4c46-8ff2-07278545e194")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cf09d5d5-2fdf-57fc-87a6-0f645ae0017d")
-)
+	)
 	(footprint "Original_Plate_IR16"
 		(layer "F.Cu")
 		(uuid "a07bfb8a-db83-4c2f-abcc-c2eba299f837")
@@ -3579,6 +3558,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b8adfe89-c213-5b97-bd0d-c8777cbaf4fa")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3692,9 +3672,7 @@
 			(uuid "50f5b7b4-948d-4fe9-90f6-6b1451b44b45")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b8adfe89-c213-5b97-bd0d-c8777cbaf4fa")
-)
+	)
 	(footprint "Original_Plate_Q13"
 		(layer "F.Cu")
 		(uuid "a3cf95e2-c9a6-4785-9058-da834ca1a8e5")
@@ -3743,6 +3721,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/012c96ed-7ab9-5327-98c4-601ddb1f62b8")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3856,9 +3835,7 @@
 			(uuid "3a1a3b37-6c6d-440f-aa49-74bb3520a59d")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/012c96ed-7ab9-5327-98c4-601ddb1f62b8")
-)
+	)
 	(footprint "Original_Plate_IR9"
 		(layer "F.Cu")
 		(uuid "a65b2b9c-e72c-456f-a456-0dd5e9fb3ffc")
@@ -3907,6 +3884,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/38ec1048-5462-5d41-8909-12e4fa2cc5ec")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4020,9 +3998,7 @@
 			(uuid "74615a7a-3f8c-420f-920c-e8948dc26ca5")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/38ec1048-5462-5d41-8909-12e4fa2cc5ec")
-)
+	)
 	(footprint "Original_Plate_IR14"
 		(layer "F.Cu")
 		(uuid "a6d60ea1-60b7-45ff-9a0a-cab91d3267c8")
@@ -4071,6 +4047,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/e59f965e-77be-5534-baf0-aa02bde47ec4")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4184,9 +4161,7 @@
 			(uuid "fb5118f3-5d04-4a72-a160-bc0469396b5a")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/e59f965e-77be-5534-baf0-aa02bde47ec4")
-)
+	)
 	(footprint "Original_Plate_IR19"
 		(layer "F.Cu")
 		(uuid "b3974ff0-02d3-493a-b1ee-18661fc0532f")
@@ -4235,6 +4210,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/68946507-5019-5561-99ba-1f617bc026b4")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4348,9 +4324,7 @@
 			(uuid "9d2c4d37-8e03-4cc2-894c-63478b4b26ed")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/68946507-5019-5561-99ba-1f617bc026b4")
-)
+	)
 	(footprint "Original_Plate_Q2"
 		(layer "F.Cu")
 		(uuid "b6a788f1-f4f9-4c45-9916-78991adbde4f")
@@ -4399,6 +4373,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f9b20fbc-6afa-5fe1-ada3-c6800744e2bf")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4512,9 +4487,7 @@
 			(uuid "1369151d-2092-417f-b9d0-831e8ab0553c")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f9b20fbc-6afa-5fe1-ada3-c6800744e2bf")
-)
+	)
 	(footprint "Original_Plate_IR6"
 		(layer "F.Cu")
 		(uuid "bc88feb0-8051-4d11-8d7f-473f3ad8c7ae")
@@ -4563,6 +4536,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cd1a875e-5959-5631-839e-766b8fef078e")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4676,9 +4650,7 @@
 			(uuid "f5b7591e-d12e-416a-89f4-746c04c04471")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cd1a875e-5959-5631-839e-766b8fef078e")
-)
+	)
 	(footprint "Original_Plate_Q9"
 		(layer "F.Cu")
 		(uuid "bf4343ed-c329-40c8-8510-4f636107a9f7")
@@ -4727,6 +4699,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ada144bc-2f3e-56ef-b306-15d377be70eb")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4840,9 +4813,7 @@
 			(uuid "e1805a2a-2fd4-4cb5-a754-74e5e05e9a17")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ada144bc-2f3e-56ef-b306-15d377be70eb")
-)
+	)
 	(footprint "Original_Plate_IR21"
 		(layer "F.Cu")
 		(uuid "cf3d6f34-65e2-4592-bbce-40f5279b8339")
@@ -4891,6 +4862,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d5b97191-c65b-55aa-909c-0479595e8d2e")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5004,9 +4976,7 @@
 			(uuid "031688e7-b4e7-4d05-8f93-b86a4bffe896")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d5b97191-c65b-55aa-909c-0479595e8d2e")
-)
+	)
 	(footprint "Original_Plate_IR13"
 		(layer "F.Cu")
 		(uuid "cf53d5b7-5aa9-4172-a8ff-1187f0ea5f3a")
@@ -5055,6 +5025,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/db8b1730-97c0-5bda-9fbc-4487c68a17e0")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5168,9 +5139,7 @@
 			(uuid "7ca24e83-d21c-41a3-bbef-f3e19eda22bc")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/db8b1730-97c0-5bda-9fbc-4487c68a17e0")
-)
+	)
 	(footprint "Original_Plate_Q5"
 		(layer "F.Cu")
 		(uuid "dd68d5d4-59d1-4a35-9032-2f5a9a904dc2")
@@ -5219,6 +5188,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/1853c8e4-511a-52f0-af80-078ad26a4711")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5332,9 +5302,7 @@
 			(uuid "2149884d-ba5e-43d0-9ad8-28f21626cf16")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/1853c8e4-511a-52f0-af80-078ad26a4711")
-)
+	)
 	(footprint "Original_Plate_IR10"
 		(layer "F.Cu")
 		(uuid "df450162-5421-4992-abbe-5463d15cae88")
@@ -5383,6 +5351,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/1afb0618-7eac-54a6-a985-3f2a2698716d")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5496,9 +5465,7 @@
 			(uuid "d044f76e-0d9a-4c19-a6bc-3053ab07c41c")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/1afb0618-7eac-54a6-a985-3f2a2698716d")
-)
+	)
 	(footprint "Original_Plate_IR20"
 		(layer "F.Cu")
 		(uuid "e846b50c-1c48-425f-8538-53d3172f1662")
@@ -5547,6 +5514,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6eb7ef6a-2ba3-5826-8f89-c77d585e28e2")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5660,9 +5628,7 @@
 			(uuid "05ce4c15-4892-4f92-9641-4024670bbdf5")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6eb7ef6a-2ba3-5826-8f89-c77d585e28e2")
-)
+	)
 	(footprint "Original_Plate_Q15"
 		(layer "F.Cu")
 		(uuid "e9470028-da6a-44b6-a21b-29aa691e96e0")
@@ -5711,6 +5677,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f4b9066c-eb3d-5254-8ff9-1af6606d06af")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5824,9 +5791,7 @@
 			(uuid "2e11c57f-6bb8-46c6-a49c-5537fb6c3b82")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f4b9066c-eb3d-5254-8ff9-1af6606d06af")
-)
+	)
 	(footprint "Original_Plate_Q7"
 		(layer "F.Cu")
 		(uuid "ebad7976-e6f4-4efd-8bce-23c8b1b11ccc")
@@ -5875,6 +5840,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/e253d2b5-162f-5153-8c22-fe9db971b647")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5988,9 +5954,7 @@
 			(uuid "89d99bca-1149-4df9-bd47-8e25e0c7710e")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/e253d2b5-162f-5153-8c22-fe9db971b647")
-)
+	)
 	(footprint "Original_Plate_IR12"
 		(layer "F.Cu")
 		(uuid "ebfcd83d-af79-487e-a5f0-53a22bd71368")
@@ -6039,6 +6003,7 @@
 				)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/c54965dd-173f-5dab-bec5-e5b1eb70f5fb")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6152,9 +6117,7 @@
 			(uuid "9c9bb311-8a9e-404a-a4dd-8a42a53fc442")
 		)
 		(embedded_fonts no)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/c54965dd-173f-5dab-bec5-e5b1eb70f5fb")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "04165f72-e4bb-4dbf-9ad1-ee6741903b1c")
@@ -6223,6 +6186,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/fdd98bcc-b7dc-5730-b238-0bc27df6ca26")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -6309,9 +6273,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/fdd98bcc-b7dc-5730-b238-0bc27df6ca26")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "07798312-657f-4d48-8c0d-86b24c671c5c")
@@ -6380,6 +6342,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/efcd86e5-7b02-5883-97ee-d5a9de0f66b8")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -6466,9 +6429,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/efcd86e5-7b02-5883-97ee-d5a9de0f66b8")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "2f6c6841-a886-4b43-b161-92e1a97607a5")
@@ -6537,6 +6498,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/770633a5-37c1-5a01-a32a-665e8e716bee")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -6623,9 +6585,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/770633a5-37c1-5a01-a32a-665e8e716bee")
-)
+	)
 	(footprint "TO220_GDS"
 		(layer "B.Cu")
 		(uuid "33b57a90-d2bd-4dd4-8d64-9c306ef822bd")
@@ -6694,6 +6654,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6965c6e2-c4f6-5e05-b6b4-0bb6306f2fb3")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -6799,9 +6760,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6965c6e2-c4f6-5e05-b6b4-0bb6306f2fb3")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "34be91f1-d545-42c0-bdab-0c3e1c0657ae")
@@ -6870,6 +6829,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/23fc4f9c-cb57-56c4-af26-1d0541da59a7")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -6956,9 +6916,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/23fc4f9c-cb57-56c4-af26-1d0541da59a7")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "4840f2c9-9e86-47f3-8823-cd4fe1db956d")
@@ -7027,6 +6985,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/10aa0565-c12e-5b72-88fb-7f965ba1e634")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7113,9 +7072,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/10aa0565-c12e-5b72-88fb-7f965ba1e634")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "4cf3639f-bdeb-47ea-a810-8825f75108d8")
@@ -7184,6 +7141,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6b36518b-e0cd-5399-bb03-f5dd0acd0a2d")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7270,9 +7228,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6b36518b-e0cd-5399-bb03-f5dd0acd0a2d")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "5d1dbbfb-5436-40a0-9fa6-00ddeda2da28")
@@ -7341,6 +7297,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f661a4ca-e661-5174-a3e9-7c701a0aac8b")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7427,9 +7384,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f661a4ca-e661-5174-a3e9-7c701a0aac8b")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "5de1d06e-0d4a-491f-99fa-fa99596cc684")
@@ -7498,6 +7453,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f8df24a9-fc50-56bd-8367-ebdbc5966f2e")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7584,9 +7540,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/f8df24a9-fc50-56bd-8367-ebdbc5966f2e")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "62921cf9-10f8-4554-a9bb-5529d663eccb")
@@ -7655,6 +7609,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b88d4f92-7b97-5caf-abde-94e4e81d17ef")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7741,9 +7696,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b88d4f92-7b97-5caf-abde-94e4e81d17ef")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "64daa556-0992-4472-8763-08c859879928")
@@ -7812,6 +7765,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6a8d1380-07bd-57fb-a131-3c2817c1485d")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -7898,9 +7852,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/6a8d1380-07bd-57fb-a131-3c2817c1485d")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "7d5e15fc-d86e-49fb-b22b-be6adf05ca29")
@@ -7969,6 +7921,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/7a1ffb4d-a19f-5477-90ae-297710cd6430")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -8055,9 +8008,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/7a1ffb4d-a19f-5477-90ae-297710cd6430")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "8041b45a-3869-49e1-ba14-d607f5169647")
@@ -8126,6 +8077,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/53fabde1-9078-5ce3-ba2c-7cd026194d28")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -8212,9 +8164,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/53fabde1-9078-5ce3-ba2c-7cd026194d28")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "82d1d437-bdbc-48d1-8a49-1a2c1bba325a")
@@ -8283,6 +8233,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/9b6be963-ae81-5a14-a673-00ae20711aaf")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -8369,9 +8320,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/9b6be963-ae81-5a14-a673-00ae20711aaf")
-)
+	)
 	(footprint "Header20"
 		(layer "B.Cu")
 		(uuid "a2f0358c-0a48-4c07-bdae-9eea52971e49")
@@ -8440,6 +8389,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/661a6fcb-4f9e-5ad6-adde-24b0a39dfc0b")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -8707,9 +8657,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/661a6fcb-4f9e-5ad6-adde-24b0a39dfc0b")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "afc7c8d8-03f0-405f-bc49-ccf52f03506d")
@@ -8778,6 +8726,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/879f71b0-7b50-5ec1-aae9-9503bff5ba93")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -8864,9 +8813,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/879f71b0-7b50-5ec1-aae9-9503bff5ba93")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "b112a461-1f93-4d9d-9dbb-69b4164ffabf")
@@ -8935,6 +8882,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cf9ecc0f-5b0c-5c13-a1fa-1caef6177524")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9021,9 +8969,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cf9ecc0f-5b0c-5c13-a1fa-1caef6177524")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "b37af3a9-1366-4632-a179-dbf40eefb7f4")
@@ -9092,6 +9038,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b2c834b2-66eb-5f0d-9c8f-0a6db9973aff")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9178,9 +9125,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/b2c834b2-66eb-5f0d-9c8f-0a6db9973aff")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "ce5f9b9e-1a62-4331-8849-8e1921e221ef")
@@ -9249,6 +9194,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d69a9daf-24fb-5b9c-8423-73fe033c2628")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9335,9 +9281,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/d69a9daf-24fb-5b9c-8423-73fe033c2628")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "d9a40561-9f5d-432f-a5d8-13fdb9bb3904")
@@ -9406,6 +9350,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/782459dd-aed2-557c-9e6c-a934f37a49b1")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9492,9 +9437,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/782459dd-aed2-557c-9e6c-a934f37a49b1")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "e131e3e2-c19c-464a-bb1a-331e0112e78d")
@@ -9563,6 +9506,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/57ab0df4-80c4-535d-aeed-9a6331904ecb")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9649,9 +9593,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/57ab0df4-80c4-535d-aeed-9a6331904ecb")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "e4cdef4c-3cbf-4d02-a6f7-98d0ddb66fde")
@@ -9720,6 +9662,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cd541d15-9774-5ef3-a89d-2aad67ea8d32")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9806,9 +9749,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/cd541d15-9774-5ef3-a89d-2aad67ea8d32")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "e8a6498a-bb66-4245-a1fc-dd46d2cc72fe")
@@ -9877,6 +9818,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ad21e7fc-f01e-5b29-be26-d0af2a0ed072")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9963,9 +9905,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ad21e7fc-f01e-5b29-be26-d0af2a0ed072")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "ec210d03-f51e-4861-b1f8-a40556358a92")
@@ -10034,6 +9974,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/2d5b5393-4df2-5329-a74f-5b2caebe17ae")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -10120,9 +10061,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/2d5b5393-4df2-5329-a74f-5b2caebe17ae")
-)
+	)
 	(footprint "Axial_R_10.16"
 		(layer "B.Cu")
 		(uuid "f0d2cda5-04da-4793-a930-606ca173f09a")
@@ -10191,6 +10130,7 @@
 				(justify mirror)
 			)
 		)
+		(path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ca466cbf-581c-5a70-876d-9a8b0461f6c6")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -10277,9 +10217,7 @@
 				(xyz 0 0 0)
 			)
 		)
-	
- (path "/38cde0d2-bad4-575c-85b8-eb5d5e541e5c/ca466cbf-581c-5a70-876d-9a8b0461f6c6")
-)
+	)
 	(gr_line
 		(start 50.0503 99.52273)
 		(end 50.07641 98.28858)
@@ -13140,351 +13078,5 @@
 		(layer "Edge.Cuts")
 		(uuid "278771e1-cbf8-4fd4-9ac7-d3f7a090a58d")
 	)
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	(embedded_fonts no)
 )
