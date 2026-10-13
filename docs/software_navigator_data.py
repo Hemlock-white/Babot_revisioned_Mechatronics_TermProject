@@ -1,0 +1,398 @@
+"""Reviewed map of the unmodified 565-line upstream BaBot sketch.
+
+Every range below refers to software/main.ino and is validated by the builder.
+Flowcharts are pedagogical views of real control/data paths, not compiler CFGs.
+"""
+
+FILE = "software/main.ino"
+
+
+def node(id, y, ttl, cap, lines, *, cx=430, w=260, kind="process", tone="logic", icon=None):
+    result = dict(id=id, cx=cx, y=y, w=w, h=82, kind=kind, tone=tone,
+                  ttl=ttl, cap=cap, jump=f"{FILE}:{lines}")
+    if icon:
+        result["iconJump"] = f"{FILE}:{icon}"
+    return result
+
+
+def edge(a, b, label="", out="bottom", into="top", via=None):
+    result = dict(from_=a, to=b, label=label, out=out, into=into)
+    if via:
+        result["via"] = via
+    return result
+
+
+GRAPHS = [
+    {
+        "id": "startup", "title": "01 · Boot and configuration",
+        "deck": "The board turns saved calibration and pin assignments into a level starting pose before loop() begins.",
+        "nodes": [
+            node("constants", 64, "Configuration", "Pins, gains, geometry, thresholds", "19-49", tone="data", icon="19-29"),
+            node("state", 194, "Runtime state", "16-element arrays and four modes", "55-102", tone="data", icon="63-66"),
+            node("pins", 324, "Set pin direction", "Button input, LEDs output; attach servos", "123-130", tone="io"),
+            node("eeprom", 454, "Restore offsets", "Read three saved values and constrain them", "132-137", tone="storage", icon="83-85"),
+            node("adc", 584, "Start serial + ADC", "115200 baud; ADC prescaler 32", "139-140", tone="io"),
+            node("home", 714, "Level platform", "Solve a neutral pose, then wait 1 s", "142-144", tone="motion", icon="25-29"),
+            node("loop", 844, "Enter loop()", "Fast path and timed path now repeat", "150-156", kind="terminal", tone="control"),
+            node("reason", 454, "Why constrain?", "Corrupt EEPROM cannot demand wild offsets", "135-137", cx=900, w=260, tone="teaching"),
+        ],
+        "edges": [
+            edge("constants", "state"), edge("state", "pins"), edge("pins", "eeprom"),
+            edge("eeprom", "adc"), edge("adc", "home"), edge("home", "loop"),
+            edge("eeprom", "reason", "safety", "right", "left"),
+        ],
+        "height": 1010,
+    },
+    {
+        "id": "main", "title": "02 · Loop and operating modes",
+        "deck": "One fast path catches button events and updates the status LED; a 30 Hz gate limits sensing and motion work.",
+        "nodes": [
+            node("enter", 60, "loop()", "Every Arduino iteration starts here", "150-156", kind="terminal", tone="control"),
+            node("press", 190, "Read + latch press", "Save a press until a timed handler consumes it", "156-169", tone="io", icon="87-92"),
+            node("led", 320, "Show mode", "LED pattern runs at full loop speed", "171-177", tone="io"),
+            node("gate", 450, "30 Hz ready?", "Return early until 33,333 µs have passed", "111-117", kind="decision", tone="control"),
+            node("scan", 580, "Measure + locate", "IR scan, then weighted center", "184-185", tone="sensor", icon="63-66"),
+            node("dispatch", 710, "Choose mode handler", "ON, OFF, ASSEMBLY, or CALIBRATION", "187-192", kind="decision", tone="control", icon="55-57"),
+            node("clear", 840, "Consume latched press", "Ready for the next button event", "194-196", tone="control"),
+            node("early", 450, "Fast return", "No scan or servo update this iteration", "182-182", cx=900, tone="teaching"),
+            node("handlers", 710, "Mode behavior", "Balance, level, sweep, or calibrate", "202-317", cx=900, tone="motion"),
+        ],
+        "edges": [
+            edge("enter", "press"), edge("press", "led"), edge("led", "gate"),
+            edge("gate", "scan", "yes"), edge("scan", "dispatch"), edge("dispatch", "clear", "then"),
+            edge("gate", "early", "no", "right", "left"),
+            edge("early", "enter", "next iteration", "right", "right", [(1220, 491), (1220, 101)]),
+            edge("dispatch", "handlers", "mode", "right", "left"),
+            edge("handlers", "clear", "return", "bottom", "right", [(900, 815), (650, 815), (650, 881)]),
+            edge("clear", "enter", "repeat", "left", "left", [(70, 881), (70, 101)]),
+        ],
+        "height": 1010,
+    },
+    {
+        "id": "sensing", "title": "03 · IR acquisition and position",
+        "deck": "Two scans separate ambient light from controlled reflection, then a spatial test and weighted center estimate the ball position.",
+        "nodes": [
+            node("off", 55, "Emitters OFF", "Start an ambient-only scan", "436-437", tone="sensor"),
+            node("ambient", 185, "Read 16 ambient", "Select mux channel, wait, sample A0", "438-442", tone="sensor", icon="63-66"),
+            node("on", 315, "Emitters ON", "Create a known optical stimulus", "443-443", tone="sensor"),
+            node("lit", 445, "Read 16 illuminated", "Same channel order, same settling wait", "444-448", tone="sensor", icon="64-66"),
+            node("subtract", 575, "Subtract background", "on − off for every channel", "449-449", tone="math", icon="64-66"),
+            node("filter", 705, "Smooth the signal", "Exponential update α = 0.7", "450-450", tone="math", icon="39-41"),
+            node("detect", 835, "Spatial range ≥ 350?", "Compare maximum and minimum sensor values", "457-464", kind="decision", tone="control", icon="41-41"),
+            node("center", 965, "Weighted center", "Normalize, cube weights, average X/Y", "466-494", tone="math", icon="68-69"),
+            node("settle", 185, "Why wait 600 µs?", "Analog node must settle after switching", "439-441", cx=900, tone="teaching"),
+            node("missing", 965, "No ball → (0, 0)", "Position output is reset", "467-467", cx=900, tone="teaching"),
+        ],
+        "edges": [
+            edge("off", "ambient"), edge("ambient", "on"), edge("on", "lit"),
+            edge("lit", "subtract"), edge("subtract", "filter"), edge("filter", "detect"),
+            edge("detect", "center", "yes"),
+            edge("ambient", "settle", "each channel", "right", "left"),
+            edge("detect", "missing", "no", "right", "left", [(650, 876), (650, 1006)]),
+        ],
+        "height": 1130,
+    },
+    {
+        "id": "control", "title": "04 · Feedback to three servos",
+        "deck": "When the ball is present, two axis controllers request tilt; geometry turns that tilt into three limited servo commands.",
+        "nodes": [
+            node("presence", 55, "Ball present?", "ON mode chooses track or recovery", "202-215", kind="decision", tone="control"),
+            node("pid", 185, "PID on X and Y", "error → roll and pitch requests", "217-218", tone="math", icon="71-75"),
+            node("smooth", 315, "Smooth commands", "Blend new and previous tilt", "220-221", tone="math", icon="39-40"),
+            node("move", 445, "movePlatform()", "Request roll, pitch, height", "223-223", tone="motion"),
+            node("rotate", 575, "Rotate 3 anchors", "0°, 120°, 240° around the plate", "336-353", tone="math", icon="25-29"),
+            node("solve", 705, "Solve link angles", "Local distance + cosine rule", "355-367", tone="math", icon="25-29"),
+            node("reorder", 835, "Map to A/B/C", "Geometry order is 2, 0, 1", "369-369", tone="motion"),
+            node("write", 965, "Limit + write", "Clamp angles, apply EEPROM offsets", "323-330", tone="motion", icon="83-85"),
+            node("lost", 55, "Ball absent", "Hold briefly or reset to level", "225-235", cx=900, tone="teaching"),
+            node("formula", 185, "Inside PID", "P + accumulated I + softened D", "500-508", cx=900, tone="teaching"),
+        ],
+        "edges": [
+            edge("presence", "pid", "yes"), edge("pid", "smooth"), edge("smooth", "move"),
+            edge("move", "rotate"), edge("rotate", "solve"), edge("solve", "reorder"), edge("reorder", "write"),
+            edge("presence", "lost", "no", "right", "left"),
+            edge("pid", "formula", "inspect", "right", "left"),
+        ],
+        "height": 1130,
+    },
+    {
+        "id": "calibration", "title": "05 · Button, mode, calibration",
+        "deck": "Edge detection groups presses; calibration is a small state machine that eventually persists three servo offsets.",
+        "nodes": [
+            node("edge", 55, "Button edge", "Press/release timestamps and duration", "401-418", tone="io", icon="87-89"),
+            node("group", 185, "Classify presses", "500 ms grouping, or immediate in calibration", "420-429", tone="control", icon="44-45"),
+            node("mode", 315, "Latch + change mode", "Triple press enters calibration", "160-169", tone="control", icon="55-57"),
+            node("init", 445, "Initialize calibration", "Reset offsets and pose for a fresh run", "273-284", tone="storage", icon="83-85"),
+            node("adjust", 575, "Handle press", "Single increments; long advances servo", "286-298", kind="decision", tone="control"),
+            node("done", 705, "All three done?", "Otherwise show the active servo", "300-317", kind="decision", tone="control", icon="55-57"),
+            node("pose", 835, "Show active servo", "A, B, or C moves to calibration pose", "313-317", tone="motion"),
+            node("save", 705, "Save offsets", "Subtract 25, write EEPROM, return ON", "302-310", cx=900, tone="storage", icon="47-49"),
+            node("single", 575, "Single press", "Increment active servo offset", "286-291", cx=900, tone="teaching"),
+            node("long", 445, "Long press", "Advance A → B → C → DONE", "293-298", cx=900, tone="teaching"),
+        ],
+        "edges": [
+            edge("edge", "group"), edge("group", "mode"), edge("mode", "init"),
+            edge("init", "adjust"), edge("adjust", "done", "then"),
+            edge("done", "pose", "not done"), edge("done", "save", "done", "right", "left"),
+            edge("adjust", "single", "single", "right", "left"),
+            edge("adjust", "long", "long", "right", "left", [(650, 616), (650, 486)]),
+            edge("pose", "edge", "next scan", "left", "left", [(70, 876), (70, 96)]),
+        ],
+        "height": 1010,
+    },
+]
+
+
+def chapter(title, ref, concept, project, principle, exercise):
+    return dict(title=title, ref=f"{FILE}:{ref}", concept=concept,
+                project=project, principle=principle, exercise=exercise)
+
+
+def choice(prompt, options, answer, why):
+    return dict(type="choice", prompt=prompt, options=options, answer=answer, why=why)
+
+
+def order(prompt, steps, why):
+    return dict(type="order", prompt=prompt, steps=steps, why=why)
+
+
+def fill(prompt, stem, answers, why):
+    return dict(type="fill", prompt=prompt, stem=stem, answers=answers, why=why)
+
+
+def code(prompt, signature, required, common, sample, why):
+    return dict(type="code", prompt=prompt, signature=signature,
+                required=required, common=common, sample=sample, why=why)
+
+
+def debug(prompt, snippet, line, clues, why):
+    return dict(type="debug", prompt=prompt, snippet=snippet, line=line, clues=clues, why=why)
+
+
+TOPICS = [
+    {
+        "id": "sensing", "title": "Optical acquisition", "tag": "Lecture 01 · Signals",
+        "deck": "Why the firmware creates its own light, scans twice, and filters a current-derived voltage.",
+        "chapters": [
+            chapter("Why switch the emitters?", "436-450",
+                    "A sensor sees both room light and light reflected from BaBot's emitters. A controlled on/off experiment gives two readings close in time.",
+                    "measureIR() turns D7 low, reads all sixteen channels, turns D7 high, reads them again, then subtracts ambient from illuminated data.",
+                    "This is common-mode rejection in time: a steady background appears in both scans and mostly cancels. Saturation or flickering light cannot be repaired by subtraction.",
+                    choice("What does irLight[i] − ambientLight[i] mainly estimate?",
+                           ["Only room lighting", "Additional light caused by BaBot's emitters", "Servo angle", "The ADC supply voltage"], 1,
+                           "The OFF scan estimates background. The ON scan adds the robot's own reflected IR; subtracting removes the approximately steady part.")),
+            chapter("Order one measurement cycle", "436-450",
+                    "Timing is part of the algorithm. Each channel is selected, allowed to settle, and sampled; the entire sequence is repeated with illumination changed.",
+                    "The sketch uses mux.channel(i), waits 600 µs, and analogRead(A0) for every channel in both scans.",
+                    "If you subtract channels with different indices or sample before the analog node settles, the physical signal is compared with the wrong baseline.",
+                    order("Arrange the steps in the order the code performs them.",
+                          ["Turn IR LEDs off", "Read 16 ambient channels", "Turn IR LEDs on", "Read 16 lit channels", "Subtract and smooth each channel"],
+                          "The emitter state is set before its scan; only after both arrays exist can channel-by-channel subtraction happen.")),
+            chapter("Exponential smoothing", "449-450",
+                    "The raw difference changes with noise and motion. An exponential update retains some of the previous value while admitting a fraction of the new sample.",
+                    "The real line is irSignal[i] += 0.7 × (irSignalRaw[i] − irSignal[i]); 0.7 gives new data substantial weight, so the estimate follows changes fairly quickly.",
+                    "The filter is a one-state recurrence. Larger α reacts faster but passes more noise; smaller α smooths more but delays position feedback.",
+                    fill("Fill the expression removed from the actual subtraction line.",
+                         "irSignalRaw[i] = ____;", ["irLight[i]-ambientLight[i]", "irLight[i] - ambientLight[i]"],
+                         "The illuminated reading minus the ambient reading isolates the extra light created by the robot's LEDs.")),
+            chapter("Write a tiny sensor primitive", "449-450",
+                    "A small pure function makes the subtraction rule testable without hardware. It should preserve signed differences; clipping too early can hide useful diagnostic information.",
+                    "The sketch stores the difference in irSignalRaw, then applies the exponential recurrence separately. These are distinct operations.",
+                    "Separating acquisition from filtering clarifies which stage changes a reading. A pure difference function is easy to verify with input pairs.",
+                    code("Write 3–8 lines inside this function to return the active-minus-ambient reading.",
+                         "float reflected(float active, float ambient) {\n  // your logic here\n}",
+                         ["return", "active", "ambient", "-"],
+                         [{"if":"ambient-active", "hint":"The subtraction direction is reversed; reflected IR is active minus ambient."}],
+                         "float reflected(float active, float ambient) {\n  return active - ambient;\n}",
+                         "The returned difference is the extra signal observed when BaBot deliberately illuminates the scene.")),
+            chapter("Debug a reversed difference", "449-450",
+                    "A sign mistake can make a bright ball look like a negative response. This can break later threshold and weighting logic without a compiler error.",
+                    "The original code uses irLight[i] − ambientLight[i], then smooths the result. The following teaching snippet intentionally changes that sign.",
+                    "Debugging requires checking the meaning of each value, not just whether the code runs.",
+                    debug("Which line is wrong, and why?",
+                          "1  int ambient = ambientLight[i];\n2  int lit = irLight[i];\n3  float reflected = ambient - lit;",
+                          3, ["reverse", "sign", "lit", "ambient", "minus", "subtract"],
+                          "Line 3 reverses the subtraction. It should be lit − ambient, so stronger reflected light raises the value.")),
+        ],
+    },
+    {
+        "id": "position", "title": "From grid to position", "tag": "Lecture 02 · Estimation",
+        "deck": "How sixteen readings become a ball-present test and a continuous X/Y estimate.",
+        "chapters": [
+            chapter("Detect structure, not brightness", "457-464",
+                    "A uniformly bright plate is not evidence of a ball. A localized reflector should make some cells stronger than others.",
+                    "ballOnPlate() finds the maximum and minimum of the smoothed sixteen-channel array and compares their difference with BALL_THRESHOLD = 350.",
+                    "This is a spatial-contrast test. It rejects a uniform offset, but a localized glare spot can still look like a ball; the threshold must match real hardware readings.",
+                    choice("If every irSignal value rises by 100 but their differences stay the same, what happens to max − min?",
+                           ["It rises by 100", "It falls by 100", "It stays the same", "It becomes zero"], 2,
+                           "Adding the same value to every sensor shifts both max and min equally, so the range is unchanged.")),
+            chapter("Build the estimator in order", "466-493",
+                    "Once a ball is detected, the code normalizes each sensor relative to the current frame and then gives stronger cells greater influence.",
+                    "It finds min/max, forms range, mirrors edge indices, computes v = (reading − min)/range, cubes v, and averages grid coordinates using those weights.",
+                    "Normalize first to remove a common scale; cube next to emphasize a peak; divide by total weight at the end to obtain a weighted center.",
+                    order("Put the real estimator steps in order.",
+                          ["Find min and max", "Compute range and guard near-zero", "Normalize each receiver", "Cube normalized value into a weight", "Divide weighted coordinate sums by total weight"],
+                          "The weight calculation needs normalized readings, and the final average needs all weights and weighted coordinate sums.")),
+            chapter("Threshold and guard", "463-475",
+                    "Two guards protect different meanings. The ball threshold asks whether spatial contrast is large enough. The near-zero-range guard prevents dividing by almost zero during normalization.",
+                    "The sketch uses BALL_THRESHOLD = 350 for detection and range < 1e−6 for the arithmetic guard. Those numbers have completely different units and purposes.",
+                    "A design can be mathematically safe yet physically insensitive, or physically selective yet numerically unsafe. Both checks matter.",
+                    fill("Complete the actual detection expression.",
+                         "return (maxV - minV >= ____);", ["BALL_THRESHOLD"],
+                         "The range of sensor values is compared with the configured ball-detection threshold, not with an absolute reading.")),
+            chapter("Write safe normalization", "474-486",
+                    "A normalized response should be zero at the frame minimum and one at the maximum, but only when the range is large enough.",
+                    "The original estimator exits for range < 1e−6, then computes (arr[index] − minV)/range for each mirrored grid cell.",
+                    "Guarding the denominator is more important than a cosmetic result. Returning zero for a degenerate example is a reasonable local teaching exercise.",
+                    code("Write 3–10 lines to return (value − low)/(high − low), or zero if the range is below 1e−6.",
+                         "float norm(float value, float low, float high) {\n  // your logic here\n}",
+                         ["high-low", "1e-6", "return", "value-low", "/"],
+                         [{"if":"/0", "hint":"Guard the range before dividing; uniform readings can make it zero."}],
+                         "float norm(float value, float low, float high) {\n  float range = high - low;\n  if (range < 1e-6) return 0;\n  return (value - low) / range;\n}",
+                         "This mirrors the sketch's separation between a near-zero guard and normalized sensor weights.")),
+            chapter("Debug a grid index", "477-487",
+                    "The estimator deliberately extends its weighted average one cell beyond each edge. mirrorIdx maps those virtual cells back to a valid 0–3 receiver index.",
+                    "In the actual code, my and mx are computed from mirrorIdx before arr[my * 4 + mx] is read. The snippet below skips that mapping.",
+                    "When loops include −1, raw row/column indices are not valid array indices. Out-of-bounds reads can produce plausible-looking but false positions.",
+                    debug("Which line can read outside the sixteen-element array, and why?",
+                          "1  for (int iy = -1; iy <= 4; iy++) {\n2    for (int ix = -1; ix <= 4; ix++) {\n3      float v = arr[iy * 4 + ix];\n4    }\n5  }",
+                          3, ["negative", "mirror", "bound", "index", "-1"],
+                          "Line 3 uses virtual −1/4 positions as real array indices. The real code mirrors them into the valid 0–3 range first.")),
+        ],
+    },
+    {
+        "id": "feedback", "title": "Feedback and PID", "tag": "Lecture 03 · Control",
+        "deck": "Why position error becomes tilt, how this sketch's PID differs from textbook PID, and what smoothing costs.",
+        "chapters": [
+            chapter("The sign of feedback", "500-507",
+                    "A controller needs a target and a measurement. Their difference is an error; the sign tells it which way to tilt.",
+                    "pidControl() uses error = target − input. The ON handler calls it once for X/roll and once for Y/pitch, using separate integral and previous-error state.",
+                    "The direction of physical correction also depends on the geometry and servo mapping; do not flip a sign solely because the numerical error looks unfamiliar.",
+                    choice("For target = 0 and measured input = +2, what error does the sketch compute?",
+                           ["+2", "−2", "0", "It depends on servo offset"], 1,
+                           "The code computes target − input, so 0 − 2 = −2 before gain and geometry transformations.")),
+            chapter("Trace the active path", "202-223",
+                    "A new ball observation should not immediately jerk the platform. The code primes previous error and skips two samples when the ball reappears.",
+                    "After the skip, it calls PID on both axes, smooths roll/pitch, and only then asks movePlatform() to solve servo angles.",
+                    "This ordering limits derivative spikes on reacquisition and separates controller output from mechanical command smoothing.",
+                    order("Arrange the ON-mode actions after a ball is detected.",
+                          ["Prime last error when ball first appears", "Skip two initial control updates", "Run PID on X and Y", "Smooth roll and pitch", "Call movePlatform()"],
+                          "The previous-error state is primed before the skipped updates, avoiding an artificial derivative kick when control resumes.")),
+            chapter("The exact recurrence", "500-508",
+                    "This is a discrete update, not the continuous-time textbook equation. The integral adds I_GAIN × error each call. The derivative uses error − lastErr, softened by |Δe|/(|Δe|+0.001).",
+                    "There is no explicit division by elapsed time in pidControl(). The regular 30 Hz gate supplies approximate timing, but blocking delays and computation can still vary it.",
+                    "Changing the loop rate changes effective I and D behavior. The code also lacks integral anti-windup, so large sustained errors deserve careful testing.",
+                    fill("Complete the first line of the real PID function.",
+                         "float error = ____;", ["target-input", "target - input"],
+                         "The controller asks how far target is from measured input; its sign drives the direction of the commanded correction.")),
+            chapter("Write one proportional step", "500-506",
+                    "Before adding I and D, isolate the proportional idea. The command should be gain times signed position error.",
+                    "The sketch sets P_GAIN = 3.0 and includes P_GAIN × error in its output. I and D add history-dependent behavior; neither changes the definition of error.",
+                    "A tiny pure step can be checked by hand, then compared with the full controller's additional state terms.",
+                    code("Write 3–8 lines returning the proportional contribution for a target and measured input.",
+                         "float pOnly(float input, float target) {\n  // your logic here\n}",
+                         ["return", "P_GAIN", "target-input", "*"],
+                         [{"if":"input-target", "hint":"The sketch defines error as target − input; reversing it reverses the command."}],
+                         "float pOnly(float input, float target) {\n  float error = target - input;\n  return P_GAIN * error;\n}",
+                         "This extracts just the proportional term from pidControl() while preserving the project's error convention.")),
+            chapter("Debug the derivative order", "501-507",
+                    "The derivative-like term compares current and previous errors. Assignment order matters even when all variable names are correct.",
+                    "The actual code forms vel = error − lastErr and updates lastErr only after computing out. The snippet below reverses those operations.",
+                    "Stateful numerical code often fails because it overwrites history before using it. Such a bug can leave a controller seemingly functional but less responsive.",
+                    debug("Which line destroys the velocity estimate, and why?",
+                          "1  float error = target - input;\n2  lastErr = error;\n3  float vel = error - lastErr;\n4  out = P_GAIN * error + D_GAIN * vel;",
+                          2, ["before", "zero", "previous", "history", "overwrite"],
+                          "Line 2 updates lastErr too early. Then line 3 subtracts error from itself, making vel zero every call.")),
+        ],
+    },
+    {
+        "id": "geometry", "title": "Geometry to actuation", "tag": "Lecture 04 · Mechanisms",
+        "deck": "How roll and pitch become three servo commands through rotation, link lengths, and output limits.",
+        "chapters": [
+            chapter("Three anchors, one platform", "336-353",
+                    "The plate is supported at three equally spaced directions. A requested roll/pitch/height changes where each plate attachment point should be in three-dimensional space.",
+                    "baseAngle contains 0°, 120°, and 240°. The code rotates each attachment point using trigonometric expressions and stores platX, platY, and platZ.",
+                    "The transform turns a global platform pose into target point locations. It does not yet say what each servo must do—that is the next geometric step.",
+                    choice("Why does movePlatform() compute three transformed attachment points?",
+                           ["To average three ADC readings", "Because each servo linkage reaches a different point on the plate", "To set USB timing", "To calculate LED current"], 1,
+                           "Each servo controls a different 120°-spaced linkage, so the same platform tilt requires three different target point positions.")),
+            chapter("From points to angles", "355-369",
+                    "For each linkage, the code subtracts the corresponding base anchor, projects into the servo's local plane, and solves a triangle with link lengths R1 and R2.",
+                    "It computes d, bounds cosAngle to [−1,1], uses atan2 − acos, then maps angle indices [2,0,1] to the actual servo A/B/C order.",
+                    "Bounding the cosine input prevents small floating-point overshoots from turning acos into NaN. The final index permutation is part of the wiring/mechanical convention.",
+                    order("Arrange the actual geometry pipeline.",
+                          ["Rotate plate attachment points", "Subtract base anchors", "Project into each servo plane", "Solve triangle angle", "Map angles to servo A/B/C"],
+                          "The triangle cannot be solved until the target point is expressed relative to the proper base anchor and local plane.")),
+            chapter("Protect inverse cosine", "364-366",
+                    "The cosine rule can produce 1.0000001 from roundoff even when a geometry is nearly valid. acos only accepts inputs from −1 to 1.",
+                    "The real code wraps the cosine-rule ratio in constrain(..., −1, 1) before calling acos. This is a numeric guard, not a proof that the requested pose is mechanically reachable.",
+                    "A robust physical controller also needs reachability checks; clipping an impossible target's cosine can mask a real geometric limit.",
+                    fill("Fill the two numeric bounds used in the real line.",
+                         "float cosAngle = constrain(ratio, ____, ____);", ["-1,1", "-1, 1"],
+                         "acos requires its input within [−1,1]. The project clamps the computed ratio to that mathematical domain.")),
+            chapter("Write a domain guard", "364-366",
+                    "This small function isolates the numerical safety rule without needing the whole robot geometry.",
+                    "The sketch uses constrain(value, −1, 1) immediately before acos. Writing it separately makes the intended invariant explicit.",
+                    "A domain guard prevents numerical failure, while a separate reachability test would address whether the mechanism can actually make the pose.",
+                    code("Write 3–8 lines returning x clipped into [−1,1].",
+                         "float safeCos(float x) {\n  // your logic here\n}",
+                         ["return", "constrain", "x", "-1", "1"],
+                         [{"if":"constrain(x,0,1)", "hint":"Negative cosine values are valid; the lower bound must be −1."}],
+                         "float safeCos(float x) {\n  return constrain(x, -1, 1);\n}",
+                         "This mirrors the safety bound immediately before acos in the project's inverse-kinematics calculation.")),
+            chapter("Debug servo ordering", "323-330",
+                    "The trigonometric loop's internal index order is not the physical wiring order. Correct angles attached to the wrong servo can tilt the plate in unexpected directions.",
+                    "The real movePlatform() calls moveServos(angles[2], angles[0], angles[1]); moveServos() then clamps and applies stored offsets.",
+                    "Always trace index mappings through to physical connectors. Mathematical symmetry does not guarantee that an arbitrary wiring permutation is harmless.",
+                    debug("Which line changes the documented A/B/C mapping, and why?",
+                          "1  // angles[] are calculated in baseAngle order\n2  moveServos(angles[0], angles[1], angles[2]);\n3  // actual sketch uses angles[2], angles[0], angles[1]",
+                          2, ["order", "mapping", "2", "0", "1", "servo"],
+                          "Line 2 assumes array order equals physical servo order. The project explicitly remaps [2,0,1].")),
+        ],
+    },
+    {
+        "id": "state", "title": "Timing, modes, calibration", "tag": "Lecture 05 · State",
+        "deck": "Why the loop is split, how button presses become events, and how calibration is saved.",
+        "chapters": [
+            chapter("Two time scales", "150-195",
+                    "The user interface needs frequent button checks and LED updates, while sensor/control work is scheduled around 30 Hz.",
+                    "loop() latches a press on every pass. If every30Hz() returns false, it exits before sensing. Once the gate opens, it scans, handles the current mode, and clears the latch.",
+                    "The latch is essential: without it, a short press detected between 30 Hz ticks could vanish before CALIBRATION or ASSEMBLY sees it.",
+                    choice("Why does loop() store lastPress instead of only using the current press result at 30 Hz?",
+                           ["To increase ADC resolution", "To retain an event detected between timed handler runs", "To change the servo pulse width", "To reset EEPROM"], 1,
+                           "Button detection runs on the fast path. The latch carries a detected event across the early return until a 30 Hz handler consumes it.")),
+            chapter("Classify a button event", "401-429",
+                    "A press is not classified on its first electrical edge. The code records press duration, counts short releases, and waits to see whether more presses follow.",
+                    "A hold of at least 1000 ms becomes LONG_PRESS. Outside calibration, short presses wait for a 500 ms gap to classify single/double/triple/quad; in calibration the count is classified immediately.",
+                    "This is an event recognizer with timing state. Its behavior depends on release edges and the mode-specific grouping rule, not merely on digitalRead() at one instant.",
+                    order("Put the short-press recognition steps in code order.",
+                          ["Detect button-down edge", "Record release duration", "Increment short-press count", "Wait for gap outside calibration", "Convert count to ButtonPress enum"],
+                          "The count is accumulated on short release; only after the timing condition does the function turn it into a named event.")),
+            chapter("Gate the expensive path", "111-117",
+                    "The fast loop should not read 32 ADC samples and recalculate servo angles on every CPU iteration.",
+                    "every30Hz() compares micros() against the previous accepted tick and returns true at most once per 33,333 µs interval.",
+                    "This is a cooperative scheduler. It is simple, but long blocking delays inside handlers can make the actual rate lower than 30 Hz.",
+                    fill("Complete the real early-return expression in loop().",
+                         "if (!____()) return;", ["every30Hz"],
+                         "The scheduler gate leaves button/LED work on the fast path and admits sensing/control at roughly 30 Hz.")),
+            chapter("Write a loss-hold predicate", "225-235",
+                    "When a ball briefly disappears, immediately leveling the plate can create unnecessary motion. The ON handler retains the previous tilt for a short grace period.",
+                    "The code holds only if the ball was previously present and millis() − ballLostTime is less than 1000 ms; otherwise it resets state and levels the platform.",
+                    "The condition combines memory of a prior valid ball with elapsed time. Either part alone would hold when it should not.",
+                    code("Write 3–8 lines returning true only for a previously seen ball lost less than 1000 ms ago.",
+                         "bool holdLast(bool wasPresent, unsigned long elapsedMs) {\n  // your logic here\n}",
+                         ["return", "wasPresent", "elapsedMs", "1000", "&&", "<"],
+                         [{"if":"elapsedMs>1000", "hint":"The sketch holds while elapsed time is *less* than 1000 ms."}],
+                         "bool holdLast(bool wasPresent, unsigned long elapsedMs) {\n  return wasPresent && elapsedMs < 1000;\n}",
+                         "Both prior presence and a short elapsed interval must be true for the grace period.")),
+            chapter("Debug persistence order", "300-310",
+                    "Calibration values are altered before being stored. Swapping those operations would save different numbers from the ones intended at completion.",
+                    "When CALIB_DONE, the sketch subtracts 25 from each offset, writes EEPROM addresses 0/4/8, marks calibration complete, and returns to ON.",
+                    "Persistent state deserves an explicit ordering review: after a reboot, only what was stored survives.",
+                    debug("Which line writes the wrong value, and why?",
+                          "1  EEPROM.put(EEPROM_ADDR_A, servoOffsetA);\n2  servoOffsetA -= 25;\n3  mode = ON;",
+                          1, ["before", "subtract", "25", "offset", "save"],
+                          "Line 1 writes before the final 25-degree adjustment. The real code subtracts first, then saves the adjusted offset.")),
+        ],
+    },
+]

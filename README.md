@@ -8,7 +8,7 @@ This repository develops a hand-assemblable version of [Johan Link's BaBot](http
 | --- | --- |
 | [`hardware/`](hardware/) | Working mechanical STL copied from the original download. |
 | [`PCB/`](PCB/) | Current KiCad electronics, grouped purchase BOMs, routing/validation notes, four-layer Base fabrication files, and supplied two-layer Plate Gerbers under review. |
-| [`software/`](software/) | Working Arduino sketch; currently byte-for-byte identical to the upstream `main.ino`. |
+| [`software/`](software/) | Working Arduino sketch; currently byte-for-byte identical to the upstream `main.ino`. The root-level [interactive software navigator](BaBot_導覽.html) teaches its architecture and algorithms. |
 | [`history/`](history/) | Earlier Base versions, two-layer routing experiments, and prior circuit notes. |
 | [`original/`](original/) | Untouched upstream sketch/license plus original PCBWay, mechanical, schematic, and saved-page downloads. |
 | [`docs/`](docs/) | [Development log](docs/develope_log.md), illustrated [original circuit lesson](docs/electronics_original.html) and [current THT circuit lesson](docs/electronics_tht.html), their Markdown sources, and a blank `hardware_explained.md`. |
@@ -17,7 +17,7 @@ Open the [four-layer Base KiCad project](PCB/KiCad/BaBot_Base_THT_4067_Module.ki
 
 The Base in `PCB/` is routed and its last DRC had **0 violations and 0 unconnected items**. Its 2 A servo-power assumption and 1 oz inner-copper recommendation still need confirmation against the chosen servos and mechanical assembly. The Plate file currently in `PCB/KiCad/` is an **older unrouted copy**. New routed Plate Gerbers have been supplied, but their [fabrication review](PCB/fabrication/plate/REVIEW_NOTES.md) found empty solder-mask plots and missing drills. **Do not order the current Plate ZIP.** The routed Plate KiCad source is still needed for repair. The unfinished two-layer Base is in `history/`, not in the fabrication package.
 
-The software folder is currently a copy for future changes. Open the two self-contained HTML circuit lessons in a browser for schematics, graphs, and interactive examples; their Markdown source guides remain alongside them. Software teaching is deferred until the owner's next requirements. Earlier Base/Plate circuit notes remain accessible in `history/notes/`.
+The software folder is currently a copy for future changes. Open the root-level [BaBot software navigator](BaBot_導覽.html) for a linked code editor, five flowcharts, and theory exercises. The self-contained [original](docs/electronics_original.html) and [THT](docs/electronics_tht.html) circuit lessons provide schematics and interactive examples. Their source guides and HTML builders are in `docs/`. Earlier Base/Plate circuit notes remain accessible in `history/notes/`.
 
 ## Credit and provenance
 
