@@ -1,0 +1,11 @@
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-F_Cu.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-B_Cu.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-F_Paste.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-B_Paste.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-F_Silkscreen.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-B_Silkscreen.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-F_Mask.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-B_Mask.gbr'。
+已繪製到 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-Edge_Cuts.gbr'。
+已建立 Gerber job 檔案 'C:\Users\USER\Desktop\plate\BaBot_Plate_v2THT-job.gbrjob'。
+資訊: 完成。

@@ -1,5 +1,5 @@
-# Routed two-layer Plate: awaiting import
+# Routed two-layer Plate: source file still needed
 
-The project owner reports that the newer Plate has been routed and Gerbers exported, but those files are not yet in this workspace. Add the newer editable KiCad project to `PCB/KiCad/` and its Gerbers/drills here when provided. Verify the imported board against the matching Base pinout and run DRC before treating these files as fabrication-ready.
+The owner supplied the routed Plate Gerbers as [`plate_THT_2layers_Gerbers.zip`](../plate_THT_2layers_Gerbers.zip) and unpacked copies in [`plate/`](../plate/). Their [review notes](../plate/REVIEW_NOTES.md) explain why the current ZIP must **not** be ordered: both solder-mask layers have no pad-opening graphics, and drill files are missing.
 
-The current `PCB/KiCad/BaBot_Plate_THT.kicad_pcb` is the older unrouted copy. The original SMD Plate Gerbers are archived separately in `original/pcbway/plate/`; they are not the new THT Plate fabrication files.
+The editable routed `BaBot_Plate_v2THT.kicad_pcb` is still needed for a safe repair and re-export. The current `PCB/KiCad/BaBot_Plate_THT.kicad_pcb` is an older **unrouted** copy. The original SMD Gerbers in `original/pcbway/plate/` are a different board. This folder remains a placeholder for the corrected, validated two-layer Plate fabrication package.

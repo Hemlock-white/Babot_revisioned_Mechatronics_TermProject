@@ -11,19 +11,12 @@ This log records the development sequence supported by the available files and c
 - **2026-10-10 — Base fabrication and purchase data:** Four-layer Base Gerbers and drill files were exported and packaged as [`PCB/fabrication/BaBot_Base_THT_4layer_Gerbers.zip`](../PCB/fabrication/BaBot_Base_THT_4layer_Gerbers.zip). Both BOMs were grouped by purchasable part and given one-board/five-board quantities, stock fields, checkboxes, and supplier links. The Base power path uses a provisional 2 A assumption and an ordering recommendation of 1 oz inner copper; the actual servo loading has not been measured.
 - **2026-10-11 — Repository organization:** Original downloads were separated from working files, early KiCad milestones were committed in sequence, and superseded Base work was moved to `history/`. `software/main.ino` is currently unchanged from the available upstream copy; there is no separately modified firmware yet. Hardware and system behavior have not been bench-tested.
 
-## Routed Plate import — placeholder
+## Routed Plate import and fabrication review
 
-**Status:** The project owner reports that the newer **two-layer THT Plate has been wired and its Gerbers exported**, but those files have **not yet been provided in this workspace**. The Plate KiCad file currently under `PCB/KiCad/` is the older unrouted copy. Do not confuse the original SMD Plate Gerbers in `original/pcbway/plate/` with the missing new THT Plate export.
-
-When the files arrive, record and fill in:
-
-- Source board/project files and their revision: **pending**
-- New Gerber and drill package location: [`PCB/fabrication/plate_tht/`](../PCB/fabrication/plate_tht/) — **pending**
-- Import date and designer notes: **pending**
-- KiCad DRC, board dimensions, and layer count verified from the imported files: **pending**
-- Base–Plate 20-pin header mapping and mechanical fit check: **pending**
-- Prototype electrical/optical test results: **pending**
+- **2026-10-13 — Gerbers supplied:** The owner placed the newer two-layer `BaBot_Plate_v2THT` package at [`PCB/fabrication/plate_THT_2layers_Gerbers.zip`](../PCB/fabrication/plate_THT_2layers_Gerbers.zip), with unpacked files in [`PCB/fabrication/plate/`](../PCB/fabrication/plate/). This is distinct from the original SMD Plate archive.
+- **2026-10-13 — Export issue identified:** JLCPCB reported missing top and bottom solder masks. Both named mask files have no pad-opening graphics, and the package has no drill files. The Gerber job lists two copper layers, 1.6 mm thickness, and a 100.0456 × 101.5921 mm board. See the [detailed review and correction steps](../PCB/fabrication/plate/REVIEW_NOTES.md). The ZIP is **not fabrication-ready**.
+- **Editable source still pending:** The routed `BaBot_Plate_v2THT.kicad_pcb` and project folder have not been located in this workspace. The Plate KiCad file currently under `PCB/KiCad/` is the older unrouted copy. A corrected Gerber/drill package, DRC, Base–Plate cable check, mechanical fit check, and prototype optical/electrical tests remain pending.
 
 ## Teaching documents
 
-[`hardware_explained.md`](hardware_explained.md) is intentionally blank. The software and electronics/circuit teaching pages have not been created; their scope awaits the owner's instructions. Previous circuit-learning drafts are preserved in [`history/notes/`](../history/notes/).
+[`hardware_explained.md`](hardware_explained.md) remains intentionally blank. The electronics/circuit teaching now has separate [original-design](electronics_original.md) and [current THT/module](electronics_tht.md) guides, written from circuit purpose and operating principles. The software teaching page awaits the owner's instructions. Previous Base/Plate circuit-learning drafts remain in [`history/notes/`](../history/notes/).

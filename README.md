@@ -7,17 +7,17 @@ This repository develops a hand-assemblable version of [Johan Link's BaBot](http
 | Folder | Contents |
 | --- | --- |
 | [`hardware/`](hardware/) | Working mechanical STL copied from the original download. |
-| [`PCB/`](PCB/) | Current KiCad electronics, grouped purchase BOMs, routing/validation notes, and four-layer Base fabrication files. |
+| [`PCB/`](PCB/) | Current KiCad electronics, grouped purchase BOMs, routing/validation notes, four-layer Base fabrication files, and supplied two-layer Plate Gerbers under review. |
 | [`software/`](software/) | Working Arduino sketch; currently byte-for-byte identical to the upstream `main.ino`. |
 | [`history/`](history/) | Earlier Base versions, two-layer routing experiments, and prior circuit notes. |
 | [`original/`](original/) | Untouched upstream sketch/license plus original PCBWay, mechanical, schematic, and saved-page downloads. |
-| [`docs/`](docs/) | [Development log](docs/develope_log.md) and a blank `hardware_explained.md` reserved for later teaching material. |
+| [`docs/`](docs/) | [Development log](docs/develope_log.md), [original electronics guide](docs/electronics_original.md), [current THT electronics guide](docs/electronics_tht.md), and a blank `hardware_explained.md`. |
 
 Open the [four-layer Base KiCad project](PCB/KiCad/BaBot_Base_THT_4067_Module.kicad_pro) or the [two-layer Plate KiCad project](PCB/KiCad/BaBot_Plate_THT.kicad_pro) in KiCad 10. Keep their `BaBot_THT.pretty` footprint folder, symbol library, and library tables beside the project files. Use the [Base BOM](PCB/KiCad/BaBot_Base_THT_4067_Module_BOM.csv) and [Plate BOM](PCB/KiCad/BaBot_Plate_THT_BOM.csv) to plan one or five assemblies and mark parts on hand. The [Base Gerber ZIP](PCB/fabrication/BaBot_Base_THT_4layer_Gerbers.zip) is the four-layer fabrication package; read its [order notes](PCB/fabrication/BaBot_Base_THT_4layer/ORDER_NOTES.md) before ordering.
 
-The Base in `PCB/` is routed and its last DRC had **0 violations and 0 unconnected items**. Its 2 A servo-power assumption and 1 oz inner-copper recommendation still need confirmation against the chosen servos and mechanical assembly. The Plate file currently in this repository is an **older unrouted copy**. The project owner reports a routed two-layer THT Plate and Gerbers exist outside this workspace; [`PCB/fabrication/plate_tht/`](PCB/fabrication/plate_tht/) and the development log reserve their import. The unfinished two-layer Base is in `history/`, not in the fabrication package.
+The Base in `PCB/` is routed and its last DRC had **0 violations and 0 unconnected items**. Its 2 A servo-power assumption and 1 oz inner-copper recommendation still need confirmation against the chosen servos and mechanical assembly. The Plate file currently in `PCB/KiCad/` is an **older unrouted copy**. New routed Plate Gerbers have been supplied, but their [fabrication review](PCB/fabrication/plate/REVIEW_NOTES.md) found empty solder-mask plots and missing drills. **Do not order the current Plate ZIP.** The routed Plate KiCad source is still needed for repair. The unfinished two-layer Base is in `history/`, not in the fabrication package.
 
-The software folder is currently a copy for future changes. No software-teaching or electronics/circuit-teaching HTML or Markdown page has been started in `docs/`; those await the owner's requirements. Earlier circuit notes remain accessible in `history/notes/`.
+The software folder is currently a copy for future changes. The two electronics guides explain the original and current THT circuits; software teaching is deferred until the owner's next requirements. Earlier Base/Plate circuit notes remain accessible in `history/notes/`.
 
 ## Credit and provenance
 
