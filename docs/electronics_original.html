@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Follow the original circuit from its IR emitter bank through sixteen receivers, an analog mux, a bare ATmega32U4, and three servos.">
+<title>Original BaBot electronics · BaBot circuit classroom</title>
+<style>
+:root { color-scheme: light; --ink:#172c40; --muted:#536b7c; --line:#cbd9e2; --blue:#295b91; --blue-soft:#eaf3fb; --teal:#147d83; --teal-soft:#e9f6f3; --orange:#c37337; --orange-soft:#fff2e8; --paper:#f6f9fb; --white:#fff; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+a { color:#145b98; text-underline-offset:3px; }
+a:hover { color:#0f8190; }
+.topbar { background:#12283e; color:white; padding:12px clamp(18px,4vw,60px); display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.brand { font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.topbar a { color:#dcf4ff; font-size:.92rem; }
+.topbar .sibling { margin-left:auto; }
+.hero { background:radial-gradient(circle at 85% 0%,#367b9b 0%,transparent 32%),linear-gradient(125deg,#173a60,#135468); color:white; padding:64px max(24px,calc((100vw - 1180px)/2)); }
+.hero .eyebrow { color:#a4e5dd; text-transform:uppercase; letter-spacing:.16em; font-weight:800; font-size:.8rem; }
+h1 { font-size:clamp(2.2rem,5vw,4.2rem); line-height:1.08; max-width:800px; margin:12px 0 18px; }
+.hero p { max-width:750px; font-size:1.12rem; color:#e8f3f5; }
+.hero .keypoints { display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
+.keypoints span { border:1px solid #8bc9d3; border-radius:999px; padding:5px 13px; font-size:.84rem; background:#ffffff1b; }
+.layout { max-width:1250px; margin:0 auto; display:grid; grid-template-columns:225px minmax(0,1fr); gap:42px; padding:30px 26px 80px; }
+.toc { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow:auto; padding:15px 12px; border-left:3px solid #b7d8e2; }
+.toc strong { display:block; font-size:.75rem; text-transform:uppercase; letter-spacing:.13em; margin:2px 0 12px; color:#5e7484; }
+.toc a { display:block; padding:6px 4px; font-size:.87rem; line-height:1.3; text-decoration:none; color:#365268; }
+.toc a:hover { color:#0b7484; text-decoration:underline; }
+main { min-width:0; max-width:930px; }
+.intro { background:white; border:1px solid var(--line); border-radius:16px; padding:22px 27px; margin-bottom:35px; box-shadow:0 10px 28px #133d5510; }
+.lesson-section { scroll-margin-top:25px; padding:10px 0 32px; border-bottom:1px solid var(--line); }
+h2 { line-height:1.2; margin:28px 0 16px; font-size:clamp(1.55rem,2.4vw,2.05rem); letter-spacing:-.025em; }
+p { margin:13px 0; }
+li { padding-left:4px; margin:8px 0; }
+ul,ol { padding-left:26px; }
+code { background:#eaf0f3; padding:.11em .34em; border-radius:4px; font: .88em/1.45 ui-monospace,SFMono-Regular,Consolas,monospace; overflow-wrap:anywhere; }
+pre { overflow:auto; padding:16px; background:#172a3d; color:white; border-radius:12px; }
+pre code { background:none; color:inherit; padding:0; }
+.figure { margin:24px 0 30px; padding:17px; background:var(--white); border:1px solid var(--line); border-radius:18px; box-shadow:0 12px 30px #133d5510; }
+.figure figcaption { border-top:1px solid #e0e8ed; padding:11px 4px 1px; color:#415c6e; font-size:.9rem; }
+.drawing { width:100%; height:auto; display:block; }
+.svg-label { font:16px system-ui,sans-serif; fill:#263e55; }
+.svg-label.small { font-size:13px; fill:#547083; }
+.svg-label.heavy { font-weight:750; font-size:17px; fill:#18354e; }
+.svg-label.power-text { fill:#a45825; font-weight:700; }
+.svg-label.logic-text,.svg-label.signal-text { fill:#1c648a; font-weight:700; }
+.svg-label.pin-number { font:700 14px ui-monospace,monospace; fill:#1c405b; }
+.svg-label.pin-label { font:14px ui-monospace,monospace; fill:#243f55; }
+.svg-box { fill:#f3f8fb; stroke:#7da9c0; stroke-width:2; }
+.flow-box,.mux-box,.adc-box,.logic-box { fill:#eaf3fa; stroke:#81abc8; }
+.feedback-box,.switch-box,.power-box { fill:#fff0e5; stroke:#d3a076; }
+.pot-box { fill:#eef2fd; stroke:#a8b6db; }
+.ground-box { fill:#ecf6f2; stroke:#9dc8ba; }
+.wire { fill:none; stroke:#385a75; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+.wire.power { stroke:#c57b3b; stroke-width:4; }
+.wire.logic,.wire.signal { stroke:#347ba5; }
+.wire.feedback { stroke:#6797b7; stroke-dasharray:8 7; }
+.wire.ground-return { stroke:#679b8b; stroke-width:3; }
+.wire.arrow,.wire.power.arrow,.wire.logic.arrow { marker-end:url(#arrow-flow); }
+#power-map .wire.arrow { marker-end:url(#power-arrow); }
+.light-ray { fill:none; stroke:#d08428; stroke-width:2.5; marker-end:url(#light-out); }
+.sensor-symbol { fill:#f6fafc; stroke:#4d87a3; stroke-width:2.5; }
+.grid-line { fill:none; stroke:#d9e6ed; stroke-width:1.5; stroke-dasharray:5 5; }
+.axis { fill:none; stroke:#486273; stroke-width:2.5; }
+.switch-step { fill:none; stroke:#c47736; stroke-width:4; }
+.ambient-step { fill:none; stroke:#8da6b4; stroke-width:3; stroke-dasharray:7 6; }
+.sensor-step,.curve { fill:none; stroke:#168293; stroke-width:4; }
+.difference { fill:none; stroke:#d18443; stroke-width:3; }
+.divider { stroke-dasharray:7 6; stroke:#9fb0bb; }
+.curve-point { fill:#e4993e; stroke:#fff; stroke-width:2; }
+.pin-sensor { fill:#e8f3fa; }.pin-control { fill:#e9f6f2; }.pin-power { fill:#fff0e5; }
+.board-core { fill:#d5c5ad; stroke:#9e8c72; }.copper-pad { fill:#cf8c51; }.drill-hole { fill:#fff; stroke:#8798a1; }.mask-line { fill:none; stroke:#4da986; stroke-width:8; }
+.lab { display:grid; grid-template-columns:minmax(260px,1fr) minmax(260px,1.4fr); align-items:center; gap:20px; padding:10px 0; }
+.lab-controls { display:grid; gap:16px; }
+.lab label { font-weight:700; color:#31546b; }
+.lab output { float:right; color:#087b84; font-variant-numeric:tabular-nums; }
+.lab input[type=range] { display:block; width:100%; accent-color:#188b9b; margin:12px 0 4px; cursor:pointer; }
+.readout { padding:10px 14px; border-radius:10px; background:#edf6f8; display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+.readout strong { font-size:1.2rem; color:#0c6c7e; font-variant-numeric:tabular-nums; }
+.readout span { color:#55717d; font-size:.85rem; }
+.fine-print { color:#667783; font-size:.8rem; line-height:1.5; margin:0; }
+.sensor-lab { grid-template-columns:minmax(240px,360px) 1fr; }
+.sensor-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:10px; background:#f1f7fa; border-radius:14px; }
+.sensor-cell { aspect-ratio:1; display:grid; place-items:center; border-radius:12px; background:#dceaf2; border:1px solid #9db9ca; transition:background .14s; }
+.sensor-cell span { background:#ffffffbd; border-radius:5px; padding:0 5px; font:700 12px ui-monospace,monospace; }
+.mux-lab { padding:15px; background:#f3f8fb; border-radius:12px; }
+.mux-lab label { display:block; font-weight:700; color:#31546b; }
+.mux-lab input { display:block; width:100%; margin:12px 0 16px; accent-color:#188b9b; }
+.mux-lab output { color:#087b84; font-variant-numeric:tabular-nums; }
+.mux-channels { display:grid; grid-template-columns:repeat(8,1fr); gap:5px; }
+.mux-channels span { display:grid; place-items:center; background:#d8eaf3; border:1px solid #97b9c9; border-radius:6px; padding:7px 2px; font:700 13px ui-monospace,monospace; }
+.mux-channels span.active { background:#f1b66b; border-color:#b56d27; color:#3e2717; }
+.mux-address { display:flex; flex-wrap:wrap; gap:10px 20px; align-items:baseline; margin-top:16px; }
+.mux-address strong { font:700 1.25rem ui-monospace,monospace; color:#155f80; }
+.table-wrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; min-width:560px; font-size:.9rem; }
+th { background:#dcebf2; text-align:left; }
+th,td { padding:11px 13px; border:1px solid #c8d8e1; vertical-align:top; }
+tbody tr:nth-child(2n) { background:#eef5f8; }
+.footer { padding:30px; text-align:center; color:#667c8c; }
+@media (max-width:850px) { .layout { display:block; padding:22px 16px 65px; }.toc { position:static; max-height:none; border-left:0; border-bottom:2px solid #d1e3ea; padding:8px 0 20px; margin-bottom:24px; }.toc a { display:inline-block; margin-right:10px; }.lab,.sensor-lab { grid-template-columns:1fr; }.hero { padding:45px 24px; } }
+@media (max-width:520px) { .topbar .sibling { margin-left:0; }.figure { padding:8px; }.svg-label { font-size:14px; }.svg-label.small { font-size:12px; }.readout { display:block; }.readout span { display:block; } }
+@media print { body { background:white; color:black; } .topbar,.toc { display:none; } .hero { color:black; background:white; padding:10px 0; } .hero p,.hero .eyebrow { color:black; } .layout { display:block; padding:0; } main { max-width:none; } .lesson-section,.figure { break-inside:avoid; } .figure { box-shadow:none; } a { color:black; } }
+</style>
+</head>
+<body>
+<header class="topbar"><span class="brand">BaBot circuit classroom</span><a href="../README.md">Repository README</a><a class="sibling" href="electronics_tht.html">Current THT version →</a></header>
+<div class="hero"><div class="eyebrow">Illustrated electronics lesson</div><h1>Original BaBot electronics</h1><p>Follow the original circuit from its IR emitter bank through sixteen receivers, an analog mux, a bare ATmega32U4, and three servos.</p><div class="keypoints"><span>Original manufactured boards</span><span>16 sensor channels</span><span>Digital-pot load</span><span>LED switching</span></div></div>
+<div class="layout"><nav class="toc" aria-label="Lesson sections"><strong>In this lesson</strong><a href="#start-with-the-problem-then-the-blocks">Start with the problem, then the blocks</a><a href="#1-make-a-controlled-source-of-light">1. Make a controlled source of light</a><a href="#2-turn-reflected-light-into-an-electrical-quantity">2. Turn reflected light into an electrical quantity</a><a href="#3-share-one-adc-among-sixteen-analog-signals">3. Share one ADC among sixteen analog signals</a><a href="#4-why-the-original-board-has-an-adjustable-resistance">4. Why the original board has an adjustable resistance</a><a href="#5-reject-steady-room-light-by-measuring-twice">5. Reject steady room light by measuring twice</a><a href="#6-turn-a-position-estimate-into-movement">6. Turn a position estimate into movement</a><a href="#recreate-the-design-reasoning-yourself">Recreate the design reasoning yourself</a></nav><main>
+<div class="intro"><strong>How to use this page.</strong> Read each schematic from the source of energy or signal toward the result. The drawings simplify repeated branches and are not physical PCB pinouts. Blue marks sensing/logic; orange marks power and switched light. Move the two teaching simulators to see how resistance and ball position change the signals. All interactive calculations are illustrative.</div>
+<p>This guide explains the <em>manufactured original</em> BaBot Base and Plate as a system. Its purpose is to show why each circuit exists and how its behavior follows from electrical and optical principles. The reconstructed connectivity comes from the <a href="../original/pcbway/">archived PCBWay Base and Plate files</a>, their manufacturing BOMs and flying-probe data, the <a href="../original/schematics/schematics_iNWgbALrz5.pdf">original schematic</a>, and the <a href="../original/upstream/BABOT-main/main.ino">published sketch</a>. The old schematic and manufacturing BOM disagree on some values; this guide identifies the manufactured BOM value when that matters. The editable upstream PCB was not available, so a signal path inferred from manufacturing data is labeled as such.</p>
+<section class="lesson-section" id="start-with-the-problem-then-the-blocks"><h2>Start with the problem, then the blocks</h2>
+<figure class="figure" id="system-flow"><svg class="drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" role="img" aria-label="BaBot optical sensing and servo-control loop"><title>BaBot optical sensing and servo-control loop</title><defs><marker id="arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#527eb1"/></marker></defs><rect class="svg-box flow-box" x="18" y="80" width="160" height="70" rx="16"/><text class="svg-label heavy" x="98" y="110" text-anchor="middle">21 IR LEDs</text><text class="svg-label small" x="98" y="133" text-anchor="middle">original Plate</text><rect class="svg-box flow-box" x="212" y="80" width="160" height="70" rx="16"/><text class="svg-label heavy" x="292" y="110" text-anchor="middle">16 sensors</text><text class="svg-label small" x="292" y="133" text-anchor="middle">photocurrent</text><rect class="svg-box flow-box" x="410" y="80" width="160" height="70" rx="16"/><text class="svg-label heavy" x="490" y="110" text-anchor="middle">bare 4067</text><text class="svg-label small" x="490" y="133" text-anchor="middle">analog switch</text><rect class="svg-box flow-box" x="620" y="80" width="160" height="70" rx="16"/><text class="svg-label heavy" x="700" y="110" text-anchor="middle">ATmega32U4</text><text class="svg-label small" x="700" y="133" text-anchor="middle">ADC + control</text><rect class="svg-box flow-box" x="827" y="80" width="160" height="70" rx="16"/><text class="svg-label heavy" x="907" y="110" text-anchor="middle">3 servos</text><text class="svg-label small" x="907" y="133" text-anchor="middle">tilt the plate</text><path class="wire arrow" d="M178 115L208 115"/><path class="wire arrow" d="M372 115L402 115"/><path class="wire arrow" d="M570 115L600 115"/><path class="wire arrow" d="M780 115L810 115"/><text class="svg-label small" x="196" y="65" text-anchor="middle">reflected light</text><text class="svg-label small" x="392" y="65" text-anchor="middle">PT00–PT15</text><text class="svg-label small" x="596" y="65" text-anchor="middle">U1_SIG → A0</text><text class="svg-label small" x="804" y="65" text-anchor="middle">3 pulse signals</text><path class="wire feedback" d="M700 151V224H102V151" marker-end="url(#arrow-flow)"/><rect class="svg-box feedback-box" x="355" y="193" width="258" height="60" rx="16"/><text class="svg-label heavy" x="484" y="223" text-anchor="middle">IR switch Q17</text><text class="svg-label small" x="484" y="246" text-anchor="middle">LEDs off / LEDs on</text><text class="svg-label small" x="700" y="194" text-anchor="end">MCU controls illumination</text></svg><figcaption>The light path is optical between emitter and receiver; all other links are electrical. The controller deliberately switches the LEDs so it can compare ambient and illuminated readings.</figcaption></figure><figure class="figure" id="sensor-map"><div class="lab sensor-lab" data-lab="grid"><div class="sensor-grid" aria-label="4 by 4 receiver response map"><div class="sensor-cell" data-cell="0" role="img" aria-label="sensor 00"><span>00</span></div><div class="sensor-cell" data-cell="1" role="img" aria-label="sensor 01"><span>01</span></div><div class="sensor-cell" data-cell="2" role="img" aria-label="sensor 02"><span>02</span></div><div class="sensor-cell" data-cell="3" role="img" aria-label="sensor 03"><span>03</span></div><div class="sensor-cell" data-cell="4" role="img" aria-label="sensor 04"><span>04</span></div><div class="sensor-cell" data-cell="5" role="img" aria-label="sensor 05"><span>05</span></div><div class="sensor-cell" data-cell="6" role="img" aria-label="sensor 06"><span>06</span></div><div class="sensor-cell" data-cell="7" role="img" aria-label="sensor 07"><span>07</span></div><div class="sensor-cell" data-cell="8" role="img" aria-label="sensor 08"><span>08</span></div><div class="sensor-cell" data-cell="9" role="img" aria-label="sensor 09"><span>09</span></div><div class="sensor-cell" data-cell="10" role="img" aria-label="sensor 10"><span>10</span></div><div class="sensor-cell" data-cell="11" role="img" aria-label="sensor 11"><span>11</span></div><div class="sensor-cell" data-cell="12" role="img" aria-label="sensor 12"><span>12</span></div><div class="sensor-cell" data-cell="13" role="img" aria-label="sensor 13"><span>13</span></div><div class="sensor-cell" data-cell="14" role="img" aria-label="sensor 14"><span>14</span></div><div class="sensor-cell" data-cell="15" role="img" aria-label="sensor 15"><span>15</span></div></div><div class="lab-controls"><label>Ball horizontal position <output data-out="x">1.5</output><input data-input="x" type="range" min="0" max="3" step="0.1" value="1.5"></label><label>Ball vertical position <output data-out="y">1.5</output><input data-input="y" type="range" min="0" max="3" step="0.1" value="1.5"></label><div class="readout"><strong data-out="centroid">(1.50, 1.50)</strong><span>example weighted center</span></div><p class="fine-print">Colors represent hypothetical IR-on minus IR-off values, not recorded readings. In a build, cell 00 is PT00 and cell 15 is PT15; confirm physical orientation against the assembled plate.</p></div></div><figcaption>Move the ball sliders. Neighboring receivers respond with different strengths, giving the controller a smooth position estimate. One yes/no detector could not provide this two-dimensional pattern.</figcaption></figure>
+<p>The robot must observe a ball&#x27;s position without touching it, decide how the platform should tilt, and make three servos tilt it. That creates three different electrical jobs: <strong>sense</strong> reflected light, <strong>compute</strong> an error and motion command, and <strong>deliver power</strong> to the emitters and servos. Keeping these jobs distinct helps explain the entire schematic.</p>
+<p>This is a <strong>4 × 4 receiver grid</strong>, surrounded by <strong>21 emitters</strong>. There is no image sensor. The position estimate comes from how strongly each receiver sees light reflected from the ball.</p>
+</section>
+<section class="lesson-section" id="1-make-a-controlled-source-of-light"><h2>1. Make a controlled source of light</h2>
+<figure class="figure" id="led-schematic"><svg class="drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-label="Original LED bank and AO3400A switch"><title>Original LED bank and AO3400A switch</title><defs><marker id="light-out" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#cc7b20"/></marker></defs><path class="wire power" d="M110 65L585 65"/><text class="svg-label power-text" x="110" y="45" text-anchor="start">+5 V emitter rail</text><path class="wire power" d="M185 65L185 115"/><polyline class="wire resistor" points="185,115 173,125 197,135 173,145 197,155 185,165"/><text class="svg-label small" x="209" y="145" text-anchor="start">R1 330 Ω</text><path class="wire " d="M185 165L185 209"/><path class="wire" d="M170 211H200L185 236Z"/><path class="wire " d="M167 238L203 238"/><path class="wire " d="M185 238L185 295"/><path class="light-ray" d="M205 211L233 187M207 222L235 198"/><text class="svg-label small" x="139" y="226" text-anchor="start">IR1</text><path class="wire power" d="M335 65L335 115"/><polyline class="wire resistor" points="335,115 323,125 347,135 323,145 347,155 335,165"/><text class="svg-label small" x="359" y="145" text-anchor="start">R2 330 Ω</text><path class="wire " d="M335 165L335 209"/><path class="wire" d="M320 211H350L335 236Z"/><path class="wire " d="M317 238L353 238"/><path class="wire " d="M335 238L335 295"/><path class="light-ray" d="M355 211L383 187M357 222L385 198"/><text class="svg-label small" x="289" y="226" text-anchor="start">IR2</text><path class="wire power" d="M485 65L485 115"/><polyline class="wire resistor" points="485,115 473,125 497,135 473,145 497,155 485,165"/><text class="svg-label small" x="509" y="145" text-anchor="start">R21 330 Ω</text><path class="wire " d="M485 165L485 209"/><path class="wire" d="M470 211H500L485 236Z"/><path class="wire " d="M467 238L503 238"/><path class="wire " d="M485 238L485 295"/><path class="light-ray" d="M505 211L533 187M507 222L535 198"/><text class="svg-label small" x="439" y="226" text-anchor="start">IR21</text><path class="wire power" d="M185 295L625 295"/><text class="svg-label small" x="345" y="321" text-anchor="middle">shared cathode bus</text><path class="wire power" d="M625 295L625 312"/><rect class="svg-box switch-box" x="583" y="312" width="84" height="48" rx="16"/><text class="svg-label heavy" x="625" y="342" text-anchor="middle">Q17</text><text class="svg-label small" x="625" y="365" text-anchor="middle">MOSFET</text><path class="wire power" d="M625 360L625 381"/><path class="wire " d="M625 373L625 391"/><path class="wire " d="M608 391L642 391"/><path class="wire " d="M614 397L636 397"/><path class="wire " d="M620 403L630 403"/><text class="svg-label small" x="570" y="354" text-anchor="end">drain</text><text class="svg-label small" x="571" y="382" text-anchor="end">source</text><path class="wire " d="M667 336L750 336"/><path class="wire " d="M750 336L750 352"/><polyline class="wire resistor" points="750,352 738,359.2 762,366.4 738,373.6 762,380.8 750,388"/><text class="svg-label small" x="774" y="375" text-anchor="start">R22 10 kΩ</text><path class="wire " d="M750 387L750 405"/><path class="wire " d="M733 405L767 405"/><path class="wire " d="M739 411L761 411"/><path class="wire " d="M745 417L755 417"/><path class="wire " d="M750 336L958 336"/><text class="svg-label power-text" x="960" y="341" text-anchor="end">MCU D7</text><text class="svg-label small" x="548" y="145" text-anchor="start">× 21 branches total</text></svg><figcaption>Each LED has its own 330 Ω resistor; 21 branches share Q17. R22 pulls the gate low until the MCU drives it high. This is a simplified electrical schematic, not a PCB pinout.</figcaption></figure>
+<p>The Plate&#x27;s <code>IR1</code>–<code>IR21</code> are Everlight IR204/H60 infrared LEDs. An LED emits light when current flows in its forward direction. Here each branch is <code>5 V emitter rail → its own resistor R1–R21 → IR LED → shared cathode bus → Q17 MOSFET → ground</code>. Each resistor is <strong>330 Ω in the original manufacturing BOM</strong>. The older schematic shows a different value, so use the BOM if you are studying the actually supplied fabrication files. The emitter is specified around 940 nm; a suitable infrared receiver can detect it even though human eyes cannot. See the <a href="https://en.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/IR204-H60.pdf">Everlight datasheet</a>.</p>
+<p>Why one resistor per LED? LEDs do not share current evenly when simply paralleled: a small difference in forward voltage makes one branch take more current, heat up, and take still more. A resistor in <strong>each</strong> branch adds negative feedback. As branch current increases, its resistor drops more voltage, opposing the increase. Using a rough 1.2 V LED drop and 0.1 V switch drop, the estimated branch current is <code>(5 − 1.2 − 0.1) / 330 ≈ 11 mA</code>; 21 lit emitters would then draw about <strong>0.24 A</strong>. A branch resistor would dissipate roughly <code>I²R ≈ 0.04 W</code>. These are design estimates, not measured currents; forward voltage, supply voltage, and switch drop vary.</p>
+<p><code>Q17</code> is an AO3400A N-channel MOSFET. It sits <strong>below</strong> the LEDs, so it is a low-side switch. A high gate voltage creates a conductive channel from drain to source and completes all 21 branches; a low gate voltage stops them. The microcontroller pin charges the gate capacitance, while the power supply and Q17 carry the LED current. <code>R22</code>, a 10 kΩ gate-to-ground resistor, holds the switch off when the controller is resetting or disconnected. This avoids an unpredictable floating gate. The MOSFET is a switch here, not an amplifier or a current regulator. <a href="https://www.aosmd.com/res/data_sheets/AO3400A.pdf">AO3400A manufacturer datasheet</a>.</p>
+<p><strong>Design lesson:</strong> Start with the optical power needed, then choose a safe LED current and resistor from voltage <em>limits</em>, not only a typical value. Size the switch, supply, connector, copper, and ground return for the <em>sum</em> of branch currents.</p>
+</section>
+<section class="lesson-section" id="2-turn-reflected-light-into-an-electrical-quantity"><h2>2. Turn reflected light into an electrical quantity</h2>
+<figure class="figure" id="sensing-schematic"><svg class="drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-label="Original sensor path with a digital-pot load"><title>Original sensor path with a digital-pot load</title><defs><marker id="sense-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#527eb1"/></marker></defs><path class="wire logic" d="M65 62L390 62"/><text class="svg-label logic-text" x="65" y="43" text-anchor="start">+5V_LOGIC</text><path class="wire logic" d="M125 62L125 95"/><circle class="sensor-symbol" cx="125" cy="122" r="27"/><path class="wire" d="M113 122L135 122M135 104V140"/><path class="wire " d="M125 149L125 162"/><text class="svg-label small" x="125" y="182" text-anchor="middle">PT00</text><path class="wire signal" d="M125 162L460 162"/><path class="wire logic" d="M235 62L235 155"/><circle class="sensor-symbol" cx="235" cy="182" r="27"/><path class="wire" d="M223 182L245 182M245 164V200"/><path class="wire " d="M235 209L235 222"/><text class="svg-label small" x="235" y="242" text-anchor="middle">PT01</text><path class="wire signal" d="M235 222L460 222"/><path class="wire logic" d="M345 62L345 215"/><circle class="sensor-symbol" cx="345" cy="242" r="27"/><path class="wire" d="M333 242L355 242M355 224V260"/><path class="wire " d="M345 269L345 282"/><text class="svg-label small" x="345" y="302" text-anchor="middle">PT15</text><path class="wire signal" d="M345 282L460 282"/><rect class="svg-box mux-box" x="460" y="99" width="206" height="188" rx="16"/><text class="svg-label heavy" x="563" y="129" text-anchor="middle">CD74HC4067</text><text class="svg-label small" x="563" y="152" text-anchor="middle">16 → 1 analog switch</text><text class="svg-label small" x="560" y="227" text-anchor="middle">S0–S3 choose a channel</text><path class="wire signal" d="M666 194L839 194"/><rect class="svg-box adc-box" x="839" y="159" width="130" height="72" rx="16"/><text class="svg-label heavy" x="904" y="189" text-anchor="middle">A0 ADC</text><text class="svg-label small" x="904" y="212" text-anchor="middle">5 V domain</text><text class="svg-label signal-text" x="744" y="177" text-anchor="middle">U1_SIG</text><path class="wire " d="M752 194L752 244"/><polyline class="wire resistor" points="752,244 740,253 764,262 740,271 764,280 752,289"/><text class="svg-label small" x="776" y="271" text-anchor="start">R18 500 Ω</text><path class="wire " d="M752 289L752 307"/><rect class="svg-box pot-box" x="705" y="307" width="95" height="55" rx="16"/><text class="svg-label heavy" x="752" y="337" text-anchor="middle">TPL0501</text><text class="svg-label small" x="752" y="360" text-anchor="middle">100 kΩ</text><path class="wire " d="M752 362L752 380"/><path class="wire " d="M735 380L769 380"/><path class="wire " d="M741 386L763 386"/><path class="wire " d="M747 392L757 392"/><text class="svg-label small" x="813" y="377" text-anchor="start">W and L → GND</text></svg><figcaption>The selected phototransistor supplies light-dependent current. R18 and the TPL0501 load convert it to a voltage at A0. The TPL0501 control pins exist on the board, but the archived sketch does not set a known tap. Simplified schematic.</figcaption></figure>
+<p><code>Q1</code>–<code>Q16</code> are 1540031NC6090 phototransistors. A photon absorbed in the device creates charge carriers; transistor action lets a light-dependent collector-emitter current flow. More reflected infrared generally means more current, subject to distance, angle, ambient illumination, and saturation. The receiver is sensitive near the emitters&#x27; 940 nm wavelength. Its case and viewing angle also shape what part of the plate it sees. <a href="https://www.we-online.com/components/products/datasheet/1540031NC6090.pdf">Würth receiver datasheet</a>.</p>
+<p>The manufacturing net data connect each receiver&#x27;s collector to the logic 5 V rail and its emitter to one unique <code>PT00</code>–<code>PT15</code> wire. The Plate does <strong>not</strong> have sixteen individual load resistors. The selected receiver is instead loaded on the Base after the multiplexer. This is the key to the circuit: a phototransistor supplies a light-dependent current, but the ADC requires a voltage. Current through an effective resistance gives a voltage: approximately <code>Vsignal ≈ Iphoto × Rload</code> while the transistor and load remain in their usable ranges. For example, 10 µA through 10 kΩ would produce about 0.1 V; 100 µA would produce about 1 V. Those currents are illustrative, not measurements of this robot. The exact node voltage also depends on the phototransistor, multiplexer resistance, and ADC loading.</p>
+<p>Why sixteen sensors? A single light reading cannot say where the ball is. A grid supplies a spatial pattern. With a reflective ball over one region, nearby receivers tend to respond more strongly than distant ones. The software can then compute a weighted center of that pattern. Optical overlap is useful: if only one sensor ever responded at a time, the position estimate would jump from cell to cell.</p>
+</section>
+<section class="lesson-section" id="3-share-one-adc-among-sixteen-analog-signals"><h2>3. Share one ADC among sixteen analog signals</h2>
+<figure class="figure" id="mux-selector"><div class="mux-lab" data-lab="mux"><label>Choose a receiver channel <output data-out="channel">06</output><input data-input="channel" type="range" min="0" max="15" step="1" value="6"></label><div class="mux-channels"><span data-channel="0">00</span><span data-channel="1">01</span><span data-channel="2">02</span><span data-channel="3">03</span><span data-channel="4">04</span><span data-channel="5">05</span><span data-channel="6">06</span><span data-channel="7">07</span><span data-channel="8">08</span><span data-channel="9">09</span><span data-channel="10">10</span><span data-channel="11">11</span><span data-channel="12">12</span><span data-channel="13">13</span><span data-channel="14">14</span><span data-channel="15">15</span></div><div class="mux-address"><span>S3 S2 S1 S0</span><strong data-out="bits">0 1 1 0</strong><span>Only PT<output data-out="pt">06</output> connects to U1_SIG → A0.</span></div></div><figcaption>Four select bits encode sixteen states: 2⁴ = 16. Move the slider to see the binary address and the single channel connected to A0. The mux passes an analog voltage; the ADC performs the conversion.</figcaption></figure>
+<p><code>U1</code> on the Base is a bare <code>CD74HC4067SM96</code> 16-channel <strong>analog multiplexer</strong>. It is a set of electronically controlled switches, not an ADC. Four digital address lines (<code>S0</code>–<code>S3</code>) select one of sixteen <code>PTxx</code> inputs and connect it to <code>U1_SIG</code>; the ATmega32U4 reads that common node at analog input <code>A0</code>. For example, binary address <code>0000</code> selects channel 0 and <code>1111</code> selects channel 15. Its enable input is active-low; <code>R1</code> (10 kΩ to ground) normally keeps the channels available. A high enable disconnects all channels. <a href="https://www.ti.com/lit/ds/symlink/cd74hc4067.pdf">TI CD74HC4067 datasheet</a>.</p>
+<p>Why multiplex? It saves fifteen MCU ADC connections while retaining all sixteen sensor wires. The price is time: the controller must select and measure channels sequentially, and only one shares the load at a time. Switching also disturbs the common node because the old channel, new source, trace capacitance, and ADC sampling capacitor can have different voltages. The published sketch waits <strong>600 µs after each channel selection</strong> before calling <code>analogRead()</code>. That delay is there to let the analog node settle; the correct delay for a redesign should be checked with the actual source resistance, cable, and ADC behavior.</p>
+<p>An analog switch has finite on-resistance, leakage, capacitance, and voltage limits. It cannot measure a signal outside its supply rails. If a channel is noisy or always reads like the preceding channel, suspect settling and source impedance before assuming the digital address is wrong.</p>
+</section>
+<section class="lesson-section" id="4-why-the-original-board-has-an-adjustable-resistance"><h2>4. Why the original board has an adjustable resistance</h2>
+<figure class="figure" id="load-simulator"><div class="lab" data-lab="load">
+      <div class="lab-controls">
+        <label>Adjustable resistance <output data-out="r">10.0 kΩ</output>
+          <input data-input="r" type="range" min="0" max="100000" step="250" value="10000"></label>
+        <label>Example photocurrent <output data-out="i">40 µA</output>
+          <input data-input="i" type="range" min="0" max="150" step="1" value="40"></label>
+        <div class="readout"><strong data-out="v">0.42 V</strong><span>simplified A0 voltage</span></div>
+        <div class="readout"><strong data-out="adc">86 / 1023</strong><span>illustrative 10-bit ADC count</span></div>
+      </div>
+      <svg class="drawing graph" viewBox="0 0 650 290" role="img" aria-label="Conceptual sensor voltage versus photocurrent graph">
+        <title>Conceptual sensor voltage versus photocurrent</title>
+        <path class="grid-line" d="M72 30H612M72 81H612M72 132H612M72 183H612M72 234H612"/>
+        <path class="axis" d="M72 30V234H612"/>
+        <text x="46" y="36" class="svg-label small">5 V</text><text x="42" y="238" class="svg-label small">0 V</text>
+        <text x="550" y="265" class="svg-label small">photocurrent →</text>
+        <text x="80" y="48" class="svg-label small">ADC ceiling</text>
+        <path data-curve="load" class="curve" d=""/>
+        <circle data-point="load" class="curve-point" cx="72" cy="234" r="7"/>
+      </svg>
+      <p class="fine-print">Model: V ≈ I × (500 Ω + R), limited to 5 V. This is an teaching approximation; real phototransistors, mux resistance, ADC loading and supply headroom change the measured result.</p>
+    </div><figcaption>Move the TPL0501 tap (conceptual) and hypothetical photocurrent sliders. A larger load makes weak light easier to see, but reaches the 5 V ADC ceiling sooner. The graph is illustrative, not a measured BaBot transfer curve.</figcaption></figure>
+<p>The original manufactured <code>U2</code> is a <strong>bare TPL0501-100 digital-potentiometer IC</strong>, not a Mikroe DIGI POT 2 module. Its <code>H</code> terminal reaches <code>U1_SIG</code> through <code>R18</code>; its wiper <code>W</code> and <code>L</code> end are connected to ground in the reconstructed manufacturing netlist. <code>R18</code> is <strong>500 Ω in the original manufacturing BOM</strong>, although the older schematic shows a different value. The resulting circuit is a variable <strong>shunt/load to ground</strong>: approximately <code>Rload = R18 + RH–W</code>. <code>R18</code> keeps some series resistance even when the adjustable portion is near zero. The TPL0501-100 is nominally <strong>100 kΩ end to end</strong>, with 256 selectable taps; 10 kΩ is a possible working adjustment, not the part&#x27;s nominal resistance. <a href="https://www.ti.com/lit/ds/symlink/tpl0501-100.pdf">TI TPL0501-100 datasheet</a>.</p>
+<p>Why adjust it? For a given photocurrent, a larger load produces a larger ADC voltage. That can make weak reflections easier to distinguish, but an excessively large load can push bright readings toward the 5 V ceiling and make the node slower to settle. A smaller load is less sensitive and faster, but may leave too little difference between ball and background. The desired setting is where dark, ambient, and ball-reflection readings remain separable <em>without clipping</em>. It should be found by measurement.</p>
+<p>The TPL0501 has <code>CS</code>, <code>DIN</code>, and <code>SCLK</code> control connections in the original board net data. However, the <a href="../original/upstream/BABOT-main/main.ino">available published `main.ino`</a> does <strong>not</strong> contain TPL0501 or SPI setup/writes. Therefore this archive does not establish a deliberate startup tap or show that software adjusted it in use. Its physical loading role is supported by the board connectivity; its operating tap in an actual original build is unverified. Do not assume that editing a constant in the archived sketch controls U2.</p>
+</section>
+<section class="lesson-section" id="5-reject-steady-room-light-by-measuring-twice"><h2>5. Reject steady room light by measuring twice</h2>
+<figure class="figure" id="timing"><svg class="drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 365" role="img" aria-label="Conceptual IR-off and IR-on sensor readings over time"><title>Conceptual IR-off and IR-on sensor readings over time</title><path class="wire axis" d="M105 42L105 285"/><path class="wire axis" d="M105 285L950 285"/><text class="svg-label small" x="72" y="65" text-anchor="middle">voltage</text><text class="svg-label small" x="942" y="311" text-anchor="end">time →</text><path class="grid-line" d="M105 235H950M105 176H950M105 112H950"/><path class="switch-step" d="M112 252H440V220H900"/><path class="ambient-step" d="M112 214H440V214H900"/><path class="sensor-step" d="M112 214H440V132H900"/><path class="wire divider" d="M440 69L440 284"/><text class="svg-label heavy" x="275" y="57" text-anchor="middle">IR OFF: ambient scan</text><text class="svg-label heavy" x="685" y="57" text-anchor="middle">IR ON: illuminated scan</text><text class="svg-label signal-text" x="786" y="119" text-anchor="start">ambient + reflection</text><text class="svg-label small" x="786" y="202" text-anchor="start">steady ambient</text><text class="svg-label small" x="786" y="245" text-anchor="start">LED control</text><path class="difference" d="M745 132H760M753 132V214M745 214H760"/><text class="svg-label small" x="765" y="175" text-anchor="start">subtract = reflected IR</text><text class="svg-label small" x="210" y="340" text-anchor="start">Each half contains 16 sequential mux selections; the sketch waits 600 µs after each selection.</text></svg><figcaption>Conceptual voltage trace, not measured data. Background light is present in both scans; reflected light from the robot’s emitters appears in the ON scan. Subtraction removes steady ambient, but cannot undo saturation or rapidly changing light.</figcaption></figure>
+<p>The MCU first turns the emitters <strong>off</strong> and reads all sixteen sensors: this is the ambient/background set. It then turns the emitters <strong>on</strong>, reads all sixteen again, and subtracts <code>off</code> from <code>on</code> channel by channel. If room illumination stays nearly constant over the two scans, much of it cancels. The useful signal is the change caused by the robot&#x27;s own infrared source and the ball&#x27;s reflection. The sketch smooths these differences, checks whether the spatial range suggests a ball, and computes a weighted center.</p>
+<p>This is the circuit reason for having a controllable MOSFET rather than leaving the IR LEDs permanently on. Subtraction cannot repair a saturated ADC, a receiver pointed the wrong way, or a rapidly flickering external IR source. The optical and electrical design must first keep readings in a useful range.</p>
+</section>
+<section class="lesson-section" id="6-turn-a-position-estimate-into-movement"><h2>6. Turn a position estimate into movement</h2>
+<figure class="figure" id="power-map"><svg class="drawing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 402" role="img" aria-label="Original USB-C entry and bare-controller support"><title>Original USB-C entry and bare-controller support</title><defs><marker id="power-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#bd6b3c"/></marker></defs><rect class="svg-box logic-box" x="30" y="56" width="190" height="80" rx="16"/><text class="svg-label heavy" x="125" y="86" text-anchor="middle">USB-C inputs</text><text class="svg-label small" x="125" y="109" text-anchor="middle">U12 + U19</text><rect class="svg-box logic-box" x="30" y="218" width="190" height="75" rx="16"/><text class="svg-label heavy" x="125" y="248" text-anchor="middle">CC pull-downs</text><text class="svg-label small" x="125" y="271" text-anchor="middle">4 × 5.1 kΩ to GND</text><rect class="svg-box power-box" x="360" y="56" width="220" height="80" rx="16"/><text class="svg-label heavy" x="470" y="86" text-anchor="middle">diodes + bridges</text><text class="svg-label small" x="470" y="109" text-anchor="middle">U20–U26</text><rect class="svg-box power-box" x="773" y="56" width="190" height="80" rx="16"/><text class="svg-label heavy" x="868" y="86" text-anchor="middle">5 V rails</text><text class="svg-label small" x="868" y="109" text-anchor="middle">logic + power</text><path class="wire arrow" d="M220 96L360 96"/><path class="wire arrow" d="M580 96L773 96"/><path class="wire logic" d="M125 136L125 218"/><path class="wire " d="M125 293L125 311"/><path class="wire " d="M108 311L142 311"/><path class="wire " d="M114 317L136 317"/><path class="wire " d="M120 323L130 323"/><rect class="svg-box logic-box" x="300" y="218" width="225" height="75" rx="16"/><text class="svg-label heavy" x="412" y="248" text-anchor="middle">bare ATmega32U4</text><text class="svg-label small" x="412" y="271" text-anchor="middle">crystal • reset • caps</text><rect class="svg-box power-box" x="650" y="218" width="250" height="75" rx="16"/><text class="svg-label heavy" x="775" y="248" text-anchor="middle">servos + LED bank</text><text class="svg-label small" x="775" y="271" text-anchor="middle">current pulses</text><path class="wire power" d="M868 136L868 183"/><path class="wire power" d="M868 183L775 183"/><path class="wire power" d="M775 183L775 218"/><path class="wire logic" d="M868 183L412 183"/><path class="wire logic" d="M412 183L412 218"/><text class="svg-label small" x="500" y="355" text-anchor="middle">CC pins signal a USB-C sink; they do not carry the 5 V power path.</text><text class="svg-label small" x="500" y="378" text-anchor="middle">“VCC-5V-2A” is a net label, not a proven current rating.</text></svg><figcaption>The CC resistors advertise a USB-C sink. Diodes and solder bridges steer and isolate connection options. The bare MCU needs its own clock, reset, capacitors, and programming connections. The actual current limit must be checked beyond the net name.</figcaption></figure>
+<p>Original <code>U4</code> is a bare ATmega32U4-AU. It samples the mux output, reads <code>SW1</code>, computes the position error and controller output, and generates three servo command pulse trains. A servo connector has <strong>signal, 5 V, and ground</strong>; the signal pin only commands position. Motor current flows through the supply and ground, not through the MCU pin. The sketch uses a PID controller and mechanism geometry to convert X/Y error into three servo angles. Those algorithms are for the later software guide; electrically, the important point is that a sensor change becomes a timed command, while the power rail supplies the motion energy.</p>
+<p>The Base includes several small circuits that make the MCU dependable:</p>
+<div class="table-wrap"><table><thead><tr><th>Part or group</th><th>Why it is present</th></tr></thead><tbody>
+<tr><td><code>U9</code> 16 MHz crystal, <code>U8</code>/<code>U10</code> 22 pF</td><td>Give the bare MCU a stable clock and the crystal its intended load. A clock is required for instruction timing, USB, and repeatable sampling.</td></tr>
+<tr><td><code>C1</code> 220 nF, <code>C2</code>–<code>C4</code> 1 µF</td><td>Local charge and filtering. The AREF and UCAP connections have MCU-specific roles; they are not interchangeable with a random bulk capacitor.</td></tr>
+<tr><td><code>R6</code> 10 kΩ</td><td>Holds reset high in normal operation; reset is asserted by pulling it low.</td></tr>
+<tr><td><code>SW1</code>, <code>R7</code> 10 kΩ</td><td>Pressing SW1 drives the button input high. R7 defines a low level when released so the input does not float.</td></tr>
+<tr><td><code>U14</code>/<code>U15</code> LEDs, <code>R10</code>/<code>R11</code></td><td>Power/status indication; the resistors limit LED current. The manufacturing BOM lists the resistors as 500 Ω.</td></tr>
+<tr><td><code>H4</code>/<code>H5</code></td><td>Programming connections for the bare MCU.</td></tr>
+</tbody></table></div>
+<p>The original Base also has two USB-C connectors, four 5.1 kΩ CC pull-downs (<code>R14</code>–<code>R17</code>), SS24AF Schottky diodes (<code>U20</code>/<code>U21</code>), and solder bridges (<code>U22</code>–<code>U26</code>). The CC pull-downs tell a USB-C source that a sink is attached; the diodes and configurable bridges steer or isolate the available power/data paths. The original high-current net is named <code>VCC-5V-2A</code>, but a net name is <strong>not</strong> a verified 2 A capability. Three servo current peaks and the LED bank determine what the source and copper actually need. <code>C5</code> (10 µF) offers a small local charge reserve on that rail; it cannot compensate for an undersized supply.</p>
+</section>
+<section class="lesson-section" id="recreate-the-design-reasoning-yourself"><h2>Recreate the design reasoning yourself</h2>
+<ol>
+<li>Define the measurable quantity: which receiver currents change when the ball moves, and what dark/bright range should the ADC see?</li>
+<li>Choose LED current from optical need, then solve <code>R = (Vsupply − VLED − Vswitch) / ILED</code> and check resistor power and total array current.</li>
+<li>Choose a load that turns expected photocurrent into a useful, unsaturated ADC voltage. Test the extreme cases, not just the middle of the plate.</li>
+<li>Check mux and ADC settling after every channel switch. A shared load saves parts but means channels interact through one analog node over time.</li>
+<li>Separate the high-current LED/servo loops from the analog return path as far as practical. Voltage drop in a shared ground trace becomes measurement error.</li>
+<li>Verify the <em>whole chain</em>: IR off/on readings → spatial response → estimated position → servo pulse → mechanical tilt. A pin map alone cannot prove that a sensor system works.</li>
+</ol>
+<p>The <a href="electronics_tht.md">current THT/module redesign</a> keeps this measurement and control concept but changes how several blocks are packaged and powered.</p>
+</section>
+</main></div><footer class="footer">Source guide: <a href="electronics_original.md">electronics_original.md</a> · Local, self-contained HTML · BaBot open-source attribution is in the repository README.</footer>
+<script>
+(() => {
+  'use strict';
+  const load = document.querySelector('[data-lab="load"]');
+  if (load) {
+    const rInput = load.querySelector('[data-input="r"]');
+    const iInput = load.querySelector('[data-input="i"]');
+    const value = key => load.querySelector(`[data-out="${key}"]`);
+    const plot = load.querySelector('[data-curve="load"]');
+    const point = load.querySelector('[data-point="load"]');
+    const update = () => {
+      const r = Number(rInput.value), current = Number(iInput.value);
+      const voltage = amp => Math.min(5, amp * 1e-6 * (r + 500));
+      value('r').textContent = (r / 1000).toFixed(2) + ' kΩ';
+      value('i').textContent = current + ' µA';
+      value('v').textContent = voltage(current).toFixed(2) + ' V';
+      value('adc').textContent = Math.round(voltage(current) / 5 * 1023) + ' / 1023';
+      const x = amp => 72 + amp / 150 * 540;
+      const y = amp => 234 - voltage(amp) / 5 * 204;
+      let d = '';
+      for (let amp = 0; amp <= 150; amp += 2) d += (amp ? 'L' : 'M') + x(amp).toFixed(2) + ' ' + y(amp).toFixed(2);
+      plot.setAttribute('d', d);
+      point.setAttribute('cx', x(current));
+      point.setAttribute('cy', y(current));
+    };
+    rInput.addEventListener('input', update);
+    iInput.addEventListener('input', update);
+    update();
+  }
+  const grid = document.querySelector('[data-lab="grid"]');
+  if (grid) {
+    const xInput = grid.querySelector('[data-input="x"]');
+    const yInput = grid.querySelector('[data-input="y"]');
+    const cells = [...grid.querySelectorAll('[data-cell]')];
+    const update = () => {
+      const x = Number(xInput.value), y = Number(yInput.value);
+      let sum = 0, wx = 0, wy = 0;
+      for (let n = 0; n < 16; n++) {
+        const cx = n % 4, cy = Math.floor(n / 4);
+        const intensity = Math.exp(-((cx-x)**2 + (cy-y)**2) / 1.15);
+        cells[n].style.background = `hsl(${197 - intensity*160} 72% ${88 - intensity*37}%)`;
+        cells[n].setAttribute('aria-label', `sensor ${String(n).padStart(2,'0')}: illustrative response ${Math.round(intensity*100)} percent`);
+        sum += intensity; wx += cx*intensity; wy += cy*intensity;
+      }
+      grid.querySelector('[data-out="x"]').textContent = x.toFixed(1);
+      grid.querySelector('[data-out="y"]').textContent = y.toFixed(1);
+      grid.querySelector('[data-out="centroid"]').textContent = `(${(wx/sum).toFixed(2)}, ${(wy/sum).toFixed(2)})`;
+    };
+    xInput.addEventListener('input', update);
+    yInput.addEventListener('input', update);
+    update();
+  }
+  const mux = document.querySelector('[data-lab="mux"]');
+  if (mux) {
+    const input = mux.querySelector('[data-input="channel"]');
+    const channels = [...mux.querySelectorAll('[data-channel]')];
+    const update = () => {
+      const n = Number(input.value);
+      mux.querySelector('[data-out="channel"]').textContent = String(n).padStart(2,'0');
+      mux.querySelector('[data-out="pt"]').textContent = String(n).padStart(2,'0');
+      mux.querySelector('[data-out="bits"]').textContent = n.toString(2).padStart(4,'0').split('').join(' ');
+      channels.forEach((cell, index) => cell.classList.toggle('active', index === n));
+    };
+    input.addEventListener('input', update);
+    update();
+  }
+})();
+</script>
+</body></html>

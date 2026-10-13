@@ -1,6 +1,6 @@
 # BaBot electronics: learn the original design
 
-This guide explains the *manufactured original* BaBot Base and Plate as a system. Its purpose is to show why each circuit exists and how its behavior follows from electrical and optical principles. The reconstructed connectivity comes from the [archived PCBWay Base and Plate files](../original/pcbway/), their manufacturing BOMs and flying-probe data, the [original schematic](../original/schematics/), and the [published sketch](../original/upstream/BABOT-main/main.ino). The old schematic and manufacturing BOM disagree on some values; this guide identifies the manufactured BOM value when that matters. The editable upstream PCB was not available, so a signal path inferred from manufacturing data is labeled as such.
+This guide explains the *manufactured original* BaBot Base and Plate as a system. Its purpose is to show why each circuit exists and how its behavior follows from electrical and optical principles. The reconstructed connectivity comes from the [archived PCBWay Base and Plate files](../original/pcbway/), their manufacturing BOMs and flying-probe data, the [original schematic](../original/schematics/schematics_iNWgbALrz5.pdf), and the [published sketch](../original/upstream/BABOT-main/main.ino). The old schematic and manufacturing BOM disagree on some values; this guide identifies the manufactured BOM value when that matters. The editable upstream PCB was not available, so a signal path inferred from manufacturing data is labeled as such.
 
 ## Start with the problem, then the blocks
 
