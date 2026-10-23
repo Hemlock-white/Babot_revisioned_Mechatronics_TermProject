@@ -1,0 +1,3112 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-14T16:48:06",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.0",
+    "schematic_parity": [
+        {
+            "description": "Original_Plate_IR1 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR1)",
+            "items": [
+                {
+                    "description": "Footprint IR1",
+                    "pos": {
+                        "x": 78.6928,
+                        "y": 57.2756
+                    },
+                    "uuid": "40b50527-6cbe-4225-af6f-b931dee3b66b"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N2899) doesn't match net given by schematic (/$1N2899)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N2899] of IR1",
+                    "pos": {
+                        "x": 79.9628,
+                        "y": 57.2756
+                    },
+                    "uuid": "29c73821-d5ae-4e9b-80f8-4461032f4adb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR1",
+                    "pos": {
+                        "x": 77.4228,
+                        "y": 57.2756
+                    },
+                    "uuid": "eb7f0aea-8790-46f3-bfb1-68c1c524f6be"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR2 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR2)",
+            "items": [
+                {
+                    "description": "Footprint IR2",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 57.328
+                    },
+                    "uuid": "03323ae7-2a6f-427b-89f8-6cf3de0e6d1e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N5933) doesn't match net given by schematic (/$1N5933)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N5933] of IR2",
+                    "pos": {
+                        "x": 101.27,
+                        "y": 57.328
+                    },
+                    "uuid": "b9dfa6e8-fc6a-4de2-a451-09f8339fac9c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR2",
+                    "pos": {
+                        "x": 98.73,
+                        "y": 57.328
+                    },
+                    "uuid": "32768a30-d173-4d21-b28d-0225b7611655"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR3 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR3)",
+            "items": [
+                {
+                    "description": "Footprint IR3",
+                    "pos": {
+                        "x": 121.3312,
+                        "y": 57.4026
+                    },
+                    "uuid": "520ca8a2-6a8a-4893-b7cd-0061dd4635a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6007) doesn't match net given by schematic (/$1N6007)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6007] of IR3",
+                    "pos": {
+                        "x": 122.6012,
+                        "y": 57.4026
+                    },
+                    "uuid": "0a36fd7c-0213-4e5c-9514-8ce942bbff7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR3",
+                    "pos": {
+                        "x": 120.0612,
+                        "y": 57.4026
+                    },
+                    "uuid": "3b64b8a5-771a-4c19-8319-a26cbe258bcb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR4 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR4)",
+            "items": [
+                {
+                    "description": "Footprint IR4",
+                    "pos": {
+                        "x": 57.2973,
+                        "y": 78.6624
+                    },
+                    "uuid": "45259a8f-964b-42c6-91dc-7dc0fcfb6315"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6081) doesn't match net given by schematic (/$1N6081)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6081] of IR4",
+                    "pos": {
+                        "x": 56.6623,
+                        "y": 79.762253
+                    },
+                    "uuid": "1b7bb75e-94e2-4bdb-a229-609368af80dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR4",
+                    "pos": {
+                        "x": 57.9323,
+                        "y": 77.562547
+                    },
+                    "uuid": "cd451bea-eeaf-433f-8d0b-21d30b2ce53c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR5 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR5)",
+            "items": [
+                {
+                    "description": "Footprint IR5",
+                    "pos": {
+                        "x": 78.664,
+                        "y": 78.664
+                    },
+                    "uuid": "671bd8b7-4467-46eb-8735-9ca6e772ccaa"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6155) doesn't match net given by schematic (/$1N6155)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6155] of IR5",
+                    "pos": {
+                        "x": 79.934,
+                        "y": 78.664
+                    },
+                    "uuid": "520be5e5-bcff-481c-8ac6-a8a4e8dea9f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR5",
+                    "pos": {
+                        "x": 77.394,
+                        "y": 78.664
+                    },
+                    "uuid": "08989080-543e-4e63-a43f-3adafea8fcf4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR6 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR6)",
+            "items": [
+                {
+                    "description": "Footprint IR6",
+                    "pos": {
+                        "x": 99.9942,
+                        "y": 78.637
+                    },
+                    "uuid": "bc88feb0-8051-4d11-8d7f-473f3ad8c7ae"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6229) doesn't match net given by schematic (/$1N6229)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6229] of IR6",
+                    "pos": {
+                        "x": 101.2642,
+                        "y": 78.637
+                    },
+                    "uuid": "fd85921c-5f23-4f18-a92b-702db0bec3f3"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR6",
+                    "pos": {
+                        "x": 98.7242,
+                        "y": 78.637
+                    },
+                    "uuid": "f5b7591e-d12e-416a-89f4-746c04c04471"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR7 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR7)",
+            "items": [
+                {
+                    "description": "Footprint IR7",
+                    "pos": {
+                        "x": 121.336,
+                        "y": 78.664
+                    },
+                    "uuid": "1a797846-2672-4841-837d-b1bffd63f9f3"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6303) doesn't match net given by schematic (/$1N6303)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6303] of IR7",
+                    "pos": {
+                        "x": 122.606,
+                        "y": 78.664
+                    },
+                    "uuid": "26801194-2511-4791-a9b1-ef7ca79d27d4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR7",
+                    "pos": {
+                        "x": 120.066,
+                        "y": 78.664
+                    },
+                    "uuid": "49d013ed-2af8-4f1d-aafc-2ea03a5e5bb5"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR8 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR8)",
+            "items": [
+                {
+                    "description": "Footprint IR8",
+                    "pos": {
+                        "x": 142.7088,
+                        "y": 78.6116
+                    },
+                    "uuid": "8fe39305-aca6-47ce-a352-20c54e80832f"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6377) doesn't match net given by schematic (/$1N6377)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6377] of IR8",
+                    "pos": {
+                        "x": 142.0738,
+                        "y": 77.511747
+                    },
+                    "uuid": "3aac85b5-8c8d-4c5b-8c8e-556c97b8ba09"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR8",
+                    "pos": {
+                        "x": 143.3438,
+                        "y": 79.711453
+                    },
+                    "uuid": "c20ca764-7d01-4d58-baf2-df2c3ac9f7eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR9 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR9)",
+            "items": [
+                {
+                    "description": "Footprint IR9",
+                    "pos": {
+                        "x": 57.2881,
+                        "y": 99.9984
+                    },
+                    "uuid": "a65b2b9c-e72c-456f-a456-0dd5e9fb3ffc"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6451) doesn't match net given by schematic (/$1N6451)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6451] of IR9",
+                    "pos": {
+                        "x": 58.5581,
+                        "y": 99.9984
+                    },
+                    "uuid": "9754694a-57ea-445b-91f1-afb0020b957e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR9",
+                    "pos": {
+                        "x": 56.0181,
+                        "y": 99.9984
+                    },
+                    "uuid": "74615a7a-3f8c-420f-920c-e8948dc26ca5"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR10 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR10)",
+            "items": [
+                {
+                    "description": "Footprint IR10",
+                    "pos": {
+                        "x": 78.6577,
+                        "y": 99.9984
+                    },
+                    "uuid": "df450162-5421-4992-abbe-5463d15cae88"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6525) doesn't match net given by schematic (/$1N6525)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6525] of IR10",
+                    "pos": {
+                        "x": 79.9277,
+                        "y": 99.9984
+                    },
+                    "uuid": "63dae88f-35af-41eb-9046-61d83a871a0f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR10",
+                    "pos": {
+                        "x": 77.3877,
+                        "y": 99.9984
+                    },
+                    "uuid": "d044f76e-0d9a-4c19-a6bc-3053ab07c41c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR11 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR11)",
+            "items": [
+                {
+                    "description": "Footprint IR11",
+                    "pos": {
+                        "x": 99.9688,
+                        "y": 99.9476
+                    },
+                    "uuid": "89f2d4ac-8a80-4d30-8d74-f148a6ff9017"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6599) doesn't match net given by schematic (/$1N6599)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6599] of IR11",
+                    "pos": {
+                        "x": 101.2388,
+                        "y": 99.9476
+                    },
+                    "uuid": "f3c2d3c3-43e5-43bb-9a35-00b9701a9842"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR11",
+                    "pos": {
+                        "x": 98.6988,
+                        "y": 99.9476
+                    },
+                    "uuid": "9cbae371-9c9a-479a-b281-c5bf4575b1c7"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR12 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR12)",
+            "items": [
+                {
+                    "description": "Footprint IR12",
+                    "pos": {
+                        "x": 121.3469,
+                        "y": 99.9476
+                    },
+                    "uuid": "ebfcd83d-af79-487e-a5f0-53a22bd71368"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6673) doesn't match net given by schematic (/$1N6673)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6673] of IR12",
+                    "pos": {
+                        "x": 122.6169,
+                        "y": 99.9476
+                    },
+                    "uuid": "725d6dee-af78-403d-8c41-812c56f64e57"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR12",
+                    "pos": {
+                        "x": 120.0769,
+                        "y": 99.9476
+                    },
+                    "uuid": "9c9bb311-8a9e-404a-a4dd-8a42a53fc442"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR13 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR13)",
+            "items": [
+                {
+                    "description": "Footprint IR13",
+                    "pos": {
+                        "x": 142.6974,
+                        "y": 100.0254
+                    },
+                    "uuid": "cf53d5b7-5aa9-4172-a8ff-1187f0ea5f3a"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6747) doesn't match net given by schematic (/$1N6747)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6747] of IR13",
+                    "pos": {
+                        "x": 143.9674,
+                        "y": 100.0254
+                    },
+                    "uuid": "f36db80e-2907-4801-9178-e545f86abdd0"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR13",
+                    "pos": {
+                        "x": 141.4274,
+                        "y": 100.0254
+                    },
+                    "uuid": "7ca24e83-d21c-41a3-bbef-f3e19eda22bc"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR14 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR14)",
+            "items": [
+                {
+                    "description": "Footprint IR14",
+                    "pos": {
+                        "x": 57.2958,
+                        "y": 121.3598
+                    },
+                    "uuid": "a6d60ea1-60b7-45ff-9a0a-cab91d3267c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6821) doesn't match net given by schematic (/$1N6821)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6821] of IR14",
+                    "pos": {
+                        "x": 56.6608,
+                        "y": 120.259947
+                    },
+                    "uuid": "7253e431-0f91-4802-8db5-b2939ac46218"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR14",
+                    "pos": {
+                        "x": 57.9308,
+                        "y": 122.459653
+                    },
+                    "uuid": "fb5118f3-5d04-4a72-a160-bc0469396b5a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR15 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR15)",
+            "items": [
+                {
+                    "description": "Footprint IR15",
+                    "pos": {
+                        "x": 78.6462,
+                        "y": 121.3598
+                    },
+                    "uuid": "18240a97-b209-4546-950e-db96eb289f45"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6895) doesn't match net given by schematic (/$1N6895)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6895] of IR15",
+                    "pos": {
+                        "x": 79.9162,
+                        "y": 121.3598
+                    },
+                    "uuid": "6f1f13ee-642d-45d3-a048-7dadff41b5bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR15",
+                    "pos": {
+                        "x": 77.3762,
+                        "y": 121.3598
+                    },
+                    "uuid": "ea520b93-d9df-4652-b586-ac5932127f56"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR16 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR16)",
+            "items": [
+                {
+                    "description": "Footprint IR16",
+                    "pos": {
+                        "x": 99.9966,
+                        "y": 121.3598
+                    },
+                    "uuid": "a07bfb8a-db83-4c2f-abcc-c2eba299f837"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6969) doesn't match net given by schematic (/$1N6969)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6969] of IR16",
+                    "pos": {
+                        "x": 101.2666,
+                        "y": 121.3598
+                    },
+                    "uuid": "7d1cfe4b-e4b6-4cd2-bd9b-ee65822dd341"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR16",
+                    "pos": {
+                        "x": 98.7266,
+                        "y": 121.3598
+                    },
+                    "uuid": "50f5b7b4-948d-4fe9-90f6-6b1451b44b45"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR17 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR17)",
+            "items": [
+                {
+                    "description": "Footprint IR17",
+                    "pos": {
+                        "x": 121.347,
+                        "y": 121.3598
+                    },
+                    "uuid": "64bee272-2624-49ec-88e5-67a0aa39f09b"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7043) doesn't match net given by schematic (/$1N7043)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7043] of IR17",
+                    "pos": {
+                        "x": 122.617,
+                        "y": 121.3598
+                    },
+                    "uuid": "fd095304-cbd8-4219-b320-7c181476c5f8"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR17",
+                    "pos": {
+                        "x": 120.077,
+                        "y": 121.3598
+                    },
+                    "uuid": "6019ba6a-01e5-4fd6-b943-fb6aa006fea5"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR18 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR18)",
+            "items": [
+                {
+                    "description": "Footprint IR18",
+                    "pos": {
+                        "x": 142.6974,
+                        "y": 121.3598
+                    },
+                    "uuid": "976cb29b-742b-4c2b-be1f-f3e45e632e49"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7117) doesn't match net given by schematic (/$1N7117)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7117] of IR18",
+                    "pos": {
+                        "x": 142.0624,
+                        "y": 122.459653
+                    },
+                    "uuid": "6b941cfe-9085-401b-8042-d5d1b4de3f32"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR18",
+                    "pos": {
+                        "x": 143.3324,
+                        "y": 120.259947
+                    },
+                    "uuid": "bf0014ec-d813-4e05-94ae-4f3e2ccd5a12"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR19 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR19)",
+            "items": [
+                {
+                    "description": "Footprint IR19",
+                    "pos": {
+                        "x": 78.6477,
+                        "y": 142.6704
+                    },
+                    "uuid": "b3974ff0-02d3-493a-b1ee-18661fc0532f"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7191) doesn't match net given by schematic (/$1N7191)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7191] of IR19",
+                    "pos": {
+                        "x": 79.9177,
+                        "y": 142.6704
+                    },
+                    "uuid": "28aa2360-a369-4478-ad2c-234f98feac67"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR19",
+                    "pos": {
+                        "x": 77.3777,
+                        "y": 142.6704
+                    },
+                    "uuid": "9d2c4d37-8e03-4cc2-894c-63478b4b26ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR20 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR20)",
+            "items": [
+                {
+                    "description": "Footprint IR20",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 142.6974
+                    },
+                    "uuid": "e846b50c-1c48-425f-8538-53d3172f1662"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7265) doesn't match net given by schematic (/$1N7265)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7265] of IR20",
+                    "pos": {
+                        "x": 101.27,
+                        "y": 142.6974
+                    },
+                    "uuid": "a3610731-2542-4197-aa42-bf9595dc7299"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR20",
+                    "pos": {
+                        "x": 98.73,
+                        "y": 142.6974
+                    },
+                    "uuid": "05ce4c15-4892-4f92-9641-4024670bbdf5"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_IR21 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_IR21)",
+            "items": [
+                {
+                    "description": "Footprint IR21",
+                    "pos": {
+                        "x": 121.3624,
+                        "y": 142.6704
+                    },
+                    "uuid": "cf3d6f34-65e2-4592-bbce-40f5279b8339"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7339) doesn't match net given by schematic (/$1N7339)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7339] of IR21",
+                    "pos": {
+                        "x": 122.6324,
+                        "y": 142.6704
+                    },
+                    "uuid": "bc1749a0-cb9b-4273-ac7b-406f9de05adb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of IR21",
+                    "pos": {
+                        "x": 120.0924,
+                        "y": 142.6704
+                    },
+                    "uuid": "031688e7-b4e7-4d05-8f93-b86a4bffe896"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q1 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q1)",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 67.9706,
+                        "y": 67.9706
+                    },
+                    "uuid": "4e3011ae-a46f-4ffb-9df8-ac3c113cd296"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q1",
+                    "pos": {
+                        "x": 67.9706,
+                        "y": 66.7006
+                    },
+                    "uuid": "ae4c5709-3017-4ee0-8874-960c6e8e84e4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT00) doesn't match net given by schematic (/PT00)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT00] of Q1",
+                    "pos": {
+                        "x": 67.9706,
+                        "y": 69.2406
+                    },
+                    "uuid": "7840f2e6-103b-4c64-9a72-cc0c58af293f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q2 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q2)",
+            "items": [
+                {
+                    "description": "Footprint Q2",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 67.996
+                    },
+                    "uuid": "b6a788f1-f4f9-4c45-9916-78991adbde4f"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q2",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 66.726
+                    },
+                    "uuid": "a252ee30-420b-4429-9d14-3a1bbd35b44b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT01) doesn't match net given by schematic (/PT01)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT01] of Q2",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 69.266
+                    },
+                    "uuid": "1369151d-2092-417f-b9d0-831e8ab0553c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q3 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q3)",
+            "items": [
+                {
+                    "description": "Footprint Q3",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 67.996
+                    },
+                    "uuid": "3b1e4122-001b-4235-a632-9fc7dc0f00c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q3",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 66.726
+                    },
+                    "uuid": "f2042c03-e841-4347-9b31-7f641e2fceba"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT02) doesn't match net given by schematic (/PT02)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT02] of Q3",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 69.266
+                    },
+                    "uuid": "7f355207-f89c-416a-aeb9-d5189f7b538d"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q4 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q4)",
+            "items": [
+                {
+                    "description": "Footprint Q4",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 67.996
+                    },
+                    "uuid": "9fa6efcf-1735-42d1-871d-b8599f40f614"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q4",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 66.726
+                    },
+                    "uuid": "aeb61e5b-9e0d-40f9-90ff-59db019c65bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT03) doesn't match net given by schematic (/PT03)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT03] of Q4",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 69.266
+                    },
+                    "uuid": "a86fb920-12f3-4c46-8ff2-07278545e194"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q5 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q5)",
+            "items": [
+                {
+                    "description": "Footprint Q5",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 89.332
+                    },
+                    "uuid": "dd68d5d4-59d1-4a35-9032-2f5a9a904dc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q5",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 88.062
+                    },
+                    "uuid": "61c7301c-fe6a-48bb-b374-4c83a3468bd9"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT04) doesn't match net given by schematic (/PT04)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT04] of Q5",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 90.602
+                    },
+                    "uuid": "2149884d-ba5e-43d0-9ad8-28f21626cf16"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q6 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q6)",
+            "items": [
+                {
+                    "description": "Footprint Q6",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 89.332
+                    },
+                    "uuid": "8006c44b-f375-44d2-95c0-e21986983fcb"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q6",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 88.062
+                    },
+                    "uuid": "927ab457-2bbb-4150-ac64-cd1ebd6e8f20"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT05) doesn't match net given by schematic (/PT05)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT05] of Q6",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 90.602
+                    },
+                    "uuid": "ea52b785-d59a-4d61-9759-842aa066ad92"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q7 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q7)",
+            "items": [
+                {
+                    "description": "Footprint Q7",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 89.332
+                    },
+                    "uuid": "ebad7976-e6f4-4efd-8bce-23c8b1b11ccc"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q7",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 88.062
+                    },
+                    "uuid": "26567549-0ac5-4e8a-af82-7bb82ca8ec79"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT06) doesn't match net given by schematic (/PT06)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT06] of Q7",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 90.602
+                    },
+                    "uuid": "89d99bca-1149-4df9-bd47-8e25e0c7710e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q8 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q8)",
+            "items": [
+                {
+                    "description": "Footprint Q8",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 89.332
+                    },
+                    "uuid": "57955da0-b3e3-4888-abf4-9b8abf0e5f76"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q8",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 88.062
+                    },
+                    "uuid": "de8b590b-c4b2-467c-a52d-889341a22e40"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT07) doesn't match net given by schematic (/PT07)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT07] of Q8",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 90.602
+                    },
+                    "uuid": "ebf3feca-905d-4ff3-a8e2-d978deea0440"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q9 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q9)",
+            "items": [
+                {
+                    "description": "Footprint Q9",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 110.668
+                    },
+                    "uuid": "bf4343ed-c329-40c8-8510-4f636107a9f7"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q9",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 109.398
+                    },
+                    "uuid": "e0ef0c2a-ffab-4679-87b5-fe86a62c24da"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT08) doesn't match net given by schematic (/PT08)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT08] of Q9",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 111.938
+                    },
+                    "uuid": "e1805a2a-2fd4-4cb5-a754-74e5e05e9a17"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q10 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q10)",
+            "items": [
+                {
+                    "description": "Footprint Q10",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 110.668
+                    },
+                    "uuid": "2640a4e0-500e-4470-8264-48322387924a"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q10",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 109.398
+                    },
+                    "uuid": "f511f968-3fec-4a27-8059-f5058f1a23b3"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT09) doesn't match net given by schematic (/PT09)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT09] of Q10",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 111.938
+                    },
+                    "uuid": "c4aaec43-9b1c-4deb-8f91-1c40993dd527"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q11 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q11)",
+            "items": [
+                {
+                    "description": "Footprint Q11",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 110.668
+                    },
+                    "uuid": "421dc1b1-c4fa-49f1-a9a1-19645a9ab560"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q11",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 109.398
+                    },
+                    "uuid": "6ac51762-e68d-44c4-99f8-089a2e527258"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT10) doesn't match net given by schematic (/PT10)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT10] of Q11",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 111.938
+                    },
+                    "uuid": "00d9d7fa-f41f-4707-88be-eeb37cd4c034"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q12 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q12)",
+            "items": [
+                {
+                    "description": "Footprint Q12",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 110.668
+                    },
+                    "uuid": "19b7bfcb-45f0-4baf-a0a3-00d42be07757"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q12",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 109.398
+                    },
+                    "uuid": "cfda3787-3f08-4adf-b7fd-b97c2b4df2ac"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT11) doesn't match net given by schematic (/PT11)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT11] of Q12",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 111.938
+                    },
+                    "uuid": "0fe881dc-25d0-4d61-9bbc-5e2d4ebe87a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q13 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q13)",
+            "items": [
+                {
+                    "description": "Footprint Q13",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 132.004
+                    },
+                    "uuid": "a3cf95e2-c9a6-4785-9058-da834ca1a8e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q13",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 130.734001
+                    },
+                    "uuid": "c99a64e8-e1bb-4d0e-a29f-b45ae15cc026"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT12) doesn't match net given by schematic (/PT12)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT12] of Q13",
+                    "pos": {
+                        "x": 67.996,
+                        "y": 133.274001
+                    },
+                    "uuid": "3a1a3b37-6c6d-440f-aa49-74bb3520a59d"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q14 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q14)",
+            "items": [
+                {
+                    "description": "Footprint Q14",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 132.004
+                    },
+                    "uuid": "15f008ec-9d36-4cd6-b129-92acab51163d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q14",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 130.734001
+                    },
+                    "uuid": "017f101c-1096-46d0-ae12-12690dd8c818"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT13) doesn't match net given by schematic (/PT13)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT13] of Q14",
+                    "pos": {
+                        "x": 89.332,
+                        "y": 133.274001
+                    },
+                    "uuid": "c7ee0c5d-79a6-44d1-b736-d1cbcb5fb161"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q15 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q15)",
+            "items": [
+                {
+                    "description": "Footprint Q15",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 132.004
+                    },
+                    "uuid": "e9470028-da6a-44b6-a21b-29aa691e96e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q15",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 130.734001
+                    },
+                    "uuid": "b31d6dc0-e679-4686-8746-878f36b893cf"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT14) doesn't match net given by schematic (/PT14)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT14] of Q15",
+                    "pos": {
+                        "x": 110.668,
+                        "y": 133.274001
+                    },
+                    "uuid": "2e11c57f-6bb8-46c6-a49c-5537fb6c3b82"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Original_Plate_Q16 doesn't match footprint given by symbol (BaBot_THT:Original_Plate_Q16)",
+            "items": [
+                {
+                    "description": "Footprint Q16",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 132.004
+                    },
+                    "uuid": "2619552c-128d-4336-9324-dc2c19f401f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [+5V_LOGIC] of Q16",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 130.734001
+                    },
+                    "uuid": "3696d933-848c-49af-af34-5e6b5a858878"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT15) doesn't match net given by schematic (/PT15)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT15] of Q16",
+                    "pos": {
+                        "x": 132.004,
+                        "y": 133.274001
+                    },
+                    "uuid": "930b3a49-2e70-4769-8156-4cffe7e1085b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "TO220_GDS doesn't match footprint given by symbol (BaBot_THT:TO220_GDS)",
+            "items": [
+                {
+                    "description": "Footprint Q17",
+                    "pos": {
+                        "x": 125.0,
+                        "y": 110.0
+                    },
+                    "uuid": "33b57a90-d2bd-4dd4-8d64-9c306ef822bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (MOSFET_GATE) doesn't match net given by schematic (/MOSFET_GATE)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [MOSFET_GATE] of Q17",
+                    "pos": {
+                        "x": 125.0,
+                        "y": 110.0
+                    },
+                    "uuid": "f5bc19a7-2c30-4d3a-a2a5-84618fe43172"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_CATHODES) doesn't match net given by schematic (/IR_CATHODES)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [IR_CATHODES] of Q17",
+                    "pos": {
+                        "x": 122.46,
+                        "y": 110.0
+                    },
+                    "uuid": "553fa09b-01be-4a1c-987f-95a0aa63ec9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (GND) doesn't match net given by schematic (/GND)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [GND] of Q17",
+                    "pos": {
+                        "x": 119.92,
+                        "y": 110.0
+                    },
+                    "uuid": "bf41305d-1088-418c-ab14-3af7b2c1f3e7"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 83.8998,
+                        "y": 61.7513
+                    },
+                    "uuid": "ec210d03-f51e-4861-b1f8-a40556358a92"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N2899) doesn't match net given by schematic (/$1N2899)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N2899] of R1",
+                    "pos": {
+                        "x": 83.8998,
+                        "y": 61.7513
+                    },
+                    "uuid": "7823a2f7-aaad-48a9-861c-9338bee9c514"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R1",
+                    "pos": {
+                        "x": 73.7398,
+                        "y": 61.7513
+                    },
+                    "uuid": "0ff7a3ca-b80f-49b3-b4d4-2e9959f8b4dc"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 105.2871,
+                        "y": 61.7513
+                    },
+                    "uuid": "ce5f9b9e-1a62-4331-8849-8e1921e221ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N5933) doesn't match net given by schematic (/$1N5933)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N5933] of R2",
+                    "pos": {
+                        "x": 105.2871,
+                        "y": 61.7513
+                    },
+                    "uuid": "9a6a029b-a415-4eb1-bf92-b0f1a01272c7"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R2",
+                    "pos": {
+                        "x": 95.1271,
+                        "y": 61.7513
+                    },
+                    "uuid": "acdc8746-80af-4c36-b016-7c158475aa52"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 126.5382,
+                        "y": 61.8783
+                    },
+                    "uuid": "f0d2cda5-04da-4793-a930-606ca173f09a"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6007) doesn't match net given by schematic (/$1N6007)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6007] of R3",
+                    "pos": {
+                        "x": 126.5382,
+                        "y": 61.8783
+                    },
+                    "uuid": "35906fda-2429-41a5-82e3-c972b50d3895"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R3",
+                    "pos": {
+                        "x": 116.3782,
+                        "y": 61.8783
+                    },
+                    "uuid": "1a0d3825-cd5d-4368-b10a-7c87817988bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 67.281,
+                        "y": 83.363
+                    },
+                    "uuid": "e131e3e2-c19c-464a-bb1a-331e0112e78d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6081) doesn't match net given by schematic (/$1N6081)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6081] of R4",
+                    "pos": {
+                        "x": 67.281,
+                        "y": 83.363
+                    },
+                    "uuid": "35c32537-cf57-44c4-b98f-f0f8e7020426"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R4",
+                    "pos": {
+                        "x": 57.121,
+                        "y": 83.363
+                    },
+                    "uuid": "d134e898-e0b7-4da2-ab88-b72a9d6b116a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 83.3413
+                    },
+                    "uuid": "7d5e15fc-d86e-49fb-b22b-be6adf05ca29"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6155) doesn't match net given by schematic (/$1N6155)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6155] of R5",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 83.3413
+                    },
+                    "uuid": "16c6ceb7-8d10-4f22-a927-41bcb4a960ec"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R5",
+                    "pos": {
+                        "x": 73.6128,
+                        "y": 83.3413
+                    },
+                    "uuid": "2ac4391e-4c2f-4c05-bc14-8940b2999fa9"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R6",
+                    "pos": {
+                        "x": 105.1601,
+                        "y": 74.1973
+                    },
+                    "uuid": "8041b45a-3869-49e1-ba14-d607f5169647"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6229) doesn't match net given by schematic (/$1N6229)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6229] of R6",
+                    "pos": {
+                        "x": 105.1601,
+                        "y": 74.1973
+                    },
+                    "uuid": "6d592e8a-c6ab-4339-8d8d-34c05afe060a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R6",
+                    "pos": {
+                        "x": 95.0001,
+                        "y": 74.1973
+                    },
+                    "uuid": "0801cbcd-172f-49fe-8f7a-91916257bc2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R7",
+                    "pos": {
+                        "x": 126.4107,
+                        "y": 83.3413
+                    },
+                    "uuid": "d9a40561-9f5d-432f-a5d8-13fdb9bb3904"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6303) doesn't match net given by schematic (/$1N6303)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6303] of R7",
+                    "pos": {
+                        "x": 126.4107,
+                        "y": 83.3413
+                    },
+                    "uuid": "540c8c0a-f0cb-4fe6-b260-8312e456fa88"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R7",
+                    "pos": {
+                        "x": 116.2507,
+                        "y": 83.3413
+                    },
+                    "uuid": "5326640b-4ec4-42df-8123-234b27a1de1b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R8",
+                    "pos": {
+                        "x": 142.7568,
+                        "y": 83.3413
+                    },
+                    "uuid": "4840f2c9-9e86-47f3-8823-cd4fe1db956d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6377) doesn't match net given by schematic (/$1N6377)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6377] of R8",
+                    "pos": {
+                        "x": 142.7568,
+                        "y": 83.3413
+                    },
+                    "uuid": "0f7c0db6-732f-4605-989f-f18b87fb4ffd"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R8",
+                    "pos": {
+                        "x": 132.5968,
+                        "y": 83.3413
+                    },
+                    "uuid": "e75b281d-0342-4625-9834-63d52f2bff78"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R9",
+                    "pos": {
+                        "x": 67.535,
+                        "y": 104.8043
+                    },
+                    "uuid": "b37af3a9-1366-4632-a179-dbf40eefb7f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6451) doesn't match net given by schematic (/$1N6451)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6451] of R9",
+                    "pos": {
+                        "x": 67.535,
+                        "y": 104.8043
+                    },
+                    "uuid": "a9b8770d-ea77-4ab9-8ac2-5e2326b5de73"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R9",
+                    "pos": {
+                        "x": 57.375,
+                        "y": 104.8043
+                    },
+                    "uuid": "3e0237c8-1ade-4868-b198-d2b23566e556"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R10",
+                    "pos": {
+                        "x": 83.8998,
+                        "y": 104.8043
+                    },
+                    "uuid": "5d1dbbfb-5436-40a0-9fa6-00ddeda2da28"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6525) doesn't match net given by schematic (/$1N6525)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6525] of R10",
+                    "pos": {
+                        "x": 83.8998,
+                        "y": 104.8043
+                    },
+                    "uuid": "786c7f92-b340-44ad-a820-8ea869e856ba"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R10",
+                    "pos": {
+                        "x": 73.7398,
+                        "y": 104.8043
+                    },
+                    "uuid": "fea571f5-a44f-4615-9890-d6b89ecb5c67"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R11",
+                    "pos": {
+                        "x": 106.6841,
+                        "y": 104.953
+                    },
+                    "uuid": "04165f72-e4bb-4dbf-9ad1-ee6741903b1c"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6599) doesn't match net given by schematic (/$1N6599)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6599] of R11",
+                    "pos": {
+                        "x": 106.6841,
+                        "y": 104.953
+                    },
+                    "uuid": "8dbd7eed-45e2-4e7b-bf03-62f5ddb75f72"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R11",
+                    "pos": {
+                        "x": 96.5241,
+                        "y": 104.953
+                    },
+                    "uuid": "fbf9d865-84ec-494e-8f42-cd12c06abad9"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R12",
+                    "pos": {
+                        "x": 126.5377,
+                        "y": 103.0
+                    },
+                    "uuid": "afc7c8d8-03f0-405f-bc49-ccf52f03506d"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6673) doesn't match net given by schematic (/$1N6673)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6673] of R12",
+                    "pos": {
+                        "x": 126.5377,
+                        "y": 103.0
+                    },
+                    "uuid": "5007fa89-d840-43e3-b1b5-1016c63b0076"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R12",
+                    "pos": {
+                        "x": 116.3777,
+                        "y": 103.0
+                    },
+                    "uuid": "eaf9f159-1bcc-45d6-aa00-d3315576142c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R13",
+                    "pos": {
+                        "x": 143.0428,
+                        "y": 104.6773
+                    },
+                    "uuid": "82d1d437-bdbc-48d1-8a49-1a2c1bba325a"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6747) doesn't match net given by schematic (/$1N6747)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6747] of R13",
+                    "pos": {
+                        "x": 143.0428,
+                        "y": 104.6773
+                    },
+                    "uuid": "d75f3b55-7b2f-4e48-ac99-55c903e77927"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R13",
+                    "pos": {
+                        "x": 132.8828,
+                        "y": 104.6773
+                    },
+                    "uuid": "93932a37-b336-4b31-9fa3-1f0a86b9b58c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R14",
+                    "pos": {
+                        "x": 71.08,
+                        "y": 116.0
+                    },
+                    "uuid": "62921cf9-10f8-4554-a9bb-5529d663eccb"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6821) doesn't match net given by schematic (/$1N6821)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6821] of R14",
+                    "pos": {
+                        "x": 71.08,
+                        "y": 116.0
+                    },
+                    "uuid": "13f42cc2-9e97-45bb-ad41-376775cbf644"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R14",
+                    "pos": {
+                        "x": 60.92,
+                        "y": 116.0
+                    },
+                    "uuid": "8c488a96-2be3-4d0a-ab73-bce0ffcb3ce4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R15",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 125.9371
+                    },
+                    "uuid": "4cf3639f-bdeb-47ea-a810-8825f75108d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6895) doesn't match net given by schematic (/$1N6895)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6895] of R15",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 125.9371
+                    },
+                    "uuid": "f5cf5445-4dd7-4636-ab76-d38f45c01c6f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R15",
+                    "pos": {
+                        "x": 73.6128,
+                        "y": 125.9371
+                    },
+                    "uuid": "addce40a-d6f2-467e-8cdf-6053222022b6"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R16",
+                    "pos": {
+                        "x": 102.8636,
+                        "y": 118.0525
+                    },
+                    "uuid": "5de1d06e-0d4a-491f-99fa-fa99596cc684"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N6969) doesn't match net given by schematic (/$1N6969)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N6969] of R16",
+                    "pos": {
+                        "x": 102.8636,
+                        "y": 118.0525
+                    },
+                    "uuid": "4e6acadb-88c9-4225-9111-03a0bfaa7ff0"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R16",
+                    "pos": {
+                        "x": 92.7036,
+                        "y": 118.0525
+                    },
+                    "uuid": "99059ba2-0807-4d64-b772-f240da98b422"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R17",
+                    "pos": {
+                        "x": 126.4107,
+                        "y": 126.1911
+                    },
+                    "uuid": "e4cdef4c-3cbf-4d02-a6f7-98d0ddb66fde"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7043) doesn't match net given by schematic (/$1N7043)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7043] of R17",
+                    "pos": {
+                        "x": 126.4107,
+                        "y": 126.1911
+                    },
+                    "uuid": "9dffc6d5-46d5-4028-aab7-790f383ccb42"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R17",
+                    "pos": {
+                        "x": 116.2507,
+                        "y": 126.1911
+                    },
+                    "uuid": "62f7001c-8f06-423d-88fd-44cf366f16f8"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R18",
+                    "pos": {
+                        "x": 139.08,
+                        "y": 116.0
+                    },
+                    "uuid": "64daa556-0992-4472-8763-08c859879928"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7117) doesn't match net given by schematic (/$1N7117)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7117] of R18",
+                    "pos": {
+                        "x": 139.08,
+                        "y": 116.0
+                    },
+                    "uuid": "f63f377d-e013-4b1f-8744-d9d7f591311f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R18",
+                    "pos": {
+                        "x": 128.92,
+                        "y": 116.0
+                    },
+                    "uuid": "999ed0c8-daf9-44aa-9d2b-d6355e2ee085"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R19",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 138.0783
+                    },
+                    "uuid": "e8a6498a-bb66-4245-a1fc-dd46d2cc72fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7191) doesn't match net given by schematic (/$1N7191)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7191] of R19",
+                    "pos": {
+                        "x": 83.7728,
+                        "y": 138.0783
+                    },
+                    "uuid": "327dab99-6a83-4016-a9f8-cc637873530a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R19",
+                    "pos": {
+                        "x": 73.6128,
+                        "y": 138.0783
+                    },
+                    "uuid": "530a2822-8e5b-499e-a1ae-a011bac91335"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R20",
+                    "pos": {
+                        "x": 105.08,
+                        "y": 146.0
+                    },
+                    "uuid": "b112a461-1f93-4d9d-9dbb-69b4164ffabf"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7265) doesn't match net given by schematic (/$1N7265)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7265] of R20",
+                    "pos": {
+                        "x": 105.08,
+                        "y": 146.0
+                    },
+                    "uuid": "53c8a191-b239-4fa0-946e-ff1422fe3531"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R20",
+                    "pos": {
+                        "x": 94.92,
+                        "y": 146.0
+                    },
+                    "uuid": "662534ec-16e4-4453-92d5-957a35db6fc7"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R21",
+                    "pos": {
+                        "x": 126.5694,
+                        "y": 138.2053
+                    },
+                    "uuid": "34be91f1-d545-42c0-bdab-0c3e1c0657ae"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net ($1N7339) doesn't match net given by schematic (/$1N7339)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [$1N7339] of R21",
+                    "pos": {
+                        "x": 126.5694,
+                        "y": 138.2053
+                    },
+                    "uuid": "10673e3e-7176-4253-873d-e312e445a287"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [+5V_SERVO] of R21",
+                    "pos": {
+                        "x": 116.4094,
+                        "y": 138.2053
+                    },
+                    "uuid": "65a4747d-c1d7-40c5-9ddb-4040f3dc938e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R22",
+                    "pos": {
+                        "x": 134.0,
+                        "y": 97.0
+                    },
+                    "uuid": "07798312-657f-4d48-8c0d-86b24c671c5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (GND) doesn't match net given by schematic (/GND)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [GND] of R22",
+                    "pos": {
+                        "x": 134.0,
+                        "y": 97.0
+                    },
+                    "uuid": "376a1632-626b-4449-9863-a57abff2acd4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (MOSFET_GATE) doesn't match net given by schematic (/MOSFET_GATE)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [MOSFET_GATE] of R22",
+                    "pos": {
+                        "x": 123.84,
+                        "y": 97.0
+                    },
+                    "uuid": "21c59acb-9adc-4c6f-a53f-102553158550"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Axial_R_10.16 doesn't match footprint given by symbol (BaBot_THT:Axial_R_10.16)",
+            "items": [
+                {
+                    "description": "Footprint R23",
+                    "pos": {
+                        "x": 127.0,
+                        "y": 90.0
+                    },
+                    "uuid": "2f6c6841-a886-4b43-b161-92e1a97607a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (IR_LED_CONTROL) doesn't match net given by schematic (/IR_LED_CONTROL)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [IR_LED_CONTROL] of R23",
+                    "pos": {
+                        "x": 127.0,
+                        "y": 90.0
+                    },
+                    "uuid": "f608e85a-9c17-4dee-857a-2a3c1646ff7e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (MOSFET_GATE) doesn't match net given by schematic (/MOSFET_GATE)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [MOSFET_GATE] of R23",
+                    "pos": {
+                        "x": 116.84,
+                        "y": 90.0
+                    },
+                    "uuid": "fc89c2a0-33a0-496b-bcdf-e8ccf875dd2c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Header20 doesn't match footprint given by symbol (BaBot_THT:Header20)",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 111.43,
+                        "y": 96.27
+                    },
+                    "uuid": "a2f0358c-0a48-4c07-bdae-9eea52971e49"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Pad net (PT00) doesn't match net given by schematic (/PT00)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [PT00] of U1",
+                    "pos": {
+                        "x": 111.43,
+                        "y": 96.27
+                    },
+                    "uuid": "15f727c4-7304-48c2-ab80-6b475277038b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT01) doesn't match net given by schematic (/PT01)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [PT01] of U1",
+                    "pos": {
+                        "x": 111.43,
+                        "y": 93.73
+                    },
+                    "uuid": "8ac90b2a-afd2-443b-be95-2b921d5bbba8"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT02) doesn't match net given by schematic (/PT02)",
+            "items": [
+                {
+                    "description": "PTH pad 3 [PT02] of U1",
+                    "pos": {
+                        "x": 108.89,
+                        "y": 96.27
+                    },
+                    "uuid": "83734f38-1012-4e73-8ae8-3c3a0f05d766"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT03) doesn't match net given by schematic (/PT03)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [PT03] of U1",
+                    "pos": {
+                        "x": 108.89,
+                        "y": 93.73
+                    },
+                    "uuid": "2a8c8127-bfc8-409c-b20b-45cf65a2f89c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT04) doesn't match net given by schematic (/PT04)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [PT04] of U1",
+                    "pos": {
+                        "x": 106.35,
+                        "y": 96.27
+                    },
+                    "uuid": "54c16c9d-f425-4391-908d-ba6915d8f816"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT05) doesn't match net given by schematic (/PT05)",
+            "items": [
+                {
+                    "description": "PTH pad 6 [PT05] of U1",
+                    "pos": {
+                        "x": 106.35,
+                        "y": 93.73
+                    },
+                    "uuid": "891d1e7d-f55b-4e60-89fe-a26125f7872c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT06) doesn't match net given by schematic (/PT06)",
+            "items": [
+                {
+                    "description": "PTH pad 7 [PT06] of U1",
+                    "pos": {
+                        "x": 103.81,
+                        "y": 96.27
+                    },
+                    "uuid": "e67c59fa-ca6a-4539-a25f-b1f1c7d06852"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT07) doesn't match net given by schematic (/PT07)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [PT07] of U1",
+                    "pos": {
+                        "x": 103.81,
+                        "y": 93.73
+                    },
+                    "uuid": "c841da59-96d3-448d-88de-b75fa058698d"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT08) doesn't match net given by schematic (/PT08)",
+            "items": [
+                {
+                    "description": "PTH pad 9 [PT08] of U1",
+                    "pos": {
+                        "x": 101.27,
+                        "y": 96.27
+                    },
+                    "uuid": "d6829d87-2412-4f6b-8199-5b61ee7f5b35"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT09) doesn't match net given by schematic (/PT09)",
+            "items": [
+                {
+                    "description": "PTH pad 10 [PT09] of U1",
+                    "pos": {
+                        "x": 101.27,
+                        "y": 93.73
+                    },
+                    "uuid": "d7f24fee-238d-4166-9573-2c5ca2806f67"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT10) doesn't match net given by schematic (/PT10)",
+            "items": [
+                {
+                    "description": "PTH pad 11 [PT10] of U1",
+                    "pos": {
+                        "x": 98.73,
+                        "y": 96.27
+                    },
+                    "uuid": "22ff010c-cd54-4e22-94b6-4fd8c1e07069"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT11) doesn't match net given by schematic (/PT11)",
+            "items": [
+                {
+                    "description": "PTH pad 12 [PT11] of U1",
+                    "pos": {
+                        "x": 98.73,
+                        "y": 93.73
+                    },
+                    "uuid": "5d6d2509-e756-4206-8bfd-6978322de17a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT12) doesn't match net given by schematic (/PT12)",
+            "items": [
+                {
+                    "description": "PTH pad 13 [PT12] of U1",
+                    "pos": {
+                        "x": 96.19,
+                        "y": 96.27
+                    },
+                    "uuid": "07a20761-1d74-4b87-972f-901cb28beb2d"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT13) doesn't match net given by schematic (/PT13)",
+            "items": [
+                {
+                    "description": "PTH pad 14 [PT13] of U1",
+                    "pos": {
+                        "x": 96.19,
+                        "y": 93.73
+                    },
+                    "uuid": "d705ce0f-f23a-4d4a-8d13-84a9b61925b0"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT14) doesn't match net given by schematic (/PT14)",
+            "items": [
+                {
+                    "description": "PTH pad 15 [PT14] of U1",
+                    "pos": {
+                        "x": 93.65,
+                        "y": 96.27
+                    },
+                    "uuid": "447d533d-09bf-4707-9de8-8b852b8f0601"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (PT15) doesn't match net given by schematic (/PT15)",
+            "items": [
+                {
+                    "description": "PTH pad 16 [PT15] of U1",
+                    "pos": {
+                        "x": 93.65,
+                        "y": 93.73
+                    },
+                    "uuid": "fa9eeb50-858b-4675-9a95-ed9773cf6a00"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (IR_LED_CONTROL) doesn't match net given by schematic (/IR_LED_CONTROL)",
+            "items": [
+                {
+                    "description": "PTH pad 17 [IR_LED_CONTROL] of U1",
+                    "pos": {
+                        "x": 91.11,
+                        "y": 96.27
+                    },
+                    "uuid": "a7c221b1-c121-4e7a-a68b-11f6a070dcc4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_SERVO) doesn't match net given by schematic (/+5V_SERVO)",
+            "items": [
+                {
+                    "description": "PTH pad 18 [+5V_SERVO] of U1",
+                    "pos": {
+                        "x": 91.11,
+                        "y": 93.73
+                    },
+                    "uuid": "8f72e528-c031-43f8-8992-d2a4de45928c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (+5V_LOGIC) doesn't match net given by schematic (/+5V_LOGIC)",
+            "items": [
+                {
+                    "description": "PTH pad 19 [+5V_LOGIC] of U1",
+                    "pos": {
+                        "x": 88.57,
+                        "y": 96.27
+                    },
+                    "uuid": "673d5b8d-a79f-4827-abb5-c4423f8d1fde"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad net (GND) doesn't match net given by schematic (/GND)",
+            "items": [
+                {
+                    "description": "PTH pad 20 [GND] of U1",
+                    "pos": {
+                        "x": 88.57,
+                        "y": 93.73
+                    },
+                    "uuid": "259c6468-2bba-417b-a950-79ea2d1d10a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        }
+    ],
+    "source": "BaBot_Plate_THT.kicad_pcb",
+    "unconnected_items": [],
+    "violations": []
+}

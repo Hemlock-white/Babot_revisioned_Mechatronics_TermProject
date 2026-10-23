@@ -1,16 +1,16 @@
 # BaBot through-hole conversion
 
-The current Base in this repository is the fully routed **four-layer** `KiCad/BaBot_Base_THT_4067_Module.kicad_pro`. The separate two-layer Base attempt is preserved under [`../history/PCB/base_2layer_draft/`](../history/PCB/base_2layer_draft/) and is **not ready to fabricate**: six signal connections and one GND connection remain open. The `KiCad/BaBot_Plate_THT.kicad_pro` copy is an **older unrouted two-layer Plate**. A routed Plate and its Gerbers have been reported as complete but have not yet been provided for import into this repository. Factory-assembled modules can still contain SMD parts.
+The current Base is the fully routed **four-layer** `KiCad/BaBot_Base_THT_4067_Module.kicad_pro`; the current Plate is the routed **two-layer** `KiCad/BaBot_Plate_THT.kicad_pro`. The separate two-layer Base attempt is preserved under [`../history/PCB/base_2layer_draft/`](../history/PCB/base_2layer_draft/) and is **not ready to fabricate**: six signal connections and one GND connection remain open. The Plate's older unrouted board and rejected Gerbers are preserved under [`../history/PCB/`](../history/PCB/). Factory-assembled modules can still contain SMD parts.
 
 See **[ROUTING.md](ROUTING.md)** for widths, clearances and current assumptions. The net classes and width presets are already configured in both projects.
 
-Earlier learning notes are archived as [Base circuit learning guide](../history/notes/circuit_learning_base.md) and [Plate circuit learning guide](../history/notes/circuit_learning_plate.md). New teaching pages are deferred pending the project owner's instructions.
+Earlier learning notes are archived as [Base circuit learning guide](../history/notes/circuit_learning_base.md) and [Plate circuit learning guide](../history/notes/circuit_learning_plate.md). The illustrated [original](../docs/electronics_original.html) and [current THT](../docs/electronics_tht.html) lessons are in `docs/`.
 
 ## Files kept
 
-`KiCad/` contains the four-layer Base, the older Plate project, editable connection schematics, BOMs, connection tables, and the required local symbol/footprint libraries. Keep `BaBot_THT.pretty`, `BaBot_THT.kicad_sym`, `fp-lib-table` and `sym-lib-table` with the projects. `sources/` contains the two module schematic PDFs. `VALIDATION.md` records the handoff checks.
+`KiCad/` contains the routed Base and Plate projects, editable connection schematics, BOMs, connection tables, and the required local symbol/footprint libraries. Keep `BaBot_THT.pretty`, `BaBot_THT.kicad_sym`, `fp-lib-table` and `sym-lib-table` with the projects. `sources/` contains the two module schematic PDFs. `VALIDATION.md` records the handoff checks.
 
-Fabrication files for the validated four-layer Base are in [`fabrication/BaBot_Base_THT_4layer/`](fabrication/BaBot_Base_THT_4layer/). The two-layer Base draft and the older Plate copy have no new fabrication exports here. The original Gerbers and BOMs remain under [`../original/pcbway/`](../original/pcbway/).
+Fabrication files for the four-layer Base are in [`fabrication/BaBot_Base_THT_4layer/`](fabrication/BaBot_Base_THT_4layer/); the corrected two-layer Plate Gerbers and drills are in [`fabrication/plate_tht/`](fabrication/plate_tht/). Read each board's order notes before fabrication. The original Gerbers and BOMs remain under [`../original/pcbway/`](../original/pcbway/).
 
 The Base and Plate CSV BOMs group identical purchase parts. `Qty per board` is for one board, and `Qty for 5 boards` is for five. Enter your stock in `Qty on hand` and change `[ ]` to `[x]` in `Have full 5-board qty?` when that complete five-board quantity is available. The Base BOM also counts cuttable socket strips, conditional module pin strips, and one Base–Plate cable per assembled pair; the cable is deliberately counted only once.
 
