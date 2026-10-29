@@ -1,0 +1,7 @@
+CH340 / CH341 Windows driver
+套件內 CH341SER.INF: DriverVer = 01/18/2022, 3.7.2022.01
+來源：Arduino 官方疑難排解頁面提供的 Internet Archive 下載連結。
+官方說明：https://support.arduino.cc/hc/en-us/articles/13148652511260-avrdude-ser-open-can-t-set-com-state-for-COMn
+下載：https://web.archive.org/web/20220519153932id_/https://www.wch-ic.com/downloads/file/65.html
+SHA256: 391a615225980f5e93bb9a6196f82a6b03b67a001b9dd3a64353f4b0ba2884b8
+已下載並檢查套件內 INF 版本；未執行安裝。

@@ -25,13 +25,15 @@
   會浮接，ADC 數字不能判斷好壞。換測下一腳時，兩個電源都先關掉。
   10 kOhm 近似 Base 已焊的 RV1 焊盤固定 10 kOhm + R18 500 Ohm 負載。
 
-  【可選整合模式：TEST_WITH_BASE = 1】
+  【整合模式：TEST_WITH_BASE = 1；目前的預設值】
   將程式燒進 Base 的 Arduino Micro，Plate 正確接到 Base，
   Micro USB 供 +5V_LOGIC，Base J1 外部 5 V 供 +5V_SERVO；
   程式用 Base 的 4067 與 A0 自動選 PT 通道，無需 Uno/麵包板電阻。
   請先用 test_code_base 的 cal 0 確認 RV1 焊盤固定電阻約 10 kOhm，
   再用此程式比較實際暗／亮／有球讀數。固定電阻不能旋轉調整；
   勿把獨立模式的接線再接到已連 Base 的 Plate。
+  輸入 scan 可自動讀完 PT00..PT15；先掃空盤，再把球放在某個感測區
+  掃一次，對照兩次的 delta。球要移到其他區域，才可逐一驗證各接收器。
 
   【量測原理與預期】
   光電晶體 collector 接 +5V_LOGIC，emitter 接 PTxx。照到 IR 後
@@ -51,9 +53,9 @@
 #include <string.h>
 #include <ctype.h>
 
-// 預設 0：Uno + 麵包板單路測試。完成 Base 後可改成 1：Micro + 4067。
+// 目前預設 1：Micro + Base 4067 自動選通道；改成 0 才是 Uno + 麵包板單路測試。
 #ifndef TEST_WITH_BASE
-#define TEST_WITH_BASE 0
+#define TEST_WITH_BASE 1
 #endif
 
 const uint8_t PIN_IR_CONTROL = 7;  // D7 -> Plate U1-17 -> R23 -> Q17 gate
@@ -167,11 +169,33 @@ void printReading(uint8_t channel, const Reading &r) {
     Serial.println(F("  Hint: almost zero; check load, logic 5V, sensor polarity, LED rail and optics."));
 }
 
+#if TEST_WITH_BASE
+// 合板快掃：4067 自動依序接通 16 路；每路都量一次 IR 關/開。
+// 空盤掃一次只能建立參考，不能證明 16 顆 Q 都能感應球。
+// 球放在實際使用高度並保持不動，再掃一次；逐區移球才能驗證每顆 Q。
+void scanAllChannels() {
+  int16_t minimum = 32767;
+  int16_t maximum = -32768;
+  Serial.println(F("=== PT00..PT15 scan: ambient / lit / delta ==="));
+  for (uint8_t channel = 0; channel < CHANNEL_COUNT; ++channel) {
+    Reading r = capturePair(channel);
+    printReading(channel, r);
+    if (r.delta < minimum) minimum = r.delta;
+    if (r.delta > maximum) maximum = r.delta;
+  }
+  Serial.print(F("Current delta min=")); Serial.print(minimum);
+  Serial.print(F(" max=")); Serial.print(maximum);
+  Serial.print(F(" spread=")); Serial.println(maximum - minimum);
+  Serial.println(F("Compare an empty scan with scans at different ball positions; one scan alone does not validate every Q."));
+}
+#endif
+
 void printHelp() {
   Serial.println();
   Serial.println(F("=== BaBot Plate test, 115200 baud ==="));
 #if TEST_WITH_BASE
   Serial.println(F("MODE: Base + Plate / Arduino Micro / auto 4067 select"));
+  Serial.println(F("All receivers: scan  (PT00..PT15; repeat empty and with ball)"));
 #else
   Serial.println(F("MODE: standalone Plate / 5V Uno / manual A0 jumper"));
   Serial.println(F("A0 -> U1-(N+1); 10k from A0 to GND; move wire ONLY with power off."));
@@ -269,6 +293,17 @@ void executeCommand(char *line) {
     ledDurationMs = (unsigned long)seconds * 1000UL;
     Serial.print(F("LED gate HIGH for at most "));
     Serial.print(seconds); Serial.println(F(" s; verify current and LED branches."));
+    return;
+  }
+
+  if (!strcmp(command, "scan")) {
+    if (arg1) { Serial.println(F("Usage: scan")); return; }
+    stopTest();
+#if TEST_WITH_BASE
+    scanAllChannels();
+#else
+    Serial.println(F("scan needs TEST_WITH_BASE=1: standalone Uno has only one manually wired PT channel."));
+#endif
     return;
   }
 

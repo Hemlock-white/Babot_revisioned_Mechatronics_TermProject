@@ -1,6 +1,6 @@
 # BaBot Plate PCB 測試：不需 Base，也可接回 Base 驗證
 
-開啟 [`test_code_plate.ino`](test_code_plate.ino)，Arduino IDE 選 **Arduino Uno**（5 V ATmega328P 相容板也可），Serial Monitor 設 **115200 baud**、行尾 **Newline**。程式預設 `TEST_WITH_BASE 0`：一條 A0 線逐路測 Plate，無需 Base 或 4067。每段程式註解說明測試的是哪個元件、量測原理、預期結果和限制。請先不要連伺服或 Base。
+開啟 [`test_code_plate.ino`](test_code_plate.ino)，Serial Monitor 設 **115200 baud**、行尾 **Newline**。目前程式預設 `TEST_WITH_BASE 1`：兩板接妥後燒到 **Arduino Micro**，可自動選通道及使用 `scan`。若要回到不接 Base 的單板測試，將該常數改為 `0`、板型選 **Arduino Uno**（5 V ATmega328P 相容板也可），再用一條 A0 線逐路測 Plate。每段程式註解說明測試的是哪個元件、量測原理、預期結果和限制。測光學訊號時先不要連伺服。
 
 ## 1. 準備與接線
 
@@ -38,6 +38,7 @@ Plate U1-1 (PT00) ───┬──────── Uno A0    ← 測下一�
 | 接外部 LED 電源，輸入 `led 10` | D7 → R23 → Q17；21 條 LED＋330 Ω 電阻；R22 關燈下拉 | U1-17 對 GND 開燈時約 5 V，十秒後／`led off` 時約 0 V。開燈時各 R1–R21 有壓降，可用 `I≈V_R/330 Ω` 估電流；典型會是每路約 10 mA 量級。供電總電流約 0.24 A，依實際元件與供電變化。IR 不一定肉眼可見。 |
 | A0 接 U1-1，輸入 `read 0` | Q1/`PT00`、外接 10 kΩ 負載、ADC，與 LED 開關造成的變化 | 輸出 `ambient`、`lit`、`delta=lit−ambient`。拿反光球靠近 Q1 後再 `read 0`，讀數應出現**可重複的改變**；改變方向取決於光學路徑。若接近 0 或 1023，先檢查電源、線路、元件方向與負載。 |
 | `watch 0`，最後 `stop` | 連續觀察同一路的變化 | 每約 700 ms 更新；移動球／遮住感測器，數字應隨之變化。`stop` 關燈並結束監看。 |
+| 合板模式 `scan` | 4067 自動依序讀 PT00～PT15，印出每路的 `ambient`、`lit`、`delta` 和本次 `delta spread` | 先在空盤掃一次，再把球放在某個區域掃一次並比較相應列。球要依序移到各感測區並重掃，才能驗證 Q1～Q16 都對球有可重複的反應。獨立 Uno 模式不支援自動掃描。 |
 | 固定空盤，`baseline 0` 與 `noise 0`；放球後 `compare 0` | 消除環境光、比較有球／無球和量測雜訊 | `baseline` 記住空盤的 `delta`；`noise` 顯示固定場景的變動範圍；`compare` 印出球造成的 `delta` 差。差值能反覆大於固定場景雜訊，才有希望可靠偵測。 |
 | 斷電後逐一改接 U1-2…16，輸入對應 `read 1`…`read 15` | Q2–Q16、接頭各 PT 線、焊接與感測能力 | 各路在同一測試距離／反射條件下都有合理、可重複的光學回應。**指令中的 N 不會自動換線**，實際 A0 線必須接 U1-(N+1)。 |
 
@@ -47,7 +48,7 @@ Plate U1-1 (PT00) ───┬──────── Uno A0    ← 測下一�
 
 Plate 上的 R1–R21、R22、R23 都是固定電阻，**Plate 沒有可變電阻**。獨立測試的 10 kΩ 是麵包板上的可替換負載，用來近似 Base 的 **R18 500 Ω + RV1 焊盤固定 10 kΩ**。若正常照明就讓 `ambient` 或 `lit` 接近 1023，可先斷電後將測試負載降低，例如改試 4.7 kΩ；若亮／暗差非常小而電源和光學位置都正確，可試較大的負載，例如 22 kΩ。每次換電阻、光源、球位置或環境光都重做 `baseline N` 和 `noise N`。負載變大會放大微弱光電流，也更容易飽和與受雜訊影響；不要根據單次數字宣告通過。目標是**有球／空盤的差異明顯超過固定場景雜訊，且讀數不貼住 0 或 1023**。
 
-Base 測好後，將 sketch 最上方的 `#define TEST_WITH_BASE 0` 改成 `1`，板子選 **Arduino Micro** 並燒入 Base。Plate 以已檢查方向的 20 芯接頭連 Base，移除所有 Uno／麵包板連線，Micro USB 供邏輯，Base J1 外部穩壓 5 V 供 LED/伺服電源。此模式 `read N` 會自動透過 4067 選通道；依次執行 `baseline N`、`noise N`、`compare N`，確認固定負載下有球／空盤的對比穩定且讀值不飽和。先由 [`test_code_base`](../test_code_base/README.md) 的 `cal 0` 確認 RV1 焊盤約 10 kΩ。**目前 Base 焊的是固定電阻，沒有可轉的 RV1；本程式也不能從軟體改變阻值。**若須改變靈敏度，先記錄各通道數據，再評估更換板上電阻與相應測試常數。
+Base 測好後，保持 sketch 的 `TEST_WITH_BASE 1`，板子選 **Arduino Micro** 並燒入 Base。Plate 以已檢查方向的 20 芯接頭連 Base，移除所有 Uno／麵包板連線，Micro USB 供邏輯，Base J1 外部穩壓 5 V 供 LED/伺服電源。此模式 `read N` 會自動透過 4067 選通道；`scan` 則一次讀完 16 路。空盤與有球各執行一次 `scan`，可以快速找出哪一路對球有反應；本次 `delta spread` 是 16 路 delta 的最大值減最小值，不等於有球／空盤對比，也不能單獨證明所有接收器正常。需要確認個別通道時，依次執行 `baseline N`、`noise N`、`compare N`，檢查固定負載下有球／空盤的對比是否穩定且讀值不飽和。先由 [`test_code_base`](../test_code_base/README.md) 的 `cal 0` 確認 RV1 焊盤約 10 kΩ。**目前 Base 焊的是固定電阻，沒有可轉的 RV1；本程式也不能從軟體改變阻值。**若須改變靈敏度，先記錄各通道數據，再評估更換板上電阻與相應測試常數。
 
 ### 不能由這段程式單獨證明的事
 
