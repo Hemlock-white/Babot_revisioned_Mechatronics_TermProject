@@ -1,10 +1,9 @@
 /**
  * BaBot Code
- * Operating Modes:
- * - ON:           Active balancing with PID control
- * - OFF:          Platform level, no balancing
- * - ASSEMBLY:     Servos sweep for assembly verification
- * - CALIBRATION:  Interactive servo offset calibration
+ * Temporary integrated test: Plate senses the ball and the three servos
+ * respond through the original ON-mode controller. Button modes, assembly
+ * sweep, and interactive servo calibration are disabled in loop().
+ * Calibration offsets are fixed at the default 100 for this test.
  */
 
 #include <CD74HC4067.h>
@@ -38,7 +37,7 @@ const int SERVO_PIN_C     = 9;
 
 const float IR_SMOOTH_ALPHA     = 0.7;
 const float OUTPUT_SMOOTH_ALPHA = 0.9;
-const float BALL_THRESHOLD      = 350.0;
+const float BALL_THRESHOLD      = 200.0;  // Trial value; compare empty/ball readings before final tuning.
 const float VEL_SCALE           = 0.001;
 
 const unsigned long DOUBLE_PRESS_GAP = 500;
@@ -120,8 +119,10 @@ bool every30Hz() {
 // SETUP
 // ============================================================================
 
+void printBallTestStatus();
+
 void setup() {
-  pinMode(BUTTON_PIN,      INPUT);
+  // pinMode(BUTTON_PIN, INPUT);  // No button/mode changes in this temporary test.
   pinMode(LED_PIN,         OUTPUT);
   pinMode(IR_LED_PIN,      OUTPUT);
 
@@ -129,12 +130,14 @@ void setup() {
   servoB.attach(SERVO_PIN_B);
   servoC.attach(SERVO_PIN_C);
 
-  EEPROM.get(EEPROM_ADDR_A, servoOffsetA);
-  EEPROM.get(EEPROM_ADDR_B, servoOffsetB);
-  EEPROM.get(EEPROM_ADDR_C, servoOffsetC);
-  servoOffsetA = constrain(servoOffsetA, 50, 150);
-  servoOffsetB = constrain(servoOffsetB, 50, 150);
-  servoOffsetC = constrain(servoOffsetC, 50, 150);
+  // EEPROM calibration is intentionally bypassed for this test. The global
+  // servoOffsetA/B/C defaults (100) apply, independent of old EEPROM data.
+  // EEPROM.get(EEPROM_ADDR_A, servoOffsetA);
+  // EEPROM.get(EEPROM_ADDR_B, servoOffsetB);
+  // EEPROM.get(EEPROM_ADDR_C, servoOffsetC);
+  // servoOffsetA = constrain(servoOffsetA, 50, 150);
+  // servoOffsetB = constrain(servoOffsetB, 50, 150);
+  // servoOffsetC = constrain(servoOffsetC, 50, 150);
 
   Serial.begin(115200);
   ADCSRA = (ADCSRA & 0b11111000) | 0b101;  // ADC prescaler = 32 (faster)
@@ -148,51 +151,36 @@ void setup() {
 // ============================================================================
 
 void loop() {
-  // -------------------------------------------------------------------------
-  // FAST PATH — runs every cycle
-  // Button detection, mode switching, LED blinking
-  // -------------------------------------------------------------------------
-
-  ButtonPress press = checkButton(mode == CALIBRATION);
-
-  // sendSerialData();
-
-  // Latch any detected press so it isn't lost if 30Hz gate hasn't fired yet
-  if (press != NO_PRESS) lastPress = press;
-
-  // Mode switching (not allowed during calibration)
-  if (mode != CALIBRATION) {
-    if (press == SINGLE_PRESS && mode != ASSEMBLY) mode = (mode == ON) ? OFF : ON;
-    if (press == QUAD_PRESS)   { mode = ASSEMBLY; assemblyStep = 0; assemblyPos = 0;
-                                servoA.write(100); servoB.write(100); servoC.write(100); }
-    if (press == TRIPLE_PRESS) { mode = CALIBRATION; calibServo = CALIB_A; }
-  }
-
-  // LED — always runs at full speed for smooth blinking
-  switch (mode) {
-    case ON:          blinkLED(300);              break;
-    case ASSEMBLY:    blinkDoubleFlash();          break;
-    case CALIBRATION: blinkLED(50);               break;
-    case OFF:         digitalWrite(LED_PIN, LOW);  break;
-  }
-
-  // -------------------------------------------------------------------------
-  // 30Hz PATH — sensor reading + PID + servos
-  // -------------------------------------------------------------------------
+  // Temporary test: skip button, OFF, ASSEMBLY and CALIBRATION mode handling.
+  // Keep the original 30 Hz Plate -> position -> PID -> servo path.
   if (!every30Hz()) return;
 
   measureIR();
   calculateWeightedCenter(irSignal, centerX, centerY);
+  handleOnMode();
+  digitalWrite(LED_PIN, ballOnPlate() ? HIGH : LOW);
+  printBallTestStatus();
+}
 
-  switch (mode) {
-    case ON:          handleOnMode();              break;
-    case OFF:         handleOffMode();             break;
-    case ASSEMBLY:    handleAssemblyMode();        break;
-    case CALIBRATION: runCalibration(lastPress);   break;
+// Print at 5 Hz so the 30 Hz control loop is not flooded with serial text.
+// The spread is calculated from the same smoothed values used by ballOnPlate().
+void printBallTestStatus() {
+  static unsigned long lastPrint = 0;
+  if (millis() - lastPrint < 200 || !Serial) return;
+  lastPrint = millis();
+
+  float minV = irSignal[0], maxV = irSignal[0];
+  for (int i = 1; i < 16; i++) {
+    minV = min(minV, irSignal[i]);
+    maxV = max(maxV, irSignal[i]);
   }
-
-  // Clear latched press after 30Hz handler has consumed it
-  lastPress = NO_PRESS;
+  Serial.print(ballOnPlate() ? "BALL" : "NO BALL");
+  Serial.print("  spread="); Serial.print(maxV - minV, 1);
+  Serial.print("/200  center=("); Serial.print(centerX, 2);
+  Serial.print(","); Serial.print(centerY, 2);
+  Serial.print(")  tilt=("); Serial.print(smoothRoll, 2);
+  Serial.print(","); Serial.print(smoothPitch, 2);
+  Serial.println(")");
 }
 
 // ============================================================================
