@@ -165,9 +165,9 @@ void printReading(uint8_t channel, const Reading &r) {
   Serial.println(F("  [ADC counts / 1023]"));
   if (r.ambient >= 1000 || r.lit >= 1000)
     Serial.println(F("  Hint: near ADC upper rail; reduce load resistance or light; check wiring."));
-  if (r.ambient <= 3 && r.lit <= 3)
+  /*if (r.ambient <= 3 && r.lit <= 3)
     Serial.println(F("  Hint: almost zero; check load, logic 5V, sensor polarity, LED rail and optics."));
-}
+*/}
 
 #if TEST_WITH_BASE
 // 合板快掃：4067 自動依序接通 16 路；每路都量一次 IR 關/開。
