@@ -164,6 +164,8 @@ void loop() {
 
 // Print at 5 Hz so the 30 Hz control loop is not flooded with serial text.
 // The spread is calculated from the same smoothed values used by ballOnPlate().
+// readMicroseconds() reports each Servo object's last commanded pulse width;
+// it does not measure the electrical waveform or the shaft's actual motion.
 void printBallTestStatus() {
   static unsigned long lastPrint = 0;
   if (millis() - lastPrint < 200 || !Serial) return;
@@ -178,8 +180,9 @@ void printBallTestStatus() {
   Serial.print("  spread="); Serial.print(maxV - minV, 1);
   Serial.print("/200  center=("); Serial.print(centerX, 2);
   Serial.print(","); Serial.print(centerY, 2);
-  Serial.print(")  tilt=("); Serial.print(smoothRoll, 2);
-  Serial.print(","); Serial.print(smoothPitch, 2);
+  Serial.print(")  cmd_us(A,B,C)=("); Serial.print(servoA.readMicroseconds());
+  Serial.print(","); Serial.print(servoB.readMicroseconds());
+  Serial.print(","); Serial.print(servoC.readMicroseconds());
   Serial.println(")");
 }
 
