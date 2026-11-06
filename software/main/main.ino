@@ -1,11 +1,13 @@
 /**
  * BaBot Code
- * Temporary integrated test: Plate senses the ball and the three servos
- * respond through the original ON-mode controller. Button modes, assembly
- * sweep, and interactive servo calibration are disabled in loop().
- * Calibration offsets are fixed at the default 100 for this test.
+ * Operating Modes:
+ * - ON:           Active balancing with PID control
+ * - OFF:          Platform level, no balancing
+ * - ASSEMBLY:     Servos sweep for assembly verification
+ * - CALIBRATION:  Interactive servo offset calibration
  */
 
+#include <Arduino.h>
 #include <CD74HC4067.h>
 #include <Servo.h>
 #include <math.h>
@@ -15,7 +17,7 @@
 // CONFIGURATION CONSTANTS
 // ============================================================================
 
-float P_GAIN = 3.0;
+float P_GAIN = 0.3;//3.0;
 float I_GAIN = 0.04;
 float D_GAIN = 25.0;
 
@@ -37,7 +39,7 @@ const int SERVO_PIN_C     = 9;
 
 const float IR_SMOOTH_ALPHA     = 0.7;
 const float OUTPUT_SMOOTH_ALPHA = 0.9;
-const float BALL_THRESHOLD      = 200.0;  // Trial value; compare empty/ball readings before final tuning.
+const float BALL_THRESHOLD      = 200.0;
 const float VEL_SCALE           = 0.001;
 
 const unsigned long DOUBLE_PRESS_GAP = 500;
@@ -54,6 +56,10 @@ const int EEPROM_ADDR_C = 8;
 enum BaBotMode   { ON, OFF, ASSEMBLY, CALIBRATION };
 enum CalibServo  { CALIB_A, CALIB_B, CALIB_C, CALIB_DONE };
 enum ButtonPress { NO_PRESS, SINGLE_PRESS, DOUBLE_PRESS, TRIPLE_PRESS, QUAD_PRESS, LONG_PRESS };
+
+const __FlashStringHelper *modeName(BaBotMode value);
+const __FlashStringHelper *calibName(CalibServo value);
+const __FlashStringHelper *pressName(ButtonPress value);
 
 // ============================================================================
 // GLOBAL STATE
@@ -100,6 +106,93 @@ unsigned long testStartTime = 0;
 uint8_t assemblyStep = 0;  // 0=IDLE, 1=SWEEP_A, 2=SWEEP_B, 3=SWEEP_C
 int     assemblyPos  = 0;
 
+// The Servo library reports the last commanded angle, not measured shaft position.
+// Keep serial output slow so it does not flood the 30 Hz balancing loop.
+const __FlashStringHelper *modeName(BaBotMode value) {
+  switch (value) {
+    case ON:          return F("ON");
+    case OFF:         return F("OFF");
+    case ASSEMBLY:    return F("ASSEMBLY");
+    case CALIBRATION: return F("CALIBRATION");
+  }
+  return F("UNKNOWN");
+}
+
+const __FlashStringHelper *calibName(CalibServo value) {
+  switch (value) {
+    case CALIB_A:    return F("A");
+    case CALIB_B:    return F("B");
+    case CALIB_C:    return F("C");
+    case CALIB_DONE: return F("DONE");
+  }
+  return F("UNKNOWN");
+}
+
+const __FlashStringHelper *pressName(ButtonPress value) {
+  switch (value) {
+    case SINGLE_PRESS: return F("SINGLE");
+    case DOUBLE_PRESS: return F("DOUBLE");
+    case TRIPLE_PRESS: return F("TRIPLE");
+    case QUAD_PRESS:   return F("QUAD");
+    case LONG_PRESS:   return F("LONG");
+    case NO_PRESS:     break;
+  }
+  return F("NONE");
+}
+
+void printOffsetsAndCommands() {
+  Serial.print(F(" offsets(A,B,C)=("));
+  Serial.print(servoOffsetA); Serial.print(',');
+  Serial.print(servoOffsetB); Serial.print(',');
+  Serial.print(servoOffsetC); Serial.print(')');
+  Serial.print(F(" cmd_deg(A,B,C)=("));
+  Serial.print(servoA.read()); Serial.print(',');
+  Serial.print(servoB.read()); Serial.print(',');
+  Serial.print(servoC.read()); Serial.print(')');
+}
+
+void printDebugStatus(bool force) {
+  static unsigned long lastPrint = 0;
+  if (!Serial) return;
+  unsigned long now = millis();
+  if (!force && now - lastPrint < 1000) return;
+  lastPrint = now;
+
+  float minV = irSignal[0], maxV = irSignal[0];
+  for (uint8_t i = 1; i < 16; ++i) {
+    if (irSignal[i] < minV) minV = irSignal[i];
+    if (irSignal[i] > maxV) maxV = irSignal[i];
+  }
+
+  Serial.print(F("STATUS mode=")); Serial.print(modeName(mode));
+  if (mode == CALIBRATION) {
+    Serial.print(F(" arm=")); Serial.print(calibName(calibServo));
+  }
+  Serial.print(F(" button=")); Serial.print(digitalRead(BUTTON_PIN) ? F("HIGH") : F("LOW"));
+  Serial.print(F(" taps=")); Serial.print(pressCount);
+  Serial.print(F(" ball=")); Serial.print(maxV - minV >= BALL_THRESHOLD ? F("YES") : F("NO"));
+  Serial.print(F(" spread=")); Serial.print(maxV - minV, 1);
+  Serial.print('/'); Serial.print(BALL_THRESHOLD, 0);
+  Serial.print(F(" center=(")); Serial.print(centerX, 2);
+  Serial.print(','); Serial.print(centerY, 2); Serial.print(')');
+  printOffsetsAndCommands();
+  Serial.println();
+}
+
+void announceSerialMonitor() {
+  static bool wasOpen = false;
+  bool open = (bool)Serial;
+  if (open && !wasOpen) {
+    Serial.println(F("BaBot main: 115200 baud; cmd_deg is commanded, not measured."));
+    Serial.println(F("Triple tap (<500ms between taps): calibrate; wait 2s after CAL START."));
+    Serial.println(F("CAL: short tap +1 degree; long press (>1000ms) A -> B -> C -> save/ON."));
+    Serial.println(F("Calibration deliberately moves one arm to a different position."));
+    Serial.println(F("OFF mode levels the platform; servos remain powered."));
+    printDebugStatus(true);
+  }
+  wasOpen = open;
+}
+
 // ============================================================================
 // TIMING HELPER
 // ============================================================================
@@ -119,10 +212,8 @@ bool every30Hz() {
 // SETUP
 // ============================================================================
 
-void printBallTestStatus();
-
 void setup() {
-  // pinMode(BUTTON_PIN, INPUT);  // No button/mode changes in this temporary test.
+  pinMode(BUTTON_PIN,      INPUT);
   pinMode(LED_PIN,         OUTPUT);
   pinMode(IR_LED_PIN,      OUTPUT);
 
@@ -130,19 +221,22 @@ void setup() {
   servoB.attach(SERVO_PIN_B);
   servoC.attach(SERVO_PIN_C);
 
-  // EEPROM calibration is intentionally bypassed for this test. The global
-  // servoOffsetA/B/C defaults (100) apply, independent of old EEPROM data.
-  // EEPROM.get(EEPROM_ADDR_A, servoOffsetA);
-  // EEPROM.get(EEPROM_ADDR_B, servoOffsetB);
-  // EEPROM.get(EEPROM_ADDR_C, servoOffsetC);
-  // servoOffsetA = constrain(servoOffsetA, 50, 150);
-  // servoOffsetB = constrain(servoOffsetB, 50, 150);
-  // servoOffsetC = constrain(servoOffsetC, 50, 150);
+  EEPROM.get(EEPROM_ADDR_A, servoOffsetA);
+  EEPROM.get(EEPROM_ADDR_B, servoOffsetB);
+  EEPROM.get(EEPROM_ADDR_C, servoOffsetC);
+  servoOffsetA = constrain(servoOffsetA, 50, 150);
+  servoOffsetB = constrain(servoOffsetB, 50, 150);
+  servoOffsetC = constrain(servoOffsetC, 50, 150);
 
   Serial.begin(115200);
   ADCSRA = (ADCSRA & 0b11111000) | 0b101;  // ADC prescaler = 32 (faster)
 
   movePlatform(0, 0, PLATE_HEIGHT);
+  if (Serial) {
+    Serial.print(F("BOOT: EEPROM offsets loaded; level target"));
+    printOffsetsAndCommands();
+    Serial.println();
+  }
   delay(1000);
 }
 
@@ -151,39 +245,67 @@ void setup() {
 // ============================================================================
 
 void loop() {
-  // Temporary test: skip button, OFF, ASSEMBLY and CALIBRATION mode handling.
-  // Keep the original 30 Hz Plate -> position -> PID -> servo path.
+  announceSerialMonitor();
+  // -------------------------------------------------------------------------
+  // FAST PATH — runs every cycle
+  // Button detection, mode switching, LED blinking
+  // -------------------------------------------------------------------------
+
+  ButtonPress press = checkButton(mode == CALIBRATION);
+
+  // sendSerialData();
+
+  // Latch any detected press so it isn't lost if 30Hz gate hasn't fired yet
+  if (press != NO_PRESS) {
+    lastPress = press;
+    if (Serial) {
+      Serial.print(F("BTN EVENT "));
+      Serial.println(pressName(press));
+    }
+  }
+
+  // Mode switching (not allowed during calibration)
+  if (mode != CALIBRATION) {
+    if (press == SINGLE_PRESS && mode != ASSEMBLY) {
+      mode = (mode == ON) ? OFF : ON;
+      if (Serial) { Serial.print(F("MODE -> ")); Serial.println(modeName(mode)); }
+    }
+    if (press == QUAD_PRESS)   { mode = ASSEMBLY; assemblyStep = 0; assemblyPos = 0;
+                                servoA.write(100); servoB.write(100); servoC.write(100);
+                                if (Serial) Serial.println(F("MODE -> ASSEMBLY; servos commanded to 100 deg")); }
+    if (press == TRIPLE_PRESS) { mode = CALIBRATION; calibServo = CALIB_A;
+                                if (Serial) Serial.println(F("MODE -> CALIBRATION; preparing arm A")); }
+    if (Serial && (press == DOUBLE_PRESS || press == LONG_PRESS)) {
+      Serial.println(F("BTN EVENT ignored outside CALIBRATION"));
+    }
+  }
+
+  // LED — always runs at full speed for smooth blinking
+  switch (mode) {
+    case ON:          blinkLED(300);              break;
+    case ASSEMBLY:    blinkDoubleFlash();          break;
+    case CALIBRATION: blinkLED(50);               break;
+    case OFF:         digitalWrite(LED_PIN, LOW);  break;
+  }
+
+  // -------------------------------------------------------------------------
+  // 30Hz PATH — sensor reading + PID + servos
+  // -------------------------------------------------------------------------
   if (!every30Hz()) return;
 
   measureIR();
   calculateWeightedCenter(irSignal, centerX, centerY);
-  handleOnMode();
-  digitalWrite(LED_PIN, ballOnPlate() ? HIGH : LOW);
-  printBallTestStatus();
-}
 
-// Print at 5 Hz so the 30 Hz control loop is not flooded with serial text.
-// The spread is calculated from the same smoothed values used by ballOnPlate().
-// readMicroseconds() reports each Servo object's last commanded pulse width;
-// it does not measure the electrical waveform or the shaft's actual motion.
-void printBallTestStatus() {
-  static unsigned long lastPrint = 0;
-  if (millis() - lastPrint < 200 || !Serial) return;
-  lastPrint = millis();
-
-  float minV = irSignal[0], maxV = irSignal[0];
-  for (int i = 1; i < 16; i++) {
-    minV = min(minV, irSignal[i]);
-    maxV = max(maxV, irSignal[i]);
+  switch (mode) {
+    case ON:          handleOnMode();              break;
+    case OFF:         handleOffMode();             break;
+    case ASSEMBLY:    handleAssemblyMode();        break;
+    case CALIBRATION: runCalibration(lastPress);   break;
   }
-  Serial.print(ballOnPlate() ? "BALL" : "NO BALL");
-  Serial.print("  spread="); Serial.print(maxV - minV, 1);
-  Serial.print("/200  center=("); Serial.print(centerX, 2);
-  Serial.print(","); Serial.print(centerY, 2);
-  Serial.print(")  cmd_us(A,B,C)=("); Serial.print(servoA.readMicroseconds());
-  Serial.print(","); Serial.print(servoB.readMicroseconds());
-  Serial.print(","); Serial.print(servoC.readMicroseconds());
-  Serial.println(")");
+
+  // Clear latched press after 30Hz handler has consumed it
+  lastPress = NO_PRESS;
+  printDebugStatus(false);
 }
 
 // ============================================================================
@@ -263,14 +385,22 @@ void handleAssemblyMode() {
 
 void runCalibration(ButtonPress press) {
   static CalibServo lastCalibServo = CALIB_DONE;
+  bool entered = false;
 
   // Init sequence when entering calibration fresh
   if (lastCalibServo == CALIB_DONE && calibServo == CALIB_A) {
+    entered = true;
     servoOffsetA = 100;
     servoOffsetB = 100;
     servoOffsetC = 100;
     moveServos(70, 70, 70);
+    if (Serial) {
+      Serial.print(F("CAL START: offsets reset to 100; wait 2s; temporary position"));
+      printOffsetsAndCommands();
+      Serial.println();
+    }
     delay(2000);
+    if (Serial) Serial.println(F("CAL READY: arm A will move to its calibration position"));
   }
   lastCalibServo = calibServo;
 
@@ -296,6 +426,11 @@ void runCalibration(ButtonPress press) {
     EEPROM.put(EEPROM_ADDR_A, servoOffsetA);
     EEPROM.put(EEPROM_ADDR_B, servoOffsetB);
     EEPROM.put(EEPROM_ADDR_C, servoOffsetC);
+    if (Serial) {
+      Serial.print(F("CAL SAVED to EEPROM; next mode ON"));
+      printOffsetsAndCommands();
+      Serial.println();
+    }
     lastCalibServo = CALIB_DONE;
     mode = ON;
     return;
@@ -305,6 +440,13 @@ void runCalibration(ButtonPress press) {
   if (calibServo == CALIB_A) moveServos(25, 70, 70);
   if (calibServo == CALIB_B) moveServos(70, 25, 70);
   if (calibServo == CALIB_C) moveServos(70, 70, 25);
+  if (Serial && (entered || press == SINGLE_PRESS || press == LONG_PRESS)) {
+    Serial.print(F("CAL arm=")); Serial.print(calibName(calibServo));
+    if (press == SINGLE_PRESS) Serial.print(F("; short tap raised its offset by 1"));
+    if (press == LONG_PRESS) Serial.print(F("; long press selected next arm"));
+    printOffsetsAndCommands();
+    Serial.println();
+  }
 }
 
 // ============================================================================
@@ -395,7 +537,10 @@ ButtonPress checkButton(bool calibrationMode) {
   unsigned long now = millis();
   ButtonPress result = NO_PRESS;
 
-  if (current == HIGH && lastState == LOW) buttonDownTime = now;
+  if (current == HIGH && lastState == LOW) {
+    buttonDownTime = now;
+    if (Serial) Serial.println(F("BTN DOWN: A1 HIGH"));
+  }
 
   if (current == LOW && lastState == HIGH) {
     unsigned long duration = now - buttonDownTime;
@@ -405,6 +550,10 @@ ButtonPress checkButton(bool calibrationMode) {
     } else {
       pressCount++;
       lastPressTime = now;
+    }
+    if (Serial) {
+      Serial.print(F("BTN UP: held=")); Serial.print(duration);
+      Serial.print(F("ms, short taps=")); Serial.println(pressCount);
     }
   }
 
